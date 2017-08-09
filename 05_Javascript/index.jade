@@ -1,0 +1,225 @@
+doctype html
+html
+  head
+    title ISIS-3710 Web development, Javascript
+    meta(charset='utf-8')
+    meta(name='author', content='John Alexis Guerra Gomez')
+    meta(name='description', content='ISIS-3710 Web development, los Andes University')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui")
+    //- link(href='../lib/css/reveal.css', rel='stylesheet')
+    //- link(href='../lib/css/theme/simple.css', rel='stylesheet')
+    //- link(href='../lib/css/zenburn.css', rel='stylesheet')
+    link(href='../css/style.css', rel='stylesheet')
+    //- Printing and PDF exports -->
+    script.
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/css/print/pdf.css' : '../lib/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    //- script(src='../lib/js/d3.min.js')
+  body
+
+
+    .reveal
+      .slides
+
+        section#title
+          h2 Javascript
+          img.logo(src="../img/universidad_de_los_andes_logo@2x.png" alt="Los Andes University")
+
+          br
+          p.small
+            a(href='http://johnguerra.co/', target='_blank') #[strong John Alexis Guerra Gómez]
+
+          p.tiny.email ja.guerrag[at}uniandes.edu.co |
+            a(href='http://twitter.com/duto_guerra' , target='_blank')  @duto_guerra
+            br
+
+
+            //- br
+            //- span ja.guerrag en uniandes.edu.co
+            //- br
+            //- a(href='http://twitter.com/duto_guerra') @duto_guerra
+          //- p.small Use
+          //-   strong  spacebar
+          //-   |  and the arrows to advance slides
+          br
+          p.tiny Slides:
+            a(href='http://johnguerra.co/lectures/webDevelopment_spring2017/05_Javascript/', target='_blank') http://johnguerra.co/lectures/webDevelopment_spring2017/05_Javascript/
+          p.tiny Class page:
+            a(href='http://johnguerra.co/classes/webDevelopment_spring_2017/', target='_blank') http://johnguerra.co/classes/webDevelopment_spring_2017/
+
+
+        //- convert -density 150 -depth 8 -quality 85 ~/Dropbox/documentos/2016/andes/visual_analytics/lectures_tamara/05_rules-artery.pdf ./05_rules-artery.png
+        section
+          section
+            h2 Wat?
+            a.tiny(href="https://www.destroyallsoftware.com/talks/wat" target="_blank") https://www.destroyallsoftware.com/talks/wat
+
+          section
+            h2 What did we learn last time?
+
+          section
+            h2 Readings discussion
+            ul
+              li.fragment questions?
+
+          section
+            h2 How to ask a question to the staff
+            ol
+              li.fragment Try yourself
+              li.fragment Google it
+              li.fragment StackOverflow it
+              li.fragment Create a reproducible bug (e.g. jsfiddle)
+              li.fragment Ask on slack (#general)
+
+          section
+            h2 Random Questions
+            ul
+              li.fragment What is #[strong var] and why we need it?
+              li.fragment What is a #[strong linter]
+              li.fragment It's Javascript Object Oriented?
+        section
+
+          section
+            h2 Functions
+            ul
+              li.fragment How do you create a function?
+              li.fragment How do you also create a function?
+              li.fragment And how do you also also create a function?
+
+
+          section
+            h2 Variable scope
+            ul
+              li.fragment Closures
+              li.fragment The module pattern
+
+          section
+            h2 Variable hoisting
+            ul
+              li.fragment A variable can be referenced before it was defined
+
+          section(data-background-image="https://media.giphy.com/media/JfDNFU1qOZna/giphy.gif" data-background-size="contain")
+            img(src="https://media.giphy.com/media/JfDNFU1qOZna/giphy.gif" alt="Say what? gif")
+
+          section
+            h2 Variable hoisting
+            a.tiny(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types#Variable_hoisting" target="_blank") https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types#Variable_hoisting
+            //- iframe.blocks(src="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types#Variable_hoisting")
+
+          section
+            h2.demo undefined vs null
+            ul
+              li.fragment #[strong undefined] a variable hasn't been created or assigned
+              li.fragment #[strong undefined] a variable was created and assigned to null
+
+          section
+            h2.demo About closures
+            a.tiny(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank") https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+
+          section
+            h2.demo Classes vs Prototypes
+            a.tiny(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model" target="_blank") https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model
+
+          section
+            h2 Objects
+            ul
+              li.fragment It's an object the same thing than a java HashTable?
+              li.fragment How do you create a new object?
+              li.fragment Can you add new attributes after object creation?
+
+          section
+            h2 Arrays
+            ul
+              li.fragment Create a function that sorts an array
+              li.fragment Create a function that filters an array of objects
+              li.fragment Create a function sums all the items on an array
+
+          section
+            h2 More arrays
+            ul
+              li.fragment filter
+              li.fragment map
+              li.fragment forEach
+
+          section
+            h2 Modify the DOM
+            pre
+              code(data-trim data-noescape).
+                document.getElementById("myId").innerHTML = "&lt;p&gt; hello! &lt;/p&gt;"
+
+
+
+        section
+          section
+            h2 Exercise
+            p Update your webpage for the class' students loading directly from the Google sheet
+            ul
+              li.fragment Share your results
+
+        section
+          section
+            h2 Required Readings Next three sessions
+            ul
+              li.fragment
+                a(href="https://www.codecademy.com/learn/learn-javascript" target="_blank") https://www.codecademy.com/learn/learn-javascript
+              li.fragment
+                a(href="https://www.youtube.com/watch?v=JxAXlJEmNMg&list=PLEzQf147-uEpvTa1bHDNlxUL2klHUMHJu&index=2", target="_blank") Crockford on Javascript series 1-6
+                span  (7+ -> Optional)
+              li.fragment (Recommended - Optional)
+                a(href="http://javascript.crockford.com/", target="_blank") http://javascript.crockford.com/
+
+
+
+
+
+    script(src='../lib/js/head.min.js')
+    script(src='../lib/js/reveal.js')
+
+    script.
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        rollingLinks: true,
+        transition: "convex",
+        //- width: "90%",
+        //- height: 1.0,
+        dependencies: [
+          // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+          { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+          // Interpret Markdown in <section> elements
+          { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+          // Syntax highlight for <code> elements
+          { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+          // Zoom in and out with Alt+click
+          { src: '../plugin/zoom-js/zoom.js', async: true },
+
+          // Speaker notes
+          { src: '../plugin/notes/notes.js', async: true },
+
+          //- // Remote control your reveal.js presentation using a touch device
+          //- { src: '../plugin/remotes/remotes.js', async: true },
+
+          //- // MathJax
+          //- { src: '../plugin/math/math.js', async: true }
+        ]
+      });
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-72531610-1', 'auto');
+      ga('send', 'pageview');
+
+
+

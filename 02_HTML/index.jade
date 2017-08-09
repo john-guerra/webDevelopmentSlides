@@ -1,0 +1,187 @@
+doctype html
+html
+  head
+    title ISIS-3710 Web development, HTML
+    meta(charset='utf-8')
+    meta(name='author', content='John Alexis Guerra Gomez')
+    meta(name='description', content='ISIS-3710 Web development, los Andes University')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui")
+    //- link(href='../lib/css/reveal.css', rel='stylesheet')
+    //- link(href='../lib/css/theme/simple.css', rel='stylesheet')
+    //- link(href='../lib/css/zenburn.css', rel='stylesheet')
+    link(href='../css/style.css', rel='stylesheet')
+    //- Printing and PDF exports -->
+    script.
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/css/print/pdf.css' : '../lib/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    //- script(src='../lib/js/d3.min.js')
+  body
+
+
+    .reveal
+      .slides
+
+        section#title
+          h2 HTML
+          img.logo(src="../img/universidad_de_los_andes_logo@2x.png" alt="Los Andes University")
+
+          br
+          p.small
+            a(href='http://johnguerra.co/', target='_blank') #[strong John Alexis Guerra Gómez]
+
+          p.tiny.email ja.guerrag[at}uniandes.edu.co |
+            a(href='http://twitter.com/duto_guerra' , target='_blank')  @duto_guerra
+            br
+
+
+            //- br
+            //- span ja.guerrag en uniandes.edu.co
+            //- br
+            //- a(href='http://twitter.com/duto_guerra') @duto_guerra
+          //- p.small Use
+          //-   strong  spacebar
+          //-   |  and the arrows to advance slides
+          br
+          p.tiny Slides:
+            a(href='http://johnguerra.co/lectures/webDevelopment_spring2017/02_HTML/', target='_blank') http://johnguerra.co/lectures/webDevelopment_spring2017/02_HTML/
+          p.tiny Class page:
+            a(href='http://johnguerra.co/classes/webDevelopment_spring_2017/', target='_blank') http://johnguerra.co/classes/webDevelopment_spring_2017/
+
+
+        //- convert -density 150 -depth 8 -quality 85 ~/Dropbox/documentos/2016/andes/visual_analytics/lectures_tamara/05_rules-artery.pdf ./05_rules-artery.png
+        section
+          section
+            h2 What did we learn last time?
+
+          section
+            h2 Readings discussion
+            ul
+              li.fragment questions?
+
+          section
+            h2 Random Questions
+            ul
+              li.fragment What's a class?
+              li.fragment What's an attribute?
+              li.fragment What's the id?
+              li.fragment What's the difference between the head and the body
+              li.fragment Content vs Style
+              li.fragment What's the DOM
+
+        section
+          section
+            h2 Group Exercise
+            p We have the #[a(href="images/WebDevUniandes.json") tweets] collected from yesterday for the class. Let's design a web page to show display and grade them.
+
+          section
+            h2 Audience and objective
+            ul
+              li.fragment Who are we targeting? #[strong Users]
+              li.fragment What do we want them to do? #[strong Task]
+
+          section
+            h2.demo Resources
+            p What do we have to show?
+            ul.small
+              li.fragment Tweets
+                ul
+                  li.fragment Handle
+                  li.fragment Text
+                  li.fragment User image
+                  li.fragment Date
+              li.fragment University Logo
+              li.fragment What else?
+
+          section
+            h2 Wireframe it
+
+          section
+            h2 Test it
+
+          section
+            h2 Code it
+            ul
+              li.fragment We can use #[a(href="http://jsfiddle.net") JSFiddle] or #[a(href="http://codepen.com") Codepen] to write it online
+            ul
+              li.fragment Or we can build it locally (I recommend #[a(href="https://www.sublimetext.com/3") Sublime] + #[a(href="http://emmet.io/") emmet])
+
+          section
+            h2 Web Developer tools
+
+        section
+          section
+            h2 Exercise
+            p Design and write the HTML of your home page
+            ul
+              li.fragment Code it and put it on github
+
+          section
+            h2 Share your results
+
+        section
+          section
+            h2 Required Readings Next session
+            ul
+              li.fragment
+                a(href="https://www.codecademy.com/learn/learn-html-css", target="_blank") https://www.codecademy.com/learn/learn-html-css
+                span  CSS Section
+              li.fragment
+                a(href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web", target="_blank") https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web
+                span CSS Basics
+
+
+
+
+
+
+    script(src='../lib/js/head.min.js')
+    script(src='../lib/js/reveal.js')
+
+    script.
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        rollingLinks: true,
+        transition: "convex",
+        //- width: "90%",
+        //- height: 1.0,
+        dependencies: [
+          // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+          { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+          // Interpret Markdown in <section> elements
+          { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+          // Syntax highlight for <code> elements
+          { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+          // Zoom in and out with Alt+click
+          { src: '../plugin/zoom-js/zoom.js', async: true },
+
+          // Speaker notes
+          { src: '../plugin/notes/notes.js', async: true },
+
+          //- // Remote control your reveal.js presentation using a touch device
+          //- { src: '../plugin/remotes/remotes.js', async: true },
+
+          //- // MathJax
+          //- { src: '../plugin/math/math.js', async: true }
+        ]
+      });
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-72531610-1', 'auto');
+      ga('send', 'pageview');
+
+
+

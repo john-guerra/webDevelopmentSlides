@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ISIS-3710 Web development, Node.js</title>
+    <meta charset="utf-8">
+    <meta name="author" content="John Alexis Guerra Gomez">
+    <meta name="description" content="ISIS-3710 Web development, los Andes University">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link href="../css/style.css" rel="stylesheet">
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/css/print/pdf.css' : '../lib/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section id="title">
+          <h2>Node.js</h2><img src="../img/universidad_de_los_andes_logo@2x.png" alt="Los Andes University" class="logo"><br>
+          <p class="small"><a href="http://johnguerra.co/" target="_blank"><strong>John Alexis Guerra Gómez</strong></a></p>
+          <p class="tiny email">ja.guerrag[at}uniandes.edu.co |<a href="http://twitter.com/duto_guerra" target="_blank"> @duto_guerra</a><br>
+          </p><br>
+          <p class="tiny">Slides:<a href="http://johnguerra.co/lectures/webDevelopment_spring2017/06_Node/" target="_blank">http://johnguerra.co/lectures/webDevelopment_spring2017/06_Node/</a></p>
+          <p class="tiny">Class page:<a href="http://johnguerra.co/classes/webDevelopment_spring_2017/" target="_blank">http://johnguerra.co/classes/webDevelopment_spring_2017/</a></p>
+        </section>
+        <section>
+          <section>
+            <h2>What did we learn last time?</h2>
+          </section>
+          <section>
+            <h2>Readings discussion</h2>
+            <ul>
+              <li class="fragment">questions?</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Random Questions</h2>
+            <ul>
+              <li class="fragment">What is <strong>Node.js</strong>?</li>
+              <li class="fragment">Why would we need <strong>Node.js</strong>?</li>
+              <li class="fragment">What does it mean it is asynchronous?</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Node.js</h2>
+            <p>Interactive Shell</p>
+            <pre><code data-trim data-noescape>$ node
+</code></pre>
+          </section>
+          <section>
+            <h2>Node.js</h2>
+            <p>Some things work only on the browser, some only on the server</p>
+          </section>
+          <section>
+            <h2>NPM</h2>
+            <ul>
+              <li>Package Management</li>
+              <li><a href="https://www.npmjs.com/" target="_blank">https://www.npmjs.com/</a></li>
+              <li class="fragment">more than 400,000 packages!</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Install a package</h2>
+            <pre><code data-trim data-noescape>$ npm install express</code></pre>
+            <p>Creates a local <code>node_modules/</code> folder</p>
+          </section>
+          <section>
+            <h2>Install it globally</h2>
+            <pre><code data-trim data-noescape>$ npm install -g express</code></pre>
+            <p>Installs it for the whole system</p>
+          </section>
+          <section>
+            <h2>Install and save dependency</h2>
+            <pre><code data-trim data-noescape># Run only once
+$ npm init
+# Then for each package
+$ npm install --save express</code></pre>
+            <p>Installs it locally and creates a <code>packages.json</code> file that saves the dependency</p>
+          </section>
+          <section>
+            <h2><code>packages.json</code></h2>
+            <pre><code data-trim data-noescape>{
+  "name": "webdevex1",
+  "version": "1.0.0",
+  "description": "TEst",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.14.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john-guerra/webDevEx1.git"
+  },
+  "author": "John Alexis Guerra Gómez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/john-guerra/webDevEx1/issues"
+  },
+  "homepage": "https://github.com/john-guerra/webDevEx1#readme"
+}
+
+</code></pre>
+          </section>
+          <section>
+            <h2>Express</h2>
+            <p>Allows us to create a simple HTTP Server</p><a href="http://expressjs.com/" target="_blank">http://expressjs.com/</a>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Exercise</h2>
+            <p>Update your webpage displaying it from node+express for the class' students loading directly from the Google sheet</p>
+            <ul>
+              <li class="fragment">Share your results</li>
+            </ul>
+          </section>
+        </section>
+      </div>
+    </div>
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../lib/js/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        rollingLinks: true,
+        transition: "convex",
+        //- width: "90%",
+        //- height: 1.0,
+        dependencies: [
+          // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+          { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      
+          // Interpret Markdown in <section> elements
+          { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
+          // Syntax highlight for <code> elements
+          { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      
+          // Zoom in and out with Alt+click
+          { src: '../plugin/zoom-js/zoom.js', async: true },
+      
+          // Speaker notes
+          { src: '../plugin/notes/notes.js', async: true },
+      
+          //- // Remote control your reveal.js presentation using a touch device
+          //- { src: '../plugin/remotes/remotes.js', async: true },
+      
+          //- // MathJax
+          //- { src: '../plugin/math/math.js', async: true }
+        ]
+      });
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-72531610-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

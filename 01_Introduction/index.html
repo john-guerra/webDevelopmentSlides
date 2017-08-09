@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ISIS-3710 Web development, Introduction</title>
+    <meta charset="utf-8">
+    <meta name="author" content="John Alexis Guerra Gomez">
+    <meta name="description" content="ISIS-3710 Web development, los Andes University">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link href="../css/style.css" rel="stylesheet">
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/css/print/pdf.css' : '../lib/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section id="title">
+          <h2>ISIS-3710 Web Development</h2><img src="../img/universidad_de_los_andes_logo@2x.png" alt="Los Andes University" class="logo"><br>
+          <p class="small"><a href="http://johnguerra.co/" target="_blank"><strong>John Alexis Guerra Gómez</strong></a></p>
+          <p class="tiny email">ja.guerrag[at}uniandes.edu.co |<a href="http://twitter.com/duto_guerra" target="_blank"> @duto_guerra</a><br>
+          </p><br>
+          <p class="tiny">Slides:<a href="http://johnguerra.co/lectures/webDevelopment_fall_2017/01_Introduction/" target="_blank">http://johnguerra.co/lectures/webDevelopment_fall_2017/01_Introduction/</a></p>
+          <p class="tiny">Class page:<a href="http://johnguerra.co/classes/webDevelopment_fall_2017/" target="_blank">http://johnguerra.co/classes/webDevelopment_fall_2017/</a></p>
+        </section>
+        <section>
+          <section>
+            <h1>Syllabus</h1>
+          </section>
+          <section>
+            <h2>Class Objectives</h2>
+            <p>At the end of the class you should be able to:</p>
+            <ul>
+              <li class="fragment">Build a modern web application</li>
+              <li class="fragment">Be able to learn new web technologies</li>
+              <li class="fragment">Understand web architectures</li>
+              <li class="fragment">Love/Hate the professor</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Topics</h2><span class="left small"><ul>
+<li>HTML5, CSS</li>
+<li>JavaScript</li>
+<li>Node.js</li>
+<li>MySQL, Mongo</li>
+<li>Basic Web design</li>
+<li>Usability</li>
+<li>Web Accessibility</li>
+<li>Security</li>
+</ul>
+</span><span class="left small"><ul>
+<li>Meteor + React</li>
+<li>Testing</li>
+<li>Public APIs, Facebook, Twitter, Instagram</li>
+<li>Scalability</li>
+<li>Backend as a service</li>
+<li>Desktop Apps with JS</li>
+<li>Mobile Apps</li>
+</ul>
+</span>
+          </section>
+          <section>
+            <h2>Readings</h2>
+            <ul class="small">
+              <li class="fragment">Asynchronous materials
+                <ul>
+                  <li class="fragment">You read them on your own</li>
+                  <li class="fragment">Mandatory</li>
+                  <li class="fragment">Must tweet comments before class</li>
+                </ul>
+              </li>
+              <li class="fragment">Synchronous materials
+                <ul>
+                  <li class="fragment">Discussions</li>
+                  <li class="fragment">Advanced topics</li>
+                  <li class="fragment">Random questions (participation)</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Comments before class</h2>
+            <ul>
+              <li class="fragment">Must be <strong>interesting</strong> and <strong>original</strong></li>
+              <li class="fragment">Tweet using #WebDev @Uniandes</li>
+              <li class="fragment">Count as part of the participation grade
+                <ul>
+                  <li class="fragment">2pts Original and interesting</li>
+                  <li class="fragment">1pts Interesting</li>
+                  <li class="fragment">0pts Non-interesting</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Requirements</h2>
+            <ul>
+              <li class="fragment">Coding (that's what we do in CS)</li>
+              <li class="fragment">Github and Twitter accounts (fill the form on the class website)</li>
+              <li class="fragment">Lot's of enthusiasm</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Grade</h2>
+            <table style="width:100%" class="table">
+              <thead>
+                <th>Concept</th>
+                <th>%</th>
+              </thead>
+              <tbody>
+                <td>two Exams</td>
+                <td>30%</td>
+              </tbody>
+              <tr>
+                <td>Projects</td>
+                <td>50%</td>
+              </tr>
+              <tr>
+                <td>Participation</td>
+                <td>20%</td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h2>Projects</h2>
+            <ul>
+              <li class="fragment">One short project – Individually</li>
+              <li class="fragment">Three short projects - Pairs</li>
+              <li class="fragment">One final project - Pairs</li>
+            </ul>
+          </section>
+          <section>
+            <h2>More about projects</h2>
+            <ul>
+              <li class="fragment">All code to Github, MIT License</li>
+              <li class="fragment">We are going to do Code Reviews</li>
+              <li class="fragment">Class presentation</li>
+              <li class="fragment">All projects are due 24hrs before class</li>
+              <li class="fragment">Then you code review one of your classmates'</li>
+              <li class="fragment">Mostly open topic
+                <ul>
+                  <li class="fragment">But real world problems!</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Ethics and Code of conduct</h2>
+            <ul>
+              <li class="fragment">Zero tolerance to fraud</li>
+              <li class="fragment">Total respect</li>
+              <li class="fragment">No mockery</li>
+              <li class="fragment">No bullying</li>
+              <li class="fragment">No discrimination</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Support</h2>
+            <ul>
+              <li class="fragment"><a href="http://web-dev-uniandes.slack.com">Slack channel</a></li>
+              <li class="fragment">Office hours by appointment</li>
+              <li class="fragment">Two monitors</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Class participation</h2>
+            <ul>
+              <li class="fragment">Ask questions</li>
+              <li class="fragment">Bring over interesting topics</li>
+              <li class="fragment">Teach us stuff! ;)</li>
+            </ul>
+          </section>
+        </section>
+        <section id="whoamI">
+          <section>
+            <h1>Who am I?</h1>
+          </section>
+          <section data-background="images/Pereira.jpg">
+          </section>
+          <section id="IRIS"><img src="images/IRIS_y_su_caja_peq.png"></section>
+          <section id="KebSolutions"><img src="images/logo_keb.png"></section>
+          <section id="Fulbright"><img src="images/Fulbright.png"></section>
+          <section id="Doctorado">
+            <h1>PhD</h1>
+          </section>
+          <section id="HCIL"><img src="images/Ben_and_Catherine.jpg"></section>
+          <section>
+            <iframe src="https://cdn.rawgit.com/mbostock/4063582/raw/dd152a94f98ab7081a41096a88ece375e64a8b6c/index.html" class="blocks"></iframe>
+          </section>
+          <section><img src="images/lifelines.jpg"></section>
+          <section><img src="images/lifeflow.png"></section>
+          <section><img src="images/2012_08_20_paxs_overview_september_01.png"></section>
+          <section><a href="https://treeversity.cattlab.umd.edu/?hierarchy=agency/bureau&amp;db=tv2_budget&amp;seqFrom=01/01/70&amp;seqTo=01/01/15&amp;currentFrom=40&amp;title=US%20Federal%20Budget"><img src="images/treeversity_v2.png"></a></section>
+          <section><img src="images/2013_04_29_eBay.png"></section>
+          <section><img src="images/13CaseStudies.png"></section>
+          <section>
+            <h2>Silicon Valley</h2>
+          </section>
+          <section><img src="images/parc_rgb.png"></section>
+          <section><img src="images/topics_steamchart_with_wordclouds.png" class="demo"></section>
+          <section><img src="images/network_explorer_overview_10k_nointer_cropped.png" class="demo"></section>
+          <section><img src="images/labs_us_purple_1000px_wide.png"></section>
+          <section><img src="images/christmass.png"></section>
+          <section><img src="images/FlickrPopular.png"></section>
+          <section><img src="images/topPhotos.png"></section>
+          <section><img src="images/photoRing.png"></section>
+        </section>
+        <section id="Examples">
+          <section>
+            <h1>Web Apps Examples</h1>
+          </section>
+          <section>
+            <h3 class="demo">My home page</h3>
+            <iframe src="http://johnguerra.co" class="blocks"></iframe><a target="_blank" href="http://johnguerra.co" class="tiny">http://johnguerra.co</a>
+          </section>
+          <section>
+            <h3>My home page</h3>
+            <ul>
+              <li><strong>DB:</strong> None</li>
+              <li><strong>Backend:</strong> Apache</li>
+              <li><strong>Frontend:</strong> Bootstrap</li>
+            </ul>
+          </section>
+          <section>
+            <h3 class="demo">My PhD Thesis</h3>
+            <iframe src="http://treeversity.cattlab.umd.edu" class="blocks"></iframe><a target="_blank" href="http://treeversity.cattlab.umd.edu" class="tiny">http://treeversity.cattlab.umd.edu</a>
+          </section>
+          <section>
+            <h3>My PhD Thesis</h3>
+            <ul>
+              <li><strong>DB:</strong> Postgresql</li>
+              <li><strong>Backend:</strong> DJango (Python) + Apache</li>
+              <li><strong>Frontend:</strong> D3.js + Bootstrap + JQuery</li>
+            </ul>
+          </section>
+          <section>
+            <h3 class="demo">Tweetometro</h3>
+            <iframe src="http://tweetometro.co" class="blocks"></iframe><a target="_blank" href="http://tweetometro.co" class="tiny">http://tweetometro.co</a>
+          </section>
+          <section>
+            <h3>Tweetometro</h3>
+            <ul>
+              <li><strong>DB:</strong> Plain text files</li>
+              <li><strong>Backend:</strong> DJango | Standalone Twitter API listener</li>
+              <li><strong>Frontend:</strong> D3.js + Bootstrap.js</li>
+            </ul>
+          </section>
+          <section>
+            <h3 class="demo">Who likes my Facebook</h3>
+            <iframe src="http://wholikesmyfb.com" class="blocks"></iframe><a target="_blank" href="http://wholikesmyfb.com" class="tiny">http://wholikesmyfb.com</a>
+          </section>
+          <section>
+            <h3>My home page</h3>
+            <ul>
+              <li><strong>DB:</strong> None</li>
+              <li><strong>Backend:</strong> Apache</li>
+              <li><strong>Frontend:</strong> D3.js + Bootstrap.js + Facebook API</li>
+            </ul>
+          </section>
+          <section>
+            <h3 class="demo">Auto Album Organizer</h3><img src="images/autoalbum.gif" class="blocks">
+          </section>
+          <section>
+            <h3>Auto Album Organizer</h3>
+            <ul>
+              <li><strong>DB:</strong> File System</li>
+              <li><strong>Backend:</strong> None</li>
+              <li><strong>Frontend:</strong> D3.js</li>
+              <li>Running as a desktop app with NW.js</li>
+            </ul>
+          </section>
+          <section>
+            <h3 class="demo">BTactile</h3>
+            <iframe src="http://btactile.com" class="blocks"></iframe><a target="_blank" href="http://btactile.com" class="tiny">http://btactile.com</a>
+          </section>
+          <section>
+            <h3>My home page</h3>
+            <ul>
+              <li><strong>DB:</strong> Mongo</li>
+              <li><strong>Backend:</strong> Meteor</li>
+              <li><strong>Backend:</strong> Meteor + React.js</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Required Readings Next session</h2>
+            <ul>
+              <li class="fragment"><a href="https://www.codecademy.com/learn/learn-html-css" target="_blank">https://www.codecademy.com/learn/learn-html-css</a><span> HTML Section</span></li>
+              <li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web" target="_blank">https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web</a><span>Up to (including) HTML basics</span></li>
+              <li class="fragment">(Optional)<a href="http://www.htmldog.com/guides/html/" target="_blank">http://www.htmldog.com/guides/html/</a></li>
+            </ul>
+          </section>
+          <section>
+            <h2 class="demo">A little motivation</h2><a href="https://www.paysa.com/salaries/full-stack-developer--t" target="_blank"><img src="images/full_stack_engineer_salary.png"></a><a href="https://www.paysa.com/salaries/full-stack-developer--t" target="_blank" class="tiny"> https://www.paysa.com/salaries/full-stack-developer--t</a>
+          </section>
+          <section>
+            <h2>Thank you</h2>
+            <h2 class="fragment">And Welcome!</h2>
+          </section>
+        </section>
+      </div>
+    </div>
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../lib/js/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        rollingLinks: true,
+        transition: "convex",
+        //- width: "90%",
+        //- height: 1.0,
+        dependencies: [
+          // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+          { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      
+          // Interpret Markdown in <section> elements
+          { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
+          // Syntax highlight for <code> elements
+          { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      
+          // Zoom in and out with Alt+click
+          { src: '../plugin/zoom-js/zoom.js', async: true },
+      
+          // Speaker notes
+          { src: '../plugin/notes/notes.js', async: true },
+      
+          //- // Remote control your reveal.js presentation using a touch device
+          //- { src: '../plugin/remotes/remotes.js', async: true },
+      
+          //- // MathJax
+          //- { src: '../plugin/math/math.js', async: true }
+        ]
+      });
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-72531610-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

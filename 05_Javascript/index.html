@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ISIS-3710 Web development, Javascript</title>
+    <meta charset="utf-8">
+    <meta name="author" content="John Alexis Guerra Gomez">
+    <meta name="description" content="ISIS-3710 Web development, los Andes University">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link href="../css/style.css" rel="stylesheet">
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/css/print/pdf.css' : '../lib/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section id="title">
+          <h2>Javascript</h2><img src="../img/universidad_de_los_andes_logo@2x.png" alt="Los Andes University" class="logo"><br>
+          <p class="small"><a href="http://johnguerra.co/" target="_blank"><strong>John Alexis Guerra Gómez</strong></a></p>
+          <p class="tiny email">ja.guerrag[at}uniandes.edu.co |<a href="http://twitter.com/duto_guerra" target="_blank"> @duto_guerra</a><br>
+          </p><br>
+          <p class="tiny">Slides:<a href="http://johnguerra.co/lectures/webDevelopment_spring2017/05_Javascript/" target="_blank">http://johnguerra.co/lectures/webDevelopment_spring2017/05_Javascript/</a></p>
+          <p class="tiny">Class page:<a href="http://johnguerra.co/classes/webDevelopment_spring_2017/" target="_blank">http://johnguerra.co/classes/webDevelopment_spring_2017/</a></p>
+        </section>
+        <section>
+          <section>
+            <h2>Wat?</h2><a href="https://www.destroyallsoftware.com/talks/wat" target="_blank" class="tiny">https://www.destroyallsoftware.com/talks/wat</a>
+          </section>
+          <section>
+            <h2>What did we learn last time?</h2>
+          </section>
+          <section>
+            <h2>Readings discussion</h2>
+            <ul>
+              <li class="fragment">questions?</li>
+            </ul>
+          </section>
+          <section>
+            <h2>How to ask a question to the staff</h2>
+            <ol>
+              <li class="fragment">Try yourself</li>
+              <li class="fragment">Google it</li>
+              <li class="fragment">StackOverflow it</li>
+              <li class="fragment">Create a reproducible bug (e.g. jsfiddle)</li>
+              <li class="fragment">Ask on slack (#general)</li>
+            </ol>
+          </section>
+          <section>
+            <h2>Random Questions</h2>
+            <ul>
+              <li class="fragment">What is <strong>var</strong> and why we need it?</li>
+              <li class="fragment">What is a <strong>linter</strong></li>
+              <li class="fragment">It's Javascript Object Oriented?</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Functions</h2>
+            <ul>
+              <li class="fragment">How do you create a function?</li>
+              <li class="fragment">How do you also create a function?</li>
+              <li class="fragment">And how do you also also create a function?</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Variable scope</h2>
+            <ul>
+              <li class="fragment">Closures</li>
+              <li class="fragment">The module pattern</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Variable hoisting</h2>
+            <ul>
+              <li class="fragment">A variable can be referenced before it was defined</li>
+            </ul>
+          </section>
+          <section data-background-image="https://media.giphy.com/media/JfDNFU1qOZna/giphy.gif" data-background-size="contain"><img src="https://media.giphy.com/media/JfDNFU1qOZna/giphy.gif" alt="Say what? gif"></section>
+          <section>
+            <h2>Variable hoisting</h2><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types#Variable_hoisting" target="_blank" class="tiny">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types#Variable_hoisting</a>
+          </section>
+          <section>
+            <h2 class="demo">undefined vs null</h2>
+            <ul>
+              <li class="fragment"><strong>undefined</strong> a variable hasn't been created or assigned</li>
+              <li class="fragment"><strong>undefined</strong> a variable was created and assigned to null</li>
+            </ul>
+          </section>
+          <section>
+            <h2 class="demo">About closures</h2><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank" class="tiny">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures</a>
+          </section>
+          <section>
+            <h2 class="demo">Classes vs Prototypes</h2><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model" target="_blank" class="tiny">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model</a>
+          </section>
+          <section>
+            <h2>Objects</h2>
+            <ul>
+              <li class="fragment">It's an object the same thing than a java HashTable?</li>
+              <li class="fragment">How do you create a new object?</li>
+              <li class="fragment">Can you add new attributes after object creation?</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Arrays</h2>
+            <ul>
+              <li class="fragment">Create a function that sorts an array</li>
+              <li class="fragment">Create a function that filters an array of objects</li>
+              <li class="fragment">Create a function sums all the items on an array</li>
+            </ul>
+          </section>
+          <section>
+            <h2>More arrays</h2>
+            <ul>
+              <li class="fragment">filter</li>
+              <li class="fragment">map</li>
+              <li class="fragment">forEach</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Modify the DOM</h2>
+            <pre><code data-trim data-noescape>document.getElementById("myId").innerHTML = "&lt;p&gt; hello! &lt;/p&gt;"
+
+
+</code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Exercise</h2>
+            <p>Update your webpage for the class' students loading directly from the Google sheet</p>
+            <ul>
+              <li class="fragment">Share your results</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Required Readings Next three sessions</h2>
+            <ul>
+              <li class="fragment"><a href="https://www.codecademy.com/learn/learn-javascript" target="_blank">https://www.codecademy.com/learn/learn-javascript</a></li>
+              <li class="fragment"><a href="https://www.youtube.com/watch?v=JxAXlJEmNMg&amp;list=PLEzQf147-uEpvTa1bHDNlxUL2klHUMHJu&amp;index=2" target="_blank">Crockford on Javascript series 1-6</a><span> (7+ -> Optional)</span></li>
+              <li class="fragment">(Recommended - Optional)<a href="http://javascript.crockford.com/" target="_blank">http://javascript.crockford.com/</a></li>
+            </ul>
+          </section>
+        </section>
+      </div>
+    </div>
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../lib/js/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        rollingLinks: true,
+        transition: "convex",
+        //- width: "90%",
+        //- height: 1.0,
+        dependencies: [
+          // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+          { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      
+          // Interpret Markdown in <section> elements
+          { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
+          // Syntax highlight for <code> elements
+          { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      
+          // Zoom in and out with Alt+click
+          { src: '../plugin/zoom-js/zoom.js', async: true },
+      
+          // Speaker notes
+          { src: '../plugin/notes/notes.js', async: true },
+      
+          //- // Remote control your reveal.js presentation using a touch device
+          //- { src: '../plugin/remotes/remotes.js', async: true },
+      
+          //- // MathJax
+          //- { src: '../plugin/math/math.js', async: true }
+        ]
+      });
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-72531610-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

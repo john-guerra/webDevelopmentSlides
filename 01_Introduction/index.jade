@@ -1,0 +1,415 @@
+doctype html
+html
+  head
+    title ISIS-3710 Web development, Introduction
+    meta(charset='utf-8')
+    meta(name='author', content='John Alexis Guerra Gomez')
+    meta(name='description', content='ISIS-3710 Web development, los Andes University')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui")
+    //- link(href='../lib/css/reveal.css', rel='stylesheet')
+    //- link(href='../lib/css/theme/simple.css', rel='stylesheet')
+    //- link(href='../lib/css/zenburn.css', rel='stylesheet')
+    link(href='../css/style.css', rel='stylesheet')
+    //- Printing and PDF exports -->
+    script.
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/css/print/pdf.css' : '../lib/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    //- script(src='../lib/js/d3.min.js')
+  body
+
+
+    .reveal
+      .slides
+
+        section#title
+          h2 ISIS-3710 Web Development
+          img.logo(src="../img/universidad_de_los_andes_logo@2x.png" alt="Los Andes University")
+
+          br
+          p.small
+            a(href='http://johnguerra.co/', target='_blank') #[strong John Alexis Guerra Gómez]
+
+          p.tiny.email ja.guerrag[at}uniandes.edu.co |
+            a(href='http://twitter.com/duto_guerra' , target='_blank')  @duto_guerra
+            br
+
+
+            //- br
+            //- span ja.guerrag en uniandes.edu.co
+            //- br
+            //- a(href='http://twitter.com/duto_guerra') @duto_guerra
+          //- p.small Use
+          //-   strong  spacebar
+          //-   |  and the arrows to advance slides
+          br
+          p.tiny Slides:
+            a(href='http://johnguerra.co/lectures/webDevelopment_fall_2017/01_Introduction/', target='_blank') http://johnguerra.co/lectures/webDevelopment_fall_2017/01_Introduction/
+          p.tiny Class page:
+            a(href='http://johnguerra.co/classes/webDevelopment_fall_2017/', target='_blank') http://johnguerra.co/classes/webDevelopment_fall_2017/
+
+
+        //- convert -density 150 -depth 8 -quality 85 ~/Dropbox/documentos/2016/andes/visual_analytics/lectures_tamara/05_rules-artery.pdf ./05_rules-artery.png
+        section
+          section
+            h1 Syllabus
+
+          section
+            h2 Class Objectives
+            p At the end of the class you should be able to:
+            ul
+              li.fragment Build a modern web application
+              li.fragment Be able to learn new web technologies
+              li.fragment Understand web architectures
+              li.fragment Love/Hate the professor
+
+          section
+            h2 Topics
+            span.left.small
+              :markdown-it
+                * HTML5, CSS
+                * JavaScript
+                * Node.js
+                * MySQL, Mongo
+                * Basic Web design
+                * Usability
+                * Web Accessibility
+                * Security
+            span.left.small
+              :markdown-it
+                * Meteor + React
+                * Testing
+                * Public APIs, Facebook, Twitter, Instagram
+                * Scalability
+                * Backend as a service
+                * Desktop Apps with JS
+                * Mobile Apps
+
+          section
+            h2 Readings
+            ul.small
+              li.fragment Asynchronous materials
+                ul
+                  li.fragment You read them on your own
+                  li.fragment Mandatory
+                  li.fragment Must tweet comments before class
+              li.fragment Synchronous materials
+                ul
+                  li.fragment Discussions
+                  li.fragment Advanced topics
+                  li.fragment Random questions (participation)
+
+          section
+            h2 Comments before class
+            ul
+              li.fragment Must be #[strong interesting] and #[strong original]
+              li.fragment Tweet using #WebDev @Uniandes
+              li.fragment Count as part of the participation grade
+                ul
+                  li.fragment 2pts Original and interesting
+                  li.fragment 1pts Interesting
+                  li.fragment 0pts Non-interesting
+
+          section
+            h2 Requirements
+            ul
+              li.fragment Coding (that's what we do in CS)
+              li.fragment Github and Twitter accounts (fill the form on the class website)
+              li.fragment Lot's of enthusiasm
+
+          section
+            h2 Grade
+            table.table(style="width:100%")
+              thead
+                th Concept
+                th %
+              tbody
+                  td two Exams
+                  td 30%
+                tr
+                  td Projects
+                  td 50%
+                tr
+                  td Participation
+                  td 20%
+
+          section
+            h2 Projects
+            ul
+              li.fragment One short project – Individually
+              li.fragment Three short projects - Pairs
+              li.fragment One final project - Pairs
+
+          section
+            h2 More about projects
+            ul
+              li.fragment All code to Github, MIT License
+              li.fragment We are going to do Code Reviews
+              li.fragment Class presentation
+              li.fragment All projects are due 24hrs before class
+              li.fragment Then you code review one of your classmates'
+              li.fragment Mostly open topic
+                ul
+                  li.fragment But real world problems!
+
+          section
+            h2 Ethics and Code of conduct
+            ul
+              li.fragment Zero tolerance to fraud
+              li.fragment Total respect
+              li.fragment No mockery
+              li.fragment No bullying
+              li.fragment No discrimination
+
+          section
+            h2 Support
+            ul
+              li.fragment #[a(href="http://web-dev-uniandes.slack.com") Slack channel]
+              li.fragment Office hours by appointment
+              li.fragment Two monitors
+
+          section
+            h2 Class participation
+            ul
+              li.fragment Ask questions
+              li.fragment Bring over interesting topics
+              li.fragment Teach us stuff! ;)
+
+
+        //- ------------------------WHOAMI----------------------
+
+        section#whoamI
+          section
+            h1 Who am I?
+
+          section(data-background="images/Pereira.jpg")
+            //- h2 Ingeniero de sistemas y computación UTP
+            //- img(src="images/Pereira.jpg")
+
+          section#IRIS
+            img(src="images/IRIS_y_su_caja_peq.png")
+
+          section#KebSolutions
+            img(src="images/logo_keb.png")
+
+          section#Fulbright
+            img(src="images/Fulbright.png")
+
+          section#Doctorado
+            h1 PhD
+
+          section#HCIL
+            img(src="images/Ben_and_Catherine.jpg")
+
+          section
+            iframe.blocks(src="https://cdn.rawgit.com/mbostock/4063582/raw/dd152a94f98ab7081a41096a88ece375e64a8b6c/index.html")
+
+          section
+            img(src="images/lifelines.jpg")
+
+          section
+            img(src="images/lifeflow.png")
+
+          section
+            img(src="images/2012_08_20_paxs_overview_september_01.png")
+
+          section
+            a(href="https://treeversity.cattlab.umd.edu/?hierarchy=agency/bureau&db=tv2_budget&seqFrom=01/01/70&seqTo=01/01/15&currentFrom=40&title=US%20Federal%20Budget")
+              img(src="images/treeversity_v2.png")
+
+          //- section
+            //- img(src="images/2013_03_29_Budget_2013_Reporting2.png")
+
+          section
+            img(src="images/2013_04_29_eBay.png")
+
+          section
+            img(src="images/13CaseStudies.png")
+
+          section
+            h2 Silicon Valley
+            //- img(src="images/mapaCalifornia.png")
+
+          section
+            img(src="images/parc_rgb.png")
+
+          section
+            img.demo(src="images/topics_steamchart_with_wordclouds.png")
+
+          section
+            img.demo(src="images/network_explorer_overview_10k_nointer_cropped.png")
+
+
+          section
+            img(src="images/labs_us_purple_1000px_wide.png")
+
+          //- section
+          //-   img(src="images/Flickr.png")
+
+          section
+            img(src="images/christmass.png")
+
+          section
+            img(src="images/FlickrPopular.png")
+
+          section
+            img(src="images/topPhotos.png")
+
+          section
+            img(src="images/photoRing.png")
+
+          //- section
+          //-   img(src="images/GeoExplorer.png")
+
+        //- ------------ Examples --------------
+        section#Examples
+          section
+            h1 Web Apps Examples
+
+          section
+            h3.demo My home page
+            iframe.blocks(src="http://johnguerra.co")
+            a.tiny(target="_blank" href="http://johnguerra.co") http://johnguerra.co
+
+          section
+            h3 My home page
+            ul
+              li #[strong DB:] None
+              li #[strong Backend:] Apache
+              li #[strong Frontend:] Bootstrap
+
+          section
+            h3.demo My PhD Thesis
+            iframe.blocks(src="http://treeversity.cattlab.umd.edu")
+            a.tiny(target="_blank" href="http://treeversity.cattlab.umd.edu") http://treeversity.cattlab.umd.edu
+
+          section
+            h3 My PhD Thesis
+            ul
+              li #[strong DB:] Postgresql
+              li #[strong Backend:] DJango (Python) + Apache
+              li #[strong Frontend:] D3.js + Bootstrap + JQuery
+
+          section
+            h3.demo Tweetometro
+            iframe.blocks(src="http://tweetometro.co")
+            a.tiny(target="_blank" href="http://tweetometro.co") http://tweetometro.co
+
+          section
+            h3 Tweetometro
+            ul
+              li #[strong DB:] Plain text files
+              li #[strong Backend:] DJango | Standalone Twitter API listener
+              li #[strong Frontend:] D3.js + Bootstrap.js
+
+          section
+            h3.demo Who likes my Facebook
+            iframe.blocks(src="http://wholikesmyfb.com")
+            a.tiny(target="_blank" href="http://wholikesmyfb.com") http://wholikesmyfb.com
+
+          section
+            h3 My home page
+            ul
+              li #[strong DB:] None
+              li #[strong Backend:] Apache
+              li #[strong Frontend:] D3.js + Bootstrap.js + Facebook API
+
+          section
+            h3.demo Auto Album Organizer
+            img.blocks(src="images/autoalbum.gif")
+
+          section
+            h3 Auto Album Organizer
+            ul
+              li #[strong DB:] File System
+              li #[strong Backend:] None
+              li #[strong Frontend:] D3.js
+              li Running as a desktop app with NW.js
+
+          section
+            h3.demo BTactile
+            iframe.blocks(src="http://btactile.com")
+            a.tiny(target="_blank" href="http://btactile.com") http://btactile.com
+
+          section
+            h3 My home page
+            ul
+              li #[strong DB:] Mongo
+              li #[strong Backend:] Meteor
+              li #[strong Backend:] Meteor + React.js
+        section
+          section
+            h2 Required Readings Next session
+            ul
+              li.fragment
+                a(href="https://www.codecademy.com/learn/learn-html-css", target="_blank") https://www.codecademy.com/learn/learn-html-css
+                span  HTML Section
+              li.fragment
+                a(href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web", target="_blank") https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web
+                span Up to (including) HTML basics
+              li.fragment (Optional)
+                a(href="http://www.htmldog.com/guides/html/", target="_blank") http://www.htmldog.com/guides/html/
+
+          section
+            h2.demo A little motivation
+            a(href="https://www.paysa.com/salaries/full-stack-developer--t" target="_blank")
+             img(src="images/full_stack_engineer_salary.png")
+            a.tiny(href="https://www.paysa.com/salaries/full-stack-developer--t" target="_blank")  https://www.paysa.com/salaries/full-stack-developer--t
+
+
+
+          section
+            h2 Thank you
+            h2.fragment And Welcome!
+
+
+    script(src='../lib/js/head.min.js')
+    script(src='../lib/js/reveal.js')
+
+    script.
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        rollingLinks: true,
+        transition: "convex",
+        //- width: "90%",
+        //- height: 1.0,
+        dependencies: [
+          // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+          { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+          // Interpret Markdown in <section> elements
+          { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+          // Syntax highlight for <code> elements
+          { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+          // Zoom in and out with Alt+click
+          { src: '../plugin/zoom-js/zoom.js', async: true },
+
+          // Speaker notes
+          { src: '../plugin/notes/notes.js', async: true },
+
+          //- // Remote control your reveal.js presentation using a touch device
+          //- { src: '../plugin/remotes/remotes.js', async: true },
+
+          //- // MathJax
+          //- { src: '../plugin/math/math.js', async: true }
+        ]
+      });
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-72531610-1', 'auto');
+      ga('send', 'pageview');
+
+
+

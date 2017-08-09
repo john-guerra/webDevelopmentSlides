@@ -1,0 +1,23 @@
+error 12 2017-01-26 01:22:26+00:00 andfoy4 Unemployed? Never! #WebDev @Uniandes https://t.co/c9Eg4hMcFs
+error 13 2017-01-26 01:27:15+00:00 andfoy4 @josega5 @Uniandes What if the image losses quality with scale transformations? #LearnAboutSVG #WebDev
+error 14 2017-01-26 01:40:03+00:00 MCMCLearnsWeb @andfoy4 You're right but I never specified 5. However there are still some survivers: #VoidElementsFTW #FreeTheTag… https://t.co/3Zcgd3UbHa
+error 15 2017-01-26 01:43:25+00:00 MCMCLearnsWeb WANT! �@Uniandes #webdev https://t.co/2mK4S3iBVH
+error 16 2017-01-26 01:46:52+00:00 andfoy4 @MCMCLearnsWeb @Uniandes So you think that you can only survive by using Void elements? Get some properties!… https://t.co/cOmekQvVlC
+error 17 2017-01-26 01:49:55+00:00 MCMCLearnsWeb @andfoy4 @Uniandes Face it Edgar, you just wanna see where they close! #MyTagsDontFollowSocietyIdealTagStandars… https://t.co/0dGPv6bSLZ
+error 18 2017-01-26 01:57:33+00:00 andfoy4 @MCMCLearnsWeb @Uniandes I don't need your advices to be successful, knowing HTML5 perfectly is rewarding per itsel… https://t.co/AT7Umj3tyK
+error 19 2017-01-26 02:15:11+00:00 CaMendoza94 El tag &lt;blink&gt;, que hace que el texto parpadee, fue creado luego de una broma en una noche de tragos #WebDev @Uniandes
+error 20 2017-01-26 02:20:43+00:00 luisMesa25 La diferencia entre &lt;span&gt; y &lt;div&gt; es que el primero no genera un "salto de linea" al usarse, es util por ejm. en parrafos #webdev @uniandes
+error 21 2017-01-26 02:28:49+00:00 Piazuelo1 #webdev @Uniandes Html5 introdujo el objeto localStorage que permite almacenar información en el navegador del usuario! No más cookies.
+error 22 2017-01-26 02:31:55+00:00 josega5 @andfoy4 @Uniandes #WebDev SVG es lo mejor pero no te confies.. Envuelve tu SVG en picture, permite poner una image… https://t.co/iMPtCQmdxl
+error 23 2017-01-26 02:32:04+00:00 MCMCLearnsWeb @andfoy4 @Uniandes Per itself?? Honey I think you're forgetting something important... #RespectCSS #MikeDrop #webdev https://t.co/3pm36ZI8pl
+error 24 2017-01-26 02:36:47+00:00 andfoy4 @MCMCLearnsWeb @Uniandes Well, then... #PeaceSettlement #WebDev https://t.co/R5RfLu1PHV
+error 25 2017-01-26 02:37:29+00:00 andfoy4 @josega5 @Uniandes That doesn't gets rid of the JPG Image #Fail #WebDev
+error 26 2017-01-26 02:44:30+00:00 MCMCLearnsWeb @andfoy4 @Uniandes &lt;/html&gt; #peace #webdev https://t.co/WQ7OIWwQd3
+error 27 2017-01-26 03:23:10+00:00 felipe1sabogal #WebDev @Uniandes Interesante saber que para el despliegue de aplicaciones web se requiere el uso de un programa FTP, no lo sabia.
+error 28 2017-01-26 03:23:22+00:00 lcastro1220 HTML permite que el WWW sea multiplataforma! porque el programador no puede modificar los elementos que va incluyendo #WebDev @Uniandes
+error 29 2017-01-26 03:29:12+00:00 felipecuetor Un navegador puede abrir un link en una pestaña nueva reconociendo el atributo "target", esto es util para la publicidad #webdev @uniandes
+error 30 2017-01-26 04:27:58+00:00 nicbuitr HTML5 añadió el input type "email", esto evita la necesidad de realizar validaciones de formato de texto con JS o JQuery.
+#WebDev @Uniandes
+error 31 2017-01-26 04:54:40+00:00 Javax4 #WebDev @Uniandes Captura de Video desde el navegador sin flash ni cosas raras ? "HTML5 to the rescue"… https://t.co/BMIjTOQ9TU
+error 32 2017-01-26 11:24:53+00:00 jhetorresto El atributo alt de la etiqueta img siempre debiera ser puesto dado que el texto se mostrara en el caso de que la imagen NO #WebDev @Uniandes
+error 33 2017-01-26 12:05:53+00:00 jscardona12 HTML5 permitirá la incorporación de audio y video sin la necesidad de plugins #webdev @Uniandes
