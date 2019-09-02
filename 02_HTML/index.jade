@@ -1,14 +1,14 @@
 doctype html
 html
   head
-    title ISIS-3710 Web development, HTML
+    title ISIS-3710 Web Development, HTML
     meta(charset='utf-8')
     meta(name='author', content='John Alexis Guerra Gomez')
-    meta(name='description', content='ISIS-3710 Web development, los Andes University')
+    meta(name='description', content='ISIS-3710 Web Development, Los Andes University, Colombia')
     meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui")
-    //- link(href='../lib/css/reveal.css', rel='stylesheet')
-    //- link(href='../lib/css/theme/simple.css', rel='stylesheet')
-    //- link(href='../lib/css/zenburn.css', rel='stylesheet')
+    link(href='../lib/css/reveal.css', rel='stylesheet')
+    link(href='../lib/css/theme/simple.css', rel='stylesheet')
+    link(href='../lib/css/zenburn.css', rel='stylesheet')
     link(href='../css/style.css', rel='stylesheet')
     //- Printing and PDF exports -->
     script.
@@ -32,7 +32,7 @@ html
           p.small
             a(href='http://johnguerra.co/', target='_blank') #[strong John Alexis Guerra Gómez]
 
-          p.tiny.email ja.guerrag[at}uniandes.edu.co |
+          p.tiny.email jguerra[at}northeastern.edu |
             a(href='http://twitter.com/duto_guerra' , target='_blank')  @duto_guerra
             br
 
@@ -46,15 +46,15 @@ html
           //-   |  and the arrows to advance slides
           br
           p.tiny Slides:
-            a(href='http://johnguerra.co/lectures/webDevelopment_spring2017/02_HTML/', target='_blank') http://johnguerra.co/lectures/webDevelopment_spring2017/02_HTML/
+            a(href='http://johnguerra.co/lectures/webDevelopment_fall2019/02_HTML/', target='_blank') http://johnguerra.co/lectures/webDevelopment_fall2019/02_HTML/
           p.tiny Class page:
-            a(href='http://johnguerra.co/classes/webDevelopment_spring_2017/', target='_blank') http://johnguerra.co/classes/webDevelopment_spring_2017/
+            a(href='http://johnguerra.co/classes/webDevelopment_fall2019/', target='_blank') http://johnguerra.co/classes/webDevelopment_fall2019/
 
 
         //- convert -density 150 -depth 8 -quality 85 ~/Dropbox/documentos/2016/andes/visual_analytics/lectures_tamara/05_rules-artery.pdf ./05_rules-artery.png
         section
-          section
-            h2 What did we learn last time?
+          //- section
+          //-   h2 What did we learn last time?
 
           section
             h2 Readings discussion
@@ -71,10 +71,42 @@ html
               li.fragment Content vs Style
               li.fragment What's the DOM
 
+
+
+        section
+          section
+            span
+              :markdown-it
+                ## Setting up your environment
+
+                * Working on the cloud ([JSFiddle](https://jsfiddle.net/), [Codepen](https://codepen.io/))
+                * Working locally ([Sublime](https://www.sublimetext.com/), [Atom](https://atom.io/), [VSCode](https://code.visualstudio.com/))
+
+          section
+            span
+              :markdown-it
+                ## Working online
+
+                * Good for quick coding
+                * All being taken care
+                * Can share links
+                * Good for asking questions
+                * I recommend [JSFiddle](https://jsfiddle.net/)
+
+          section
+            span
+              :markdown-it
+                ## Working locally
+
+                * Better for debugging and organizing
+                * Need setup
+                * Better linters!!
+                * I recommend [Sublime](https://www.sublimetext.com/)
+
         section
           section
             h2 Group Exercise
-            p We have the #[a(href="images/WebDevUniandes.json") tweets] collected from yesterday for the class. Let's design a web page to show display and grade them.
+            p We have the #[a(href="images/UniandesTweets.json") tweets] collected from yesterday for the class. Let's design a web page to show display and grade them.
 
           section
             h2 Audience and objective
@@ -121,16 +153,16 @@ html
           section
             h2 Share your results
 
-        section
-          section
-            h2 Required Readings Next session
-            ul
-              li.fragment
-                a(href="https://www.codecademy.com/learn/learn-html-css", target="_blank") https://www.codecademy.com/learn/learn-html-css
-                span  CSS Section
-              li.fragment
-                a(href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web", target="_blank") https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web
-                span CSS Basics
+        //- section
+        //-   section
+        //-     h2 Required Readings Next session
+        //-     ul
+        //-       li.fragment
+        //-         a(href="https://www.codecademy.com/learn/learn-html-css", target="_blank") https://www.codecademy.com/learn/learn-html-css
+        //-         span  CSS Section
+        //-       li.fragment
+        //-         a(href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web", target="_blank") https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web
+        //-         span CSS Basics
 
 
 

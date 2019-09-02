@@ -1,6 +1,3 @@
-@import '../lib/css/reveal.css';
-@import '../lib/css/theme/simple.css';
-@import '../lib/css/zenburn.css';
 .reveal p,
 .reveal ol,
 .reveal ul,
@@ -59,7 +56,8 @@
 .reveal blockquote:after {
   content: '';
 }
-.reveal iframe.blocks {
+.reveal iframe.blocks,
+.reveal iframe.demo {
   width: 100%;
   height: 650px;
   margin-left: -30px;
@@ -187,4 +185,86 @@
 }
 .reveal .logo {
   height: 80px;
+}
+#munznerpreferencechart {
+  color: #fff;
+  font-size: 0.6em;
+}
+#munznerpreferencechart .line {
+  stroke: #4a90e2;
+  stroke-width: 25;
+  stroke-opacity: 0.3;
+  fill: none;
+}
+#munznerpreferencechart .box rect {
+  fill-opacity: 0.75;
+}
+#munznerpreferencechart .box:hover text {
+  opacity: 1;
+}
+#munznerpreferencechart .mainArea.selected .line.selected {
+  opacity: 0.9;
+}
+#munznerpreferencechart .mainArea.selected .line {
+  opacity: 0.1;
+}
+#munznerpreferencechart .mainArea.selected .box {
+  opacity: 0.1;
+}
+#munznerpreferencechart .mainArea.selected .box.selected {
+  opacity: 0.9;
+}
+#munznerpreferencechart .box text {
+  pointer-events: none;
+  font-size: 14pt;
+}
+#munznerpreferencechart .axis path,
+#munznerpreferencechart .axis line {
+  fill: none;
+/*stroke: #ccc*/
+  shape-rendering: crispEdges;
+}
+#munznerpreferencechart .y.axis line {
+  stroke: #fff;
+}
+#munznerpreferencechart text {
+  font-size: 22pt;
+}
+.anscombeTable {
+  width: 70%;
+  float: left;
+  font-family: sans-serif;
+}
+.anscombeTable td:nth-child(odd) {
+  background-color: #eee;
+}
+.anscombeTable td:nth-child(even) {
+  background-color: #ddd;
+}
+.anscombeTable td {
+  font-size: 16pt;
+  text-align: right;
+}
+.anscombeTable th {
+  font-size: 20pt;
+  text-align: center;
+}
+.anscombeTable tr:nth-child(2) td {
+  text-align: center;
+}
+.anscombeResult {
+  width: 25%;
+  float: left;
+  font-family: sans-serif;
+}
+.anscombeResult td:nth-child(1) {
+  text-align: left;
+}
+.anscombeResult td {
+  font-size: 12pt;
+  text-align: right;
+}
+.anscombeResult th {
+  font-size: 18pt;
+  text-align: center;
 }

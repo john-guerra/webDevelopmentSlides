@@ -1,0 +1,27 @@
+{
+  "name": "webDevelopment_fall2019",
+  "version": "1.0.0",
+  "description": "My slides for my web development course",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john-guerra/webDevelopmentSlides.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/john-guerra/webDevelopmentSlides/issues"
+  },
+  "homepage": "https://github.com/john-guerra/webDevelopmentSlides#readme",
+  "dependencies": {
+    "jstransformer-markdown-it": "^2.1.0",
+    "markdown-it": "^8.4.2"
+  }
+}

@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ISIS-3710 Web development, Introduction</title>
+    <title>ISIS-3710 Web Development, Introduction</title>
     <meta charset="utf-8">
     <meta name="author" content="John Alexis Guerra Gomez">
-    <meta name="description" content="ISIS-3710 Web development, los Andes University">
+    <meta name="description" content="ISIS-3710 Web Development, Los Andes University, Colombia">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link href="../lib/css/reveal.css" rel="stylesheet">
+    <link href="../lib/css/theme/simple.css" rel="stylesheet">
+    <link href="../lib/css/zenburn.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
     <script>
       var link = document.createElement( 'link' );
@@ -14,17 +17,16 @@
       link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/css/print/pdf.css' : '../lib/css/print/paper.css';
       document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
+    <script src="../lib/js/d3.min.js"></script>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
         <section id="title">
           <h2>ISIS-3710 Web Development</h2><img src="../img/universidad_de_los_andes_logo@2x.png" alt="Los Andes University" class="logo"><br>
-          <p class="small"><a href="http://johnguerra.co/" target="_blank"><strong>John Alexis Guerra Gómez</strong></a></p>
-          <p class="tiny email">ja.guerrag[at}uniandes.edu.co |<a href="http://twitter.com/duto_guerra" target="_blank"> @duto_guerra</a><br>
-          </p><br>
-          <p class="tiny">Slides:<a href="http://johnguerra.co/lectures/webDevelopment_fall_2017/01_Introduction/" target="_blank">http://johnguerra.co/lectures/webDevelopment_fall_2017/01_Introduction/</a></p>
-          <p class="tiny">Class page:<a href="http://johnguerra.co/classes/webDevelopment_fall_2017/" target="_blank">http://johnguerra.co/classes/webDevelopment_fall_2017/</a></p>
+          <p class="small"><a href="http://johnguerra.co/" target="_blank"><strong>John Alexis Guerra Gómez</strong></a></p><br><span>ja.guerrag en uniandes.edu.co</span><br><a href="http://twitter.com/duto_guerra">@duto_guerra</a><br>
+          <p class="tiny">Slides:<a href="http://johnguerra.co/lectures/webDevelopment_fall2019/01_Introduction/" target="_blank">http://johnguerra.co/lectures/webDevelopment_fall2019/01_Introduction/</a></p>
+          <p class="tiny">Class page:<a href="http://johnguerra.co/classes/webDevelopment_fall2019/" target="_blank">http://johnguerra.co/classes/webDevelopment_fall2019/</a></p>
         </section>
         <section>
           <section>
@@ -45,7 +47,7 @@
 <li>HTML5, CSS</li>
 <li>JavaScript</li>
 <li>Node.js</li>
-<li>MySQL, Mongo</li>
+<li>Mongo</li>
 <li>Basic Web design</li>
 <li>Usability</li>
 <li>Web Accessibility</li>
@@ -82,7 +84,7 @@
             </ul>
           </section>
           <section>
-            <h2>Comments before class</h2>
+            <h2>Comments (tweets) before class</h2>
             <ul>
               <li class="fragment">Must be <strong>interesting</strong> and <strong>original</strong></li>
               <li class="fragment">Tweet using #WebDev @Uniandes</li>
@@ -93,6 +95,39 @@
                   <li class="fragment">0pts Non-interesting</li>
                 </ul>
               </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Class participation</h2>
+            <ul>
+              <li class="fragment">Ask questions</li>
+              <li class="fragment">Bring over interesting topics</li>
+              <li class="fragment">Teach us stuff! ;)</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Lottery</h2>
+            <ul>
+              <li class="fragment">Ran in the first five minutes of the class</li>
+              <li class="fragment">Be early</li>
+              <li class="fragment">About the readings for the day</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Lottery (Grading)</h2><span><ul>
+<li>-2  Wasn't there when called upon on class</li>
+<li>-1  Answered wrong</li>
+<li>0 Regular answer</li>
+<li>1 Kind of good answer</li>
+<li>2 Great answer</li>
+</ul>
+</span>
+          </section>
+          <section>
+            <h2>Lottery (Grading II)</h2>
+            <ul>
+              <li>Your final participation grade will depend of the average of the group</li>
+              <li class="fragment">You need to have at least the average points of the group</li>
             </ul>
           </section>
           <section>
@@ -111,12 +146,12 @@
                 <th>%</th>
               </thead>
               <tbody>
-                <td>two Exams</td>
-                <td>30%</td>
+                <td>one Exam</td>
+                <td>20%</td>
               </tbody>
               <tr>
                 <td>Projects</td>
-                <td>50%</td>
+                <td>60%</td>
               </tr>
               <tr>
                 <td>Participation</td>
@@ -160,17 +195,9 @@
           <section>
             <h2>Support</h2>
             <ul>
-              <li class="fragment"><a href="http://web-dev-uniandes.slack.com">Slack channel</a></li>
+              <li class="fragment"><a href="http://web-dev-neu.slack.com">Slack channel</a></li>
               <li class="fragment">Office hours by appointment</li>
               <li class="fragment">Two monitors</li>
-            </ul>
-          </section>
-          <section>
-            <h2>Class participation</h2>
-            <ul>
-              <li class="fragment">Ask questions</li>
-              <li class="fragment">Bring over interesting topics</li>
-              <li class="fragment">Teach us stuff! ;)</li>
             </ul>
           </section>
         </section>
@@ -238,7 +265,7 @@
           </section>
           <section>
             <h3 class="demo">Tweetometro</h3>
-            <iframe src="http://tweetometro.co" class="blocks"></iframe><a target="_blank" href="http://tweetometro.co" class="tiny">http://tweetometro.co</a>
+            <iframe src="http://old.tweetometro.co" class="blocks"></iframe><a target="_blank" href="http://old.tweetometro.co" class="tiny">http://tweetometro.co</a>
           </section>
           <section>
             <h3>Tweetometro</h3>
@@ -253,7 +280,19 @@
             <iframe src="http://wholikesmyfb.com" class="blocks"></iframe><a target="_blank" href="http://wholikesmyfb.com" class="tiny">http://wholikesmyfb.com</a>
           </section>
           <section>
-            <h3>My home page</h3>
+            <h3>Who likes my Facebook</h3>
+            <ul>
+              <li><strong>DB:</strong> None</li>
+              <li><strong>Backend:</strong> Apache</li>
+              <li><strong>Frontend:</strong> D3.js + Bootstrap.js + Facebook API</li>
+            </ul>
+          </section>
+          <section>
+            <h3 class="demo">How did Colombia really vote</h3>
+            <iframe src="http://johnguerra.co/viz/resultadosSegundaVuelta2018/" class="blocks"></iframe><a target="_blank" href="http://johnguerra.co/viz/resultadosSegundaVuelta2018/" class="tiny">http://johnguerra.co/viz/resultadosSegundaVuelta2018/</a>
+          </section>
+          <section>
+            <h3>Who likes my Facebook</h3>
             <ul>
               <li><strong>DB:</strong> None</li>
               <li><strong>Backend:</strong> Apache</li>
@@ -277,7 +316,7 @@
             <iframe src="http://btactile.com" class="blocks"></iframe><a target="_blank" href="http://btactile.com" class="tiny">http://btactile.com</a>
           </section>
           <section>
-            <h3>My home page</h3>
+            <h3>BTactile</h3>
             <ul>
               <li><strong>DB:</strong> Mongo</li>
               <li><strong>Backend:</strong> Meteor</li>
@@ -309,6 +348,9 @@
     <script>
       Reveal.initialize({
         controls: true,
+        controlsTutorial: true,
+        controlsLayout: 'bottom-right',
+        controlsBackArrows: 'faded',
         progress: true,
         history: true,
         center: true,
@@ -334,10 +376,10 @@
           { src: '../plugin/notes/notes.js', async: true },
       
           //- // Remote control your reveal.js presentation using a touch device
-          //- { src: '../plugin/remotes/remotes.js', async: true },
+          //- { src: 'plugin/remotes/remotes.js', async: true },
       
           //- // MathJax
-          //- { src: '../plugin/math/math.js', async: true }
+          //- { src: 'plugin/math/math.js', async: true }
         ]
       });
     </script>

@@ -1,14 +1,14 @@
 doctype html
 html
   head
-    title ISIS-3710 Web development, Bootstrap
+    title ISIS-3710 Web Development, Bootstrap
     meta(charset='utf-8')
     meta(name='author', content='John Alexis Guerra Gomez')
-    meta(name='description', content='ISIS-3710 Web development, los Andes University')
+    meta(name='description', content='ISIS-3710 Web Development, Los Andes University, Colombia')
     meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui")
-    //- link(href='../lib/css/reveal.css', rel='stylesheet')
-    //- link(href='../lib/css/theme/simple.css', rel='stylesheet')
-    //- link(href='../lib/css/zenburn.css', rel='stylesheet')
+    link(href='../lib/css/reveal.css', rel='stylesheet')
+    link(href='../lib/css/theme/simple.css', rel='stylesheet')
+    link(href='../lib/css/zenburn.css', rel='stylesheet')
     link(href='../css/style.css', rel='stylesheet')
     //- Printing and PDF exports -->
     script.
@@ -32,7 +32,7 @@ html
           p.small
             a(href='http://johnguerra.co/', target='_blank') #[strong John Alexis Guerra Gómez]
 
-          p.tiny.email ja.guerrag[at}uniandes.edu.co |
+          p.tiny.email jguerra[at}northeastern.edu |
             a(href='http://twitter.com/duto_guerra' , target='_blank')  @duto_guerra
             br
 
@@ -46,12 +46,86 @@ html
           //-   |  and the arrows to advance slides
           br
           p.tiny Slides:
-            a(href='http://johnguerra.co/lectures/webDevelopment_spring2017/04_Bootstrap/', target='_blank') http://johnguerra.co/lectures/webDevelopment_spring2017/04_Bootstrap/
+            a(href='http://johnguerra.co/lectures/webDevelopment_fall2019/04_Bootstrap/', target='_blank') http://johnguerra.co/lectures/webDevelopment_fall2019/04_Bootstrap/
           p.tiny Class page:
-            a(href='http://johnguerra.co/classes/webDevelopment_spring_2017/', target='_blank') http://johnguerra.co/classes/webDevelopment_spring_2017/
+            a(href='http://johnguerra.co/classes/webDevelopment_fall2019/', target='_blank') http://johnguerra.co/classes/webDevelopment_fall2019/
 
 
         //- convert -density 150 -depth 8 -quality 85 ~/Dropbox/documentos/2016/andes/visual_analytics/lectures_tamara/05_rules-artery.pdf ./05_rules-artery.png
+
+
+        section
+          section
+            h1 Project 1
+
+          section
+            h2 P1 Requirements
+            ul.small
+              li.fragment Your homepage: Your skills, courses, projects, hobbies, etc.
+              li.fragment ✓ #[a(href="https://validator.w3.org/") W3C Compliant]
+              li.fragment ✓ Bootstrap 4+ (can use templates)
+              li.fragment ✓ At least two pages
+              li.fragment ✓ At least one JS (Vanilla) feature not copied
+              li.fragment ✓ Can use templates
+
+          section
+            h2 P1 Submission Requirements
+            ul.small
+              li.fragment Github page (README, MIT License, code)
+              li.fragment Deployed URL (consider #[a(href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/Publishing_your_website#Publishing_via_GitHub") github pages])
+                ul
+                  li Must remain online 6 months after the class ends
+              li.fragment 2 min presentation Google slides
+              li.fragment Code review (Github Pull Request)
+              li.fragment 3 min Video demonstrating
+
+
+          section
+            h2 Presentation
+            ul.small
+              li.fragment Objective
+              li.fragment Technologies used
+              li.fragment What you are most proud of
+              li.fragment What was the hardest part
+              li.fragment Demo
+              li.fragment Use Google Slides
+              li.fragment Make sure they are public
+
+          section
+            h2 Code + Github
+            ul.small
+              li.fragment #[a(href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/Dealing_with_files") Organized Files]
+              li.fragment Good README
+              li.fragment MIT License (or equivalent)
+              li.fragment Demo linked
+              li.fragment Code must freeze 24 hours before the deadline
+              li.fragment Create a release
+
+          section
+            h2 Good README
+            ul.small
+              li.fragment Good project name
+              li.fragment Project objective
+              li.fragment Screenshot (gifs are preferred)
+              li.fragment Tech requirements
+              li.fragment How to install/use
+              li.fragment Author with link to homepage
+              li.fragment Reference to the class with link
+              li.fragment Link to the video demonstration
+              li.fragment Use #[a(href="https://guides.github.com/features/mastering-markdown/") Github Markdown]
+
+          section
+            h2 Code Review
+            ul.small
+              li.fragment Suhas will assign the code reviews
+              li.fragment Must be done during the 24hs before the deadline
+              li.fragment If the person you are reviewing doesn't have code, tag them in Slack #general
+              li.fragment Be respectful
+              li.fragment Use positive comments
+              li.fragment Praises count
+              li.fragment Provide constructive feedback
+
+
         section
           section
             h2 What did we learn last time?
@@ -138,17 +212,17 @@ html
             ul
               li.fragment Share your results
 
-        section
-          section
-            h2 Required Readings Next three sessions
-            ul
-              li.fragment
-                a(href="https://www.codecademy.com/learn/learn-javascript" target="_blank") https://www.codecademy.com/learn/learn-javascript
-              li.fragment
-                a(href="https://www.youtube.com/watch?v=JxAXlJEmNMg&list=PLEzQf147-uEpvTa1bHDNlxUL2klHUMHJu&index=2", target="_blank") Crockford on Javascript series 1-6
-                span  (7+ -> Optional)
-              li.fragment (Recommended - Optional)
-                a(href="http://javascript.crockford.com/", target="_blank") http://javascript.crockford.com/
+        //- section
+        //-   section
+        //-     h2 Required Readings Next three sessions
+        //-     ul
+        //-       li.fragment
+        //-         a(href="https://www.codecademy.com/learn/learn-javascript" target="_blank") https://www.codecademy.com/learn/learn-javascript
+        //-       li.fragment
+        //-         a(href="https://www.youtube.com/watch?v=JxAXlJEmNMg&list=PLEzQf147-uEpvTa1bHDNlxUL2klHUMHJu&index=2", target="_blank") Crockford on Javascript series 1-6
+        //-         span  (7+ -> Optional)
+        //-       li.fragment (Recommended - Optional)
+        //-         a(href="http://javascript.crockford.com/", target="_blank") http://javascript.crockford.com/
 
 
 
