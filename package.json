@@ -22,6 +22,6 @@
   "homepage": "https://github.com/john-guerra/webDevelopmentSlides#readme",
   "dependencies": {
     "jstransformer-markdown-it": "^2.1.0",
-    "markdown-it": "^8.4.2"
+    "markdown-it": "^12.3.2"
   }
 }
