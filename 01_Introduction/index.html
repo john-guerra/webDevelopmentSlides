@@ -1,32 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ISIS-3710 Web Development, Introduction</title>
+    <title>CS5610 Web Development, John Alexis Guerra Gomez</title>
     <meta charset="utf-8">
     <meta name="author" content="John Alexis Guerra Gomez">
-    <meta name="description" content="ISIS-3710 Web Development, Los Andes University, Colombia">
+    <meta name="description" content="CS5610 Web Development, Northeastern University, Oakland">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-    <link href="../lib/css/reveal.css" rel="stylesheet">
-    <link href="../lib/css/theme/simple.css" rel="stylesheet">
-    <link href="../lib/css/zenburn.css" rel="stylesheet">
+    <link href="../lib/reveal.css" rel="stylesheet">
+    <link href="../lib/theme/white.css" rel="stylesheet" id="theme">
+    <link rel="stylesheet" href="../lib/plugin/highlight/monokai.css">
     <link href="../css/style.css" rel="stylesheet">
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/css/print/pdf.css' : '../lib/css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
-    <script src="../lib/js/d3.min.js"></script>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
         <section id="title">
-          <h2>ISIS-3710 Web Development</h2><img src="../img/universidad_de_los_andes_logo@2x.png" alt="Los Andes University" class="logo"><br>
-          <p class="small"><a href="http://johnguerra.co/" target="_blank"><strong>John Alexis Guerra Gómez</strong></a></p><br><span>ja.guerrag en uniandes.edu.co</span><br><a href="http://twitter.com/duto_guerra">@duto_guerra</a><br>
-          <p class="tiny">Slides:<a href="http://johnguerra.co/lectures/webDevelopment_fall2019/01_Introduction/" target="_blank">http://johnguerra.co/lectures/webDevelopment_fall2019/01_Introduction/</a></p>
-          <p class="tiny">Class page:<a href="http://johnguerra.co/classes/webDevelopment_fall2019/" target="_blank">http://johnguerra.co/classes/webDevelopment_fall2019/</a></p>
+          <h2>CS5610 Web Development</h2><img class="logo" src="../img/seal_logotype-768x252.png" alt="Northeastern University"><br>
+          <p class="small"><a href="http://johnguerra.co/" target="_blank"><strong>John Alexis Guerra Gómez</strong></a></p><br><span>jguerra at northeastern.edu</span><br><a href="https://bsky.app/profile/johnguerra.bsky.social">@johnguerra.bsky.social</a><br>
+          <p class="tiny">Slides:<a href="http://johnguerra.co/lectures/webDevelopment_spring2025/01_Introduction/" target="_blank">http://johnguerra.co/lectures/webDevelopment_spring2025/01_Introduction/</a></p>
+          <p class="tiny">Class page:<a href="http://johnguerra.co/classes/webDevelopment_spring_2025/" target="_blank">http://johnguerra.co/classes/webDevelopment_spring_2025/</a></p>
         </section>
         <section>
           <section>
@@ -54,13 +46,14 @@
 <li>Security</li>
 </ul>
 </span><span class="left small"><ul>
-<li>Meteor + React</li>
+<li>React</li>
 <li>Testing</li>
 <li>Public APIs, Facebook, Twitter, Instagram</li>
 <li>Scalability</li>
-<li>Backend as a service</li>
 <li>Desktop Apps with JS</li>
-<li>Mobile Apps</li>
+<li>SVG + Canvas</li>
+<li>Web Sockets</li>
+<li>Gatsby?</li>
 </ul>
 </span>
           </section>
@@ -71,7 +64,7 @@
                 <ul>
                   <li class="fragment">You read them on your own</li>
                   <li class="fragment">Mandatory</li>
-                  <li class="fragment">Must tweet comments before class</li>
+                  <li class="fragment">Tweet before class something about what you read</li>
                 </ul>
               </li>
               <li class="fragment">Synchronous materials
@@ -87,7 +80,7 @@
             <h2>Comments (tweets) before class</h2>
             <ul>
               <li class="fragment">Must be <strong>interesting</strong> and <strong>original</strong></li>
-              <li class="fragment">Tweet using #WebDev @Uniandes</li>
+              <li class="fragment">Tweet using #WebDev @NortheasternCA</li>
               <li class="fragment">Count as part of the participation grade
                 <ul>
                   <li class="fragment">2pts Original and interesting</li>
@@ -100,9 +93,17 @@
           <section>
             <h2>Class participation</h2>
             <ul>
-              <li class="fragment">Ask questions</li>
+              <li class="fragment"><a href="https://stackoverflow.com/help/how-to-ask"> Ask questions</a></li>
               <li class="fragment">Bring over interesting topics</li>
               <li class="fragment">Teach us stuff! ;)</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Slack</h2><span>Make sure you join these channels</span>
+            <ul>
+              <li>#announcements For the official communications from staff.<strong> Don't post here</strong></li>
+              <li>#project For propossing your projects</li>
+              <li>#classchat Guess what</li>
             </ul>
           </section>
           <section>
@@ -110,7 +111,7 @@
             <ul>
               <li class="fragment">Ran in the first five minutes of the class</li>
               <li class="fragment">Be early</li>
-              <li class="fragment">About the readings for the day</li>
+              <li class="fragment">Questions about the readings for the day</li>
             </ul>
           </section>
           <section>
@@ -126,44 +127,46 @@
           <section>
             <h2>Lottery (Grading II)</h2>
             <ul>
-              <li>Your final participation grade will depend of the average of the group</li>
-              <li class="fragment">You need to have at least the average points of the group</li>
+              <li>Your final participation grade will depend of the median of the group</li>
+              <li class="fragment">You need to have at least the median points of the group</li>
             </ul>
           </section>
           <section>
             <h2>Requirements</h2>
             <ul>
               <li class="fragment">Coding (that's what we do in CS)</li>
-              <li class="fragment">Github and Twitter accounts (fill the form on the class website)</li>
+              <li class="fragment">Github and Bluesky accounts (fill the form on the class website)</li>
               <li class="fragment">Lot's of enthusiasm</li>
             </ul>
           </section>
           <section>
             <h2>Grade</h2>
-            <table style="width:100%" class="table">
+            <table class="table" style="width:100%">
               <thead>
                 <th>Concept</th>
                 <th>%</th>
               </thead>
               <tbody>
-                <td>one Exam</td>
-                <td>20%</td>
+                <tr>
+                  <td>Projects</td>
+                  <td>60%</td>
+                </tr>
+                <tr>
+                  <td>Participation</td>
+                  <td>20%</td>
+                </tr>
+                <tr>
+                  <td>Midterm Evaluation</td>
+                  <td>20%</td>
+                </tr>
               </tbody>
-              <tr>
-                <td>Projects</td>
-                <td>60%</td>
-              </tr>
-              <tr>
-                <td>Participation</td>
-                <td>20%</td>
-              </tr>
             </table>
           </section>
           <section>
             <h2>Projects</h2>
             <ul>
               <li class="fragment">One short project – Individually</li>
-              <li class="fragment">Three short projects - Pairs</li>
+              <li class="fragment">Two short projects - Pairs</li>
               <li class="fragment">One final project - Pairs</li>
             </ul>
           </section>
@@ -197,7 +200,7 @@
             <ul>
               <li class="fragment"><a href="http://web-dev-neu.slack.com">Slack channel</a></li>
               <li class="fragment">Office hours by appointment</li>
-              <li class="fragment">Two monitors</li>
+              <li class="fragment">Two/Three TAs</li>
             </ul>
           </section>
         </section>
@@ -205,8 +208,7 @@
           <section>
             <h1>Who am I?</h1>
           </section>
-          <section data-background="images/Pereira.jpg">
-          </section>
+          <section data-background="images/Pereira.jpg"></section>
           <section id="IRIS"><img src="images/IRIS_y_su_caja_peq.png"></section>
           <section id="KebSolutions"><img src="images/logo_keb.png"></section>
           <section id="Fulbright"><img src="images/Fulbright.png"></section>
@@ -215,7 +217,7 @@
           </section>
           <section id="HCIL"><img src="images/Ben_and_Catherine.jpg"></section>
           <section>
-            <iframe src="https://cdn.rawgit.com/mbostock/4063582/raw/dd152a94f98ab7081a41096a88ece375e64a8b6c/index.html" class="blocks"></iframe>
+            <iframe class="blocks" src="https://cdn.rawgit.com/mbostock/4063582/raw/dd152a94f98ab7081a41096a88ece375e64a8b6c/index.html"></iframe>
           </section>
           <section><img src="images/lifelines.jpg"></section>
           <section><img src="images/lifeflow.png"></section>
@@ -227,13 +229,30 @@
             <h2>Silicon Valley</h2>
           </section>
           <section><img src="images/parc_rgb.png"></section>
-          <section><img src="images/topics_steamchart_with_wordclouds.png" class="demo"></section>
-          <section><img src="images/network_explorer_overview_10k_nointer_cropped.png" class="demo"></section>
+          <section><img class="demo" src="images/topics_steamchart_with_wordclouds.png"></section>
+          <section><img class="demo" src="images/network_explorer_overview_10k_nointer_cropped.png"></section>
           <section><img src="images/labs_us_purple_1000px_wide.png"></section>
           <section><img src="images/christmass.png"></section>
           <section><img src="images/FlickrPopular.png"></section>
           <section><img src="images/topPhotos.png"></section>
           <section><img src="images/photoRing.png"></section>
+          <section>
+            <h2>Back to Colombia</h2>
+          </section>
+          <section data-background-iframe="https://johnguerra.co/students.html"></section>
+        </section>
+        <section>
+          <section>
+            <h1>Please read this book</h1>
+            <div class="flex">
+              <div class="left">
+                <ul>
+                  <li><a href="https://onesearch.library.northeastern.edu/discovery/fulldisplay?context=L&amp;vid=01NEU_INST:NU_Olin&amp;search_scope=Mills_and_CI&amp;tab=Everything&amp;docid=alma9952285852201401">Outsmart your Brain</a></li>
+                </ul>
+              </div>
+              <div class="right"><img src="images/outsmartYourBrain.jpg" alt="Outsmart your Brain Book Cover"></div>
+            </div>
+          </section>
         </section>
         <section id="Examples">
           <section>
@@ -241,7 +260,7 @@
           </section>
           <section>
             <h3 class="demo">My home page</h3>
-            <iframe src="http://johnguerra.co" class="blocks"></iframe><a target="_blank" href="http://johnguerra.co" class="tiny">http://johnguerra.co</a>
+            <iframe class="blocks" src="http://johnguerra.co"></iframe><a class="tiny" target="_blank" href="http://johnguerra.co">http://johnguerra.co</a>
           </section>
           <section>
             <h3>My home page</h3>
@@ -252,9 +271,9 @@
             </ul>
           </section>
           <section>
-            <h3 class="demo">My PhD Thesis</h3>
-            <iframe src="http://treeversity.cattlab.umd.edu" class="blocks"></iframe><a target="_blank" href="http://treeversity.cattlab.umd.edu" class="tiny">http://treeversity.cattlab.umd.edu</a>
+            <h3 class="demo">My PhD Thesis</h3><a class="tiny" target="_blank" href="http://treeversity.cattlab.umd.edu">http://treeversity.cattlab.umd.edu</a>
           </section>
+          <section data-background-iframe="http://treeversity.cattlab.umd.edu"></section>
           <section>
             <h3>My PhD Thesis</h3>
             <ul>
@@ -265,7 +284,7 @@
           </section>
           <section>
             <h3 class="demo">Tweetometro</h3>
-            <iframe src="http://old.tweetometro.co" class="blocks"></iframe><a target="_blank" href="http://old.tweetometro.co" class="tiny">http://tweetometro.co</a>
+            <iframe class="blocks" src="http://old.tweetometro.co"></iframe><a class="tiny" target="_blank" href="http://old.tweetometro.co">http://tweetometro.co</a>
           </section>
           <section>
             <h3>Tweetometro</h3>
@@ -276,8 +295,7 @@
             </ul>
           </section>
           <section>
-            <h3 class="demo">Who likes my Facebook</h3>
-            <iframe src="http://wholikesmyfb.com" class="blocks"></iframe><a target="_blank" href="http://wholikesmyfb.com" class="tiny">http://wholikesmyfb.com</a>
+            <h3 class="demo">Who likes my Facebook</h3><img src="images/wholikesmyfb_small.gif"><br><a class="tiny" target="_blank" href="http://wholikesmyfb.com">http://wholikesmyfb.com</a>
           </section>
           <section>
             <h3>Who likes my Facebook</h3>
@@ -288,19 +306,7 @@
             </ul>
           </section>
           <section>
-            <h3 class="demo">How did Colombia really vote</h3>
-            <iframe src="http://johnguerra.co/viz/resultadosSegundaVuelta2018/" class="blocks"></iframe><a target="_blank" href="http://johnguerra.co/viz/resultadosSegundaVuelta2018/" class="tiny">http://johnguerra.co/viz/resultadosSegundaVuelta2018/</a>
-          </section>
-          <section>
-            <h3>Who likes my Facebook</h3>
-            <ul>
-              <li><strong>DB:</strong> None</li>
-              <li><strong>Backend:</strong> Apache</li>
-              <li><strong>Frontend:</strong> D3.js + Bootstrap.js + Facebook API</li>
-            </ul>
-          </section>
-          <section>
-            <h3 class="demo">Auto Album Organizer</h3><img src="images/autoalbum.gif" class="blocks">
+            <h3 class="demo">Auto Album Organizer</h3><img class="blocks" src="images/autoalbum.gif">
           </section>
           <section>
             <h3>Auto Album Organizer</h3>
@@ -312,8 +318,20 @@
             </ul>
           </section>
           <section>
+            <h3 class="demo">How did Colombia really vote</h3>
+            <iframe class="blocks" src="http://johnguerra.co/viz/resultadosSegundaVuelta2018/"></iframe><a class="tiny" target="_blank" href="http://johnguerra.co/viz/resultadosSegundaVuelta2018/">http://johnguerra.co/viz/resultadosSegundaVuelta2018/</a>
+          </section>
+          <section data-background-iframe="http://johnguerra.co/viz/resultadosSegundaVuelta2018/"></section>
+          <section>
+            <ul>
+              <li><strong>DB:</strong> None</li>
+              <li><strong>Backend:</strong> Apache</li>
+              <li><strong>Frontend:</strong> D3.js + Scrollytelling</li>
+            </ul>
+          </section>
+          <section>
             <h3 class="demo">BTactile</h3>
-            <iframe src="http://btactile.com" class="blocks"></iframe><a target="_blank" href="http://btactile.com" class="tiny">http://btactile.com</a>
+            <iframe class="blocks" src="http://btactile.com"></iframe><a class="tiny" target="_blank" href="http://btactile.com">http://btactile.com</a>
           </section>
           <section>
             <h3>BTactile</h3>
@@ -323,10 +341,22 @@
               <li><strong>Backend:</strong> Meteor + React.js</li>
             </ul>
           </section>
+          <section>
+            <h2>Lucy Tejada Táctil</h2><a class="tiny" target="_blank" href="http://lucytejadatactil.com">http://lucytejadatactil.com</a>
+          </section>
+          <section data-background-iframe="http://lucytejadatactil.com"></section>
+          <section>
+            <h3>Lucy Tejada Tactil</h3>
+            <ul>
+              <li><strong>DB:</strong> JSON + GraphQL</li>
+              <li><strong>Backend:</strong> Apache + Static Pages (Gatsby)</li>
+              <li><strong>Frontend:</strong> React</li>
+            </ul>
+          </section>
         </section>
         <section>
           <section>
-            <h2>Required Readings Next session</h2>
+            <h2>Next</h2>
             <ul>
               <li class="fragment"><a href="https://www.codecademy.com/learn/learn-html-css" target="_blank">https://www.codecademy.com/learn/learn-html-css</a><span> HTML Section</span></li>
               <li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web" target="_blank">https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web</a><span>Up to (including) HTML basics</span></li>
@@ -334,7 +364,7 @@
             </ul>
           </section>
           <section>
-            <h2 class="demo">A little motivation</h2><a href="https://www.paysa.com/salaries/full-stack-developer--t" target="_blank"><img src="images/full_stack_engineer_salary.png"></a><a href="https://www.paysa.com/salaries/full-stack-developer--t" target="_blank" class="tiny"> https://www.paysa.com/salaries/full-stack-developer--t</a>
+            <h2 class="demo">A little motivation</h2><a href="https://www.paysa.com/salaries/full-stack-developer--t" target="_blank"><img src="images/full_stack_engineer_salary.png"></a><a class="tiny" href="https://www.paysa.com/salaries/full-stack-developer--t" target="_blank"> https://www.paysa.com/salaries/full-stack-developer--t</a>
           </section>
           <section>
             <h2>Thank you</h2>
@@ -343,45 +373,54 @@
         </section>
       </div>
     </div>
-    <script src="../lib/js/head.min.js"></script>
-    <script src="../lib/js/reveal.js"></script>
+    <script src="../lib/reveal.js"></script>
+    <script src="../lib/plugin/markdown/markdown.js"></script>
+    <script src="../lib/plugin/highlight/highlight.js"></script>
+    <script src="../lib/plugin/notes/notes.js"></script>
+    <script src="../lib/plugin/math/math.js"></script>
     <script>
       Reveal.initialize({
         controls: true,
-        controlsTutorial: true,
-        controlsLayout: 'bottom-right',
-        controlsBackArrows: 'faded',
         progress: true,
         history: true,
         center: true,
-        rollingLinks: true,
         transition: "convex",
-        //- width: "90%",
-        //- height: 1.0,
-        dependencies: [
-          // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
-          { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
       
-          // Interpret Markdown in <section> elements
-          { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      
-          // Syntax highlight for <code> elements
-          { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-      
-          // Zoom in and out with Alt+click
-          { src: '../plugin/zoom-js/zoom.js', async: true },
-      
-          // Speaker notes
-          { src: '../plugin/notes/notes.js', async: true },
-      
-          //- // Remote control your reveal.js presentation using a touch device
-          //- { src: 'plugin/remotes/remotes.js', async: true },
-      
-          //- // MathJax
-          //- { src: 'plugin/math/math.js', async: true }
-        ]
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
       });
+      //- Reveal.initialize({
+      //-   controls: true,
+      //-   progress: true,
+      //-   history: true,
+      //-   center: true,
+      //-   rollingLinks: true,
+      //-   transition: "convex",
+      //-   //- width: "90%",
+      //-   //- height: 1.0,
+      //-   dependencies: [
+      //-     // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+      //-     { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      
+      //-     // Interpret Markdown in <section> elements
+      //-     { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      //-     { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
+      //-     // Syntax highlight for <code> elements
+      //-     { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      
+      //-     // Zoom in and out with Alt+click
+      //-     { src: '../plugin/zoom-js/zoom.js', async: true },
+      
+      //-     // Speaker notes
+      //-     { src: '../plugin/notes/notes.js', async: true },
+      
+      //-     //- // Remote control your reveal.js presentation using a touch device
+      //-     //- { src: '../plugin/remotes/remotes.js', async: true },
+      
+      //-     //- // MathJax
+      //-     //- { src: '../plugin/math/math.js', async: true }
+      //-   ]
+      //- });
     </script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

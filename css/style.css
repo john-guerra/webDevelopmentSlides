@@ -35,7 +35,9 @@
   list-style-type: circle;
 }
 .reveal pre code {
-  padding: 2em;
+  padding: 1em;
+  font-size: 0.7em;
+  line-height: 1.2em;
   word-wrap: normal;
 }
 .reveal pre code::selection,
@@ -185,6 +187,45 @@
 }
 .reveal .logo {
   height: 80px;
+}
+.flex {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.flex * {
+  margin: auto;
+}
+.flex .quarter {
+  width: 22%;
+  margin-right: 1%;
+  margin-left: 1%;
+}
+.flex .third {
+  width: 30%;
+  margin-right: 1.5%;
+  margin-left: 1.5%;
+}
+.flex .half {
+  width: 45%;
+  margin: auto;
+}
+.flex .twothirds {
+  width: 60%;
+  margin-right: 3%;
+  margin-left: 3%;
+}
+.flex .flex1 {
+  flex: 1;
+}
+.flex .flex2 {
+  flex: 2;
+}
+.flex .flex3 {
+  flex: 3;
+}
+.flex .flex4 {
+  flex: 4;
 }
 #munznerpreferencechart {
   color: #fff;

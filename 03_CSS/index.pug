@@ -1,0 +1,109 @@
+doctype html
+html
+  head
+    title CS5610 Web Development, CSS
+    meta(charset='utf-8')
+    meta(name='author', content='John Alexis Guerra Gomez')
+    meta(name='description', content='CS5610 Web Development, Northeastern University, Oakland')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui")
+include ../partials/reveal_header.pug
+  body
+
+
+    .reveal
+      .slides
+
+        section#title
+          h2 CSS
+          img.logo(src="../img/seal_logotype-768x252.png" alt="Northeastern University")
+
+
+          br
+          p.small
+            a(href='http://johnguerra.co/', target='_blank') #[strong John Alexis Guerra Gómez]
+
+          p.tiny.email jguerra[at}northeastern.edu |
+            a(href='http://twitter.com/duto_guerra' , target='_blank')  @duto_guerra
+            br
+
+
+          br
+          p.tiny Slides:
+            a(href='http://johnguerra.co/lectures/webDevelopment_spring2025/03_CSS/', target='_blank') http://johnguerra.co/lectures/webDevelopment_spring2025/03_CSS/
+          p.tiny Class page:
+            a(href='http://johnguerra.co/classes/webDevelopment_spring_2025/', target='_blank') http://johnguerra.co/classes/webDevelopment_spring_2025/
+
+
+        //- convert -density 150 -depth 8 -quality 85 ~/Dropbox/documentos/2016/andes/visual_analytics/lectures_tamara/05_rules-artery.pdf ./05_rules-artery.png
+        section
+          section
+            h2 What did we learn last time?
+
+          section
+            h2 Readings discussion
+            ul
+              li.fragment questions?
+
+          section
+            h2 Random Questions
+            ul
+              li.fragment How do you style a class?
+              li.fragment How do you style a class only inside a link?
+              li.fragment What should you use id or class?
+              li.fragment How do you style an element inline?
+              li.fragment Why would you add a rgba after a rgb property?
+              li.fragment What is Google Fonts?
+
+        section
+
+          //- Do exercise with many divs
+          //- Explain the box model
+
+          section
+            h2 When to use pxs, ems and %?
+            ul
+              li.fragment #[strong pxs] fixed. Not dependent on screen size.
+              li.fragment #[strong ems] Relative to font-size. Good for fonts on responsive designs.
+              li.fragment #[strong %] Relative to height/width. Good for divs on responsive designs.
+
+          section
+            h2 Margins
+            img.blocks(src="images/margins_and_padding.png")
+
+          section
+            h2 Z-index
+            p Doesn't work with SVG 😞
+
+          section
+            h2 Gradients
+            p Search online for generators. e.g. #[a(href="http://www.colorzilla.com/gradient-editor/") Colorzilla gradient editor]
+
+          section
+            h2 Group Exercise
+            p Let's continue visualizing #[a(href="../02_HTML/images/airbnb_sf_listings_500.json.zip") the Airbnb Listings]
+
+        section
+          section
+            h2 Exercise
+            p Improve the HTML of your homepage with some CSS
+            ul
+              li.fragment Share your results
+
+        section
+          section
+            h2 Required Readings Next session
+            ul
+              li.fragment
+                a(href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox") https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
+              li.fragment
+                a(href="http://getbootstrap.com/getting-started/" target="_blank") http://getbootstrap.com/getting-started/
+              li.fragment (Optional)
+                a(href="https://www.codecademy.com/learn/make-a-website", target="_blank") https://www.codecademy.com/learn/make-a-website
+
+
+
+
+  include ../partials/reveal_footer.pug
+
+
+

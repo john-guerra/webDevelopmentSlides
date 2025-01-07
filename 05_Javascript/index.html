@@ -1,37 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ISIS-3710 Web Development, Javascript</title>
+    <title>CS5610 Web Development, Javascript</title>
     <meta charset="utf-8">
     <meta name="author" content="John Alexis Guerra Gomez">
-    <meta name="description" content="ISIS-3710 Web Development, Los Andes University, Colombia">
+    <meta name="description" content="CS5610 Web Development, Northeastern University, Oakland">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-    <link href="../lib/css/reveal.css" rel="stylesheet">
-    <link href="../lib/css/theme/simple.css" rel="stylesheet">
-    <link href="../lib/css/zenburn.css" rel="stylesheet">
+    <link href="../lib/reveal.css" rel="stylesheet">
+    <link href="../lib/theme/white.css" rel="stylesheet" id="theme">
+    <link rel="stylesheet" href="../lib/plugin/highlight/monokai.css">
     <link href="../css/style.css" rel="stylesheet">
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/css/print/pdf.css' : '../lib/css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
         <section id="title">
-          <h2>Javascript</h2><img src="../img/universidad_de_los_andes_logo@2x.png" alt="Los Andes University" class="logo"><br>
+          <h2>Javascript</h2><img class="logo" src="../img/seal_logotype-768x252.png" alt="Northeastern University"><br>
           <p class="small"><a href="http://johnguerra.co/" target="_blank"><strong>John Alexis Guerra Gómez</strong></a></p>
-          <p class="tiny email">jguerra[at}northeastern.edu |<a href="http://twitter.com/duto_guerra" target="_blank"> @duto_guerra</a><br>
-          </p><br>
-          <p class="tiny">Slides:<a href="http://johnguerra.co/lectures/webDevelopment_fall2019/05_Javascript/" target="_blank">http://johnguerra.co/lectures/webDevelopment_fall2019/05_Javascript/</a></p>
-          <p class="tiny">Class page:<a href="http://johnguerra.co/classes/webDevelopment_fall2019/" target="_blank">http://johnguerra.co/classes/webDevelopment_fall2019/</a></p>
+          <p class="tiny email">jguerra[at}northeastern.edu |<a href="http://twitter.com/duto_guerra" target="_blank"> @duto_guerra</a><br></p><br>
+          <p class="tiny">Slides:<a href="http://johnguerra.co/lectures/webDevelopment_spring2025/05_Javascript/" target="_blank">http://johnguerra.co/lectures/webDevelopment_spring2025/05_Javascript/</a></p>
+          <p class="tiny">Class page:<a href="http://johnguerra.co/classes/webDevelopment_spring_2025/" target="_blank">http://johnguerra.co/classes/webDevelopment_spring_2025/</a></p>
         </section>
         <section>
           <section>
-            <h2>Wat?</h2><a href="https://www.destroyallsoftware.com/talks/wat" target="_blank" class="tiny">https://www.destroyallsoftware.com/talks/wat</a>
+            <h2>Wat?</h2><a class="tiny" href="https://www.destroyallsoftware.com/talks/wat" target="_blank">https://www.destroyallsoftware.com/talks/wat</a>
           </section>
           <section>
             <h2>What did we learn last time?</h2>
@@ -55,7 +47,7 @@
           <section>
             <h2>Random Questions</h2>
             <ul>
-              <li class="fragment">What is <strong>var</strong> and why we need it?</li>
+              <li class="fragment">What is <strong>let</strong> and why we need it?</li>
               <li class="fragment">What is a <strong>linter</strong></li>
               <li class="fragment">It's Javascript Object Oriented?</li>
             </ul>
@@ -64,28 +56,82 @@
         <section>
           <section>
             <h2>Functions</h2>
-            <ul>
-              <li class="fragment">How do you create a function?</li>
-              <li class="fragment">How do you also create a function?</li>
-              <li class="fragment">And how do you also also create a function?</li>
-            </ul>
+            <div class="flex">
+              <div class="half">
+                <ul>
+                  <li class="fragment">How do you create a function?</li>
+                  <li class="fragment">How do you also create a function?</li>
+                  <li class="fragment">And how do you also also create a function?</li>
+                </ul>
+              </div>
+              <div class="half">
+                <pre><code data-trim data-noescape>function add5(a) {
+  return a + 5
+}
+const add5_anon = function(a) {
+  return a + 5
+}
+
+const add5_arrow = (a) => {
+  return a + 5
+}
+
+
+</code></pre>
+              </div>
+            </div>
           </section>
           <section>
             <h2>Variable scope</h2>
             <ul>
-              <li class="fragment">Closures</li>
-              <li class="fragment">The module pattern</li>
+              <li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures">Closures</a></li>
+              <li class="fragment">The module pattern.</li>
+              <li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">Modern modules</a></li>
             </ul>
           </section>
           <section>
+            <h2 class="demo"><a href="https://jsfiddle.net/v7gjv/8164/">Scope common error </a></h2>
+            <div class="r-stretch">
+              <pre><code data-trim data-noescape>function showHelp(help) {
+  document.getElementById("help").textContent = help;
+}
+
+function setupHelp() {
+  var helpText = [
+    { id: "email", help: "Your email address" },
+    { id: "name", help: "Your full name" },
+    { id: "age", help: "Your age (you must be over 16)" },
+  ];
+
+  for (var i = 0; i < helpText.length; i++) {
+    // Culprit is the use of `var` on this line
+    var item = helpText[i];
+    document.getElementById(item.id).onfocus = function () {
+      showHelp(item.help);
+    };
+  }
+}
+
+setupHelp();
+</code></pre>
+            </div>
+          </section>
+          <section class="pre">
             <h2>Variable hoisting</h2>
             <ul>
               <li class="fragment">A variable can be referenced before it was defined</li>
             </ul>
           </section>
-          <section data-background-image="https://media.giphy.com/media/JfDNFU1qOZna/giphy.gif" data-background-size="contain"><img src="https://media.giphy.com/media/JfDNFU1qOZna/giphy.gif" alt="Say what? gif"></section>
+          <section data-background-image="https://media.giphy.com/media/JfDNFU1qOZna/giphy.gif" data-background-size="contain"></section>
           <section>
-            <h2>Variable hoisting</h2><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types#Variable_hoisting" target="_blank" class="tiny">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types#Variable_hoisting</a>
+            <h2>Variable hoisting</h2>
+            <pre><code data-trim data-noescape>console.log(x === undefined); // true
+var x = 3;
+
+(function () {
+  console.log(x); // undefined
+  var x = "local value";
+})();</code></pre><a class="tiny" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types#Variable_hoisting" target="_blank">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types#Variable_hoisting</a>
           </section>
           <section>
             <h2 class="demo">undefined vs null</h2>
@@ -95,10 +141,10 @@
             </ul>
           </section>
           <section>
-            <h2 class="demo">About closures</h2><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank" class="tiny">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures</a>
+            <h2 class="demo">About closures</h2><a class="tiny" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures</a>
           </section>
           <section>
-            <h2 class="demo">Classes vs Prototypes</h2><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model" target="_blank" class="tiny">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model</a>
+            <h2 class="demo">Classes vs Prototypes</h2><a class="tiny" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model" target="_blank">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model</a>
           </section>
           <section>
             <h2>Objects</h2>
@@ -106,6 +152,7 @@
               <li class="fragment">It's an object the same thing than a java HashTable?</li>
               <li class="fragment">How do you create a new object?</li>
               <li class="fragment">Can you add new attributes after object creation?</li>
+              <li class="fragment">Use Map when you need a Hash</li>
             </ul>
           </section>
           <section>
@@ -126,16 +173,50 @@
           </section>
           <section>
             <h2>Modify the DOM</h2>
-            <pre><code data-trim data-noescape>document.getElementById("myId").innerHTML = "&lt;p&gt; hello! &lt;/p&gt;"
+            <div class="flex">
+              <div class="flex1">
+                <div><button id="btnModifyTheDom">How are you feeling?</button></div>
+                <div><output id="modifyTheDomTarget"></output></div>
+                <script>
+                  const btnModify = document.querySelector("#btnModifyTheDom");
+                  btnModify.addEventListener("click", () => {
+                    const target = document.querySelector("#modifyTheDomTarget");
+                    const rand = Math.floor(Math.random() * 10);
+                    console.log("rand", rand, "target", target);
+                    target.innerHTML = Array.from({ length: rand })
+                      .map( () => "❤️" )
+                      .join("");
+                  });
+                </script>
+              </div>
+              <div class="flex4">
+                <pre><code data-trim data-noescape><script type="text/template">
+  <div><button id="btnModifyTheDom">How are you feeling?</button></div>
+  <div><output id="modifyTheDomTarget"></output></div>
+  <script>
+    const btnModify = document.querySelector("#btnModifyTheDom");
+    btnModify.addEventListener("click", () => {
+      const target = document.querySelector("#modifyTheDomTarget");
+      const rand = Math.floor(Math.random() * 10);
+      console.log("rand", rand, "target", target);
+      target.innerHTML = Array.from({ length: rand })
+        .map( () => "❤️" )
+        .join("");
+    });
+  </script>
+</script>
+
 
 
 </code></pre>
+              </div>
+            </div>
           </section>
         </section>
         <section>
           <section>
             <h2>Exercise</h2>
-            <p>Update your webpage for the class' students loading directly from the Google sheet</p>
+            <p>Build a listings page from the <a href="../02_HTML/images/airbnb_sf_listings_500.json.zip">SF Airbnb listings for Sept 2023</a> JSON file.</p>
             <ul>
               <li class="fragment">Share your results</li>
             </ul>
@@ -145,59 +226,70 @@
           <section>
             <h2>Required Readings Next session</h2>
             <ul>
-              <li class="fragment"><a href="https://www.codecademy.com/learn/learn-javascript" target="_blank">https://www.codecademy.com/learn/learn-javascript</a></li>
-              <li class="fragment"><a href="https://www.youtube.com/watch?v=JxAXlJEmNMg&amp;list=PLEzQf147-uEpvTa1bHDNlxUL2klHUMHJu&amp;index=2" target="_blank">Crockford on Javascript series 1-6</a><span> (7+ -> Optional)</span></li>
+              <li class="fragment">(Recommended - Optional)<a href="https://www.youtube.com/watch?v=JxAXlJEmNMg&amp;list=PLEzQf147-uEpvTa1bHDNlxUL2klHUMHJu&amp;index=2" target="_blank">Crockford on Javascript series 1-6</a><span> (7+ -> Optional)</span></li>
               <li class="fragment">(Recommended - Optional)<a href="http://javascript.crockford.com/" target="_blank">http://javascript.crockford.com/</a></li>
             </ul>
           </section>
         </section>
       </div>
     </div>
-    <script src="../lib/js/head.min.js"></script>
-    <script src="../lib/js/reveal.js"></script>
-    <script>
-      Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
-        rollingLinks: true,
-        transition: "convex",
-        //- width: "90%",
-        //- height: 1.0,
-        dependencies: [
-          // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
-          { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
-      
-          // Interpret Markdown in <section> elements
-          { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      
-          // Syntax highlight for <code> elements
-          { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-      
-          // Zoom in and out with Alt+click
-          { src: '../plugin/zoom-js/zoom.js', async: true },
-      
-          // Speaker notes
-          { src: '../plugin/notes/notes.js', async: true },
-      
-          //- // Remote control your reveal.js presentation using a touch device
-          //- { src: '../plugin/remotes/remotes.js', async: true },
-      
-          //- // MathJax
-          //- { src: '../plugin/math/math.js', async: true }
-        ]
-      });
-    </script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      
-      ga('create', 'UA-72531610-1', 'auto');
-      ga('send', 'pageview');
-    </script>
   </body>
+  <script src="../lib/reveal.js"></script>
+  <script src="../lib/plugin/markdown/markdown.js"></script>
+  <script src="../lib/plugin/highlight/highlight.js"></script>
+  <script src="../lib/plugin/notes/notes.js"></script>
+  <script src="../lib/plugin/math/math.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: "convex",
+    
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+    });
+    //- Reveal.initialize({
+    //-   controls: true,
+    //-   progress: true,
+    //-   history: true,
+    //-   center: true,
+    //-   rollingLinks: true,
+    //-   transition: "convex",
+    //-   //- width: "90%",
+    //-   //- height: 1.0,
+    //-   dependencies: [
+    //-     // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+    //-     { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+    
+    //-     // Interpret Markdown in <section> elements
+    //-     { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    //-     { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    
+    //-     // Syntax highlight for <code> elements
+    //-     { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    
+    //-     // Zoom in and out with Alt+click
+    //-     { src: '../plugin/zoom-js/zoom.js', async: true },
+    
+    //-     // Speaker notes
+    //-     { src: '../plugin/notes/notes.js', async: true },
+    
+    //-     //- // Remote control your reveal.js presentation using a touch device
+    //-     //- { src: '../plugin/remotes/remotes.js', async: true },
+    
+    //-     //- // MathJax
+    //-     //- { src: '../plugin/math/math.js', async: true }
+    //-   ]
+    //- });
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-72531610-1', 'auto');
+    ga('send', 'pageview');
+  </script>
 </html>

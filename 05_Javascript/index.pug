@@ -1,0 +1,253 @@
+doctype html
+html
+  head
+    title CS5610 Web Development, Javascript
+    meta(charset='utf-8')
+    meta(name='author', content='John Alexis Guerra Gomez')
+    meta(name='description', content='CS5610 Web Development, Northeastern University, Oakland')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui")
+
+    include ../partials/reveal_header.pug
+  body
+
+
+    .reveal
+      .slides
+
+        section#title
+          h2 Javascript
+          img.logo(src="../img/seal_logotype-768x252.png" alt="Northeastern University")
+
+
+          br
+          p.small
+            a(href='http://johnguerra.co/', target='_blank') #[strong John Alexis Guerra Gómez]
+
+          p.tiny.email jguerra[at}northeastern.edu |
+            a(href='http://twitter.com/duto_guerra' , target='_blank')  @duto_guerra
+            br
+
+
+            //- br
+            //- span ja.guerrag en uniandes.edu.co
+            //- br
+            //- a(href='https://bsky.app/profile/johnguerra.bsky.social') @johnguerra.bsky.social
+          //- p.small Use
+          //-   strong  spacebar
+          //-   |  and the arrows to advance slides
+          br
+          p.tiny Slides:
+            a(href='http://johnguerra.co/lectures/webDevelopment_spring2025/05_Javascript/', target='_blank') http://johnguerra.co/lectures/webDevelopment_spring2025/05_Javascript/
+          p.tiny Class page:
+            a(href='http://johnguerra.co/classes/webDevelopment_spring_2025/', target='_blank') http://johnguerra.co/classes/webDevelopment_spring_2025/
+
+
+        //- convert -density 150 -depth 8 -quality 85 ~/Dropbox/documentos/2016/andes/visual_analytics/lectures_tamara/05_rules-artery.pdf ./05_rules-artery.png
+        section
+          section
+            h2 Wat?
+            a.tiny(href="https://www.destroyallsoftware.com/talks/wat" target="_blank") https://www.destroyallsoftware.com/talks/wat
+
+          section
+            h2 What did we learn last time?
+
+          section
+            h2 Readings discussion
+            ul
+              li.fragment questions?
+
+          section
+            h2 How to ask a question to the staff
+            ol
+              li.fragment Try yourself
+              li.fragment Google it
+              li.fragment StackOverflow it
+              li.fragment Create a reproducible bug (e.g. jsfiddle)
+              li.fragment Ask on slack (#general)
+
+          section
+            h2 Random Questions
+            ul
+              li.fragment What is #[strong let] and why we need it?
+              li.fragment What is a #[strong linter]
+              li.fragment It's Javascript Object Oriented?
+        section
+          section
+            h2 Functions
+            .flex
+              .half
+                ul
+                  li.fragment How do you create a function?
+                  li.fragment How do you also create a function?
+                  li.fragment And how do you also also create a function?
+              .half
+                pre
+                  code(data-trim data-noescape).
+                    function add5(a) {
+                      return a + 5
+                    }
+                    const add5_anon = function(a) {
+                      return a + 5
+                    }
+
+                    const add5_arrow = (a) => {
+                      return a + 5
+                    }
+
+
+
+          section
+            h2 Variable scope
+            ul
+              li.fragment
+                a(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures") Closures
+              li.fragment The module pattern.
+              li.fragment
+                a(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules") Modern modules
+
+          section
+            h2.demo #[a(href="https://jsfiddle.net/v7gjv/8164/") Scope common error ]
+            div.r-stretch
+              pre
+                code(data-trim data-noescape).
+                  function showHelp(help) {
+                    document.getElementById("help").textContent = help;
+                  }
+
+                  function setupHelp() {
+                    var helpText = [
+                      { id: "email", help: "Your email address" },
+                      { id: "name", help: "Your full name" },
+                      { id: "age", help: "Your age (you must be over 16)" },
+                    ];
+
+                    for (var i = 0; i < helpText.length; i++) {
+                      // Culprit is the use of `var` on this line
+                      var item = helpText[i];
+                      document.getElementById(item.id).onfocus = function () {
+                        showHelp(item.help);
+                      };
+                    }
+                  }
+
+                  setupHelp();
+
+          section.pre
+            h2 Variable hoisting
+            ul
+              li.fragment A variable can be referenced before it was defined
+
+          section(data-background-image="https://media.giphy.com/media/JfDNFU1qOZna/giphy.gif" data-background-size="contain")
+            //- img(src="https://media.giphy.com/media/JfDNFU1qOZna/giphy.gif" alt="Say what? gif")
+
+          section
+            h2 Variable hoisting
+            pre
+              code(data-trim data-noescape).
+                console.log(x === undefined); // true
+                var x = 3;
+
+                (function () {
+                  console.log(x); // undefined
+                  var x = "local value";
+                })();
+            a.tiny(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types#Variable_hoisting" target="_blank") https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types#Variable_hoisting
+            //- iframe.blocks(src="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types#Variable_hoisting")
+
+          section
+            h2.demo undefined vs null
+            ul
+              li.fragment #[strong undefined] a variable hasn't been created or assigned
+              li.fragment #[strong null] a variable was created and assigned to null
+
+          section
+            h2.demo About closures
+            a.tiny(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank") https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+
+          section
+            h2.demo Classes vs Prototypes
+            a.tiny(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model" target="_blank") https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model
+
+          section
+            h2 Objects
+            ul
+              li.fragment It's an object the same thing than a java HashTable?
+              li.fragment How do you create a new object?
+              li.fragment Can you add new attributes after object creation?
+              li.fragment Use Map when you need a Hash
+
+          section
+            h2 Arrays
+            ul
+              li.fragment Create a function that sorts an array
+              li.fragment Create a function that filters an array of objects
+              li.fragment Create a function sums all the items on an array
+
+          section
+            h2 More arrays
+            ul
+              li.fragment filter
+              li.fragment map
+              li.fragment forEach
+
+          section
+            h2 Modify the DOM
+            .flex
+              .flex1.
+                <div><button id="btnModifyTheDom">How are you feeling?</button></div>
+                <div><output id="modifyTheDomTarget"></output></div>
+                <script>
+                  const btnModify = document.querySelector("#btnModifyTheDom");
+                  btnModify.addEventListener("click", () => {
+                    const target = document.querySelector("#modifyTheDomTarget");
+                    const rand = Math.floor(Math.random() * 10);
+                    console.log("rand", rand, "target", target);
+                    target.innerHTML = Array.from({ length: rand })
+                      .map( () => "❤️" )
+                      .join("");
+                  });
+                </script>
+              .flex4
+                pre
+                  code(data-trim data-noescape).
+                    <script type="text/template">
+                      <div><button id="btnModifyTheDom">How are you feeling?</button></div>
+                      <div><output id="modifyTheDomTarget"></output></div>
+                      <script>
+                        const btnModify = document.querySelector("#btnModifyTheDom");
+                        btnModify.addEventListener("click", () => {
+                          const target = document.querySelector("#modifyTheDomTarget");
+                          const rand = Math.floor(Math.random() * 10);
+                          console.log("rand", rand, "target", target);
+                          target.innerHTML = Array.from({ length: rand })
+                            .map( () => "❤️" )
+                            .join("");
+                        });
+                      </script>
+                    </script>
+
+
+
+
+        section
+          section
+            h2 Exercise
+            //- p Here are some of the #[a(href="images/airbnb_sf_listings_500.json.zip") SF Airbnb listings for Sept 2023]. Let's design a web page to display them and rate them.
+            p Build a listings page from the #[a(href="../02_HTML/images/airbnb_sf_listings_500.json.zip") SF Airbnb listings for Sept 2023] JSON file.
+            ul
+              li.fragment Share your results
+
+        section
+          section
+            h2 Required Readings Next session
+            ul
+              //- li.fragment
+              //-   a(href="https://www.codecademy.com/learn/learn-javascript" target="_blank") https://www.codecademy.com/learn/learn-javascript
+              li.fragment (Recommended - Optional)
+                a(href="https://www.youtube.com/watch?v=JxAXlJEmNMg&list=PLEzQf147-uEpvTa1bHDNlxUL2klHUMHJu&index=2", target="_blank") Crockford on Javascript series 1-6
+                span  (7+ -> Optional)
+              li.fragment (Recommended - Optional)
+                a(href="http://javascript.crockford.com/", target="_blank") http://javascript.crockford.com/
+
+  include ../partials/reveal_footer.pug
+

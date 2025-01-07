@@ -1,23 +1,12 @@
 doctype html
 html
   head
-    title ISIS-3710 Web Development, HTML
+    title CS5610 Web Development, HTML
     meta(charset='utf-8')
     meta(name='author', content='John Alexis Guerra Gomez')
-    meta(name='description', content='ISIS-3710 Web Development, Los Andes University, Colombia')
+    meta(name='description', content='CS5610 Web Development, Northeastern University, Oakland')
     meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui")
-    link(href='../lib/css/reveal.css', rel='stylesheet')
-    link(href='../lib/css/theme/simple.css', rel='stylesheet')
-    link(href='../lib/css/zenburn.css', rel='stylesheet')
-    link(href='../css/style.css', rel='stylesheet')
-    //- Printing and PDF exports -->
-    script.
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/css/print/pdf.css' : '../lib/css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    //- script(src='../lib/js/d3.min.js')
+    include ../partials/reveal_header.pug
   body
 
 
@@ -26,7 +15,8 @@ html
 
         section#title
           h2 HTML
-          img.logo(src="../img/universidad_de_los_andes_logo@2x.png" alt="Los Andes University")
+          img.logo(src="../img/seal_logotype-768x252.png" alt="Northeastern University")
+
 
           br
           p.small
@@ -40,15 +30,15 @@ html
             //- br
             //- span ja.guerrag en uniandes.edu.co
             //- br
-            //- a(href='http://twitter.com/duto_guerra') @duto_guerra
+            //- a(href='https://bsky.app/profile/johnguerra.bsky.social') @johnguerra.bsky.social
           //- p.small Use
           //-   strong  spacebar
           //-   |  and the arrows to advance slides
           br
           p.tiny Slides:
-            a(href='http://johnguerra.co/lectures/webDevelopment_fall2019/02_HTML/', target='_blank') http://johnguerra.co/lectures/webDevelopment_fall2019/02_HTML/
+            a(href='http://johnguerra.co/lectures/webDevelopment_spring2025/02_HTML/', target='_blank') http://johnguerra.co/lectures/webDevelopment_spring2025/02_HTML/
           p.tiny Class page:
-            a(href='http://johnguerra.co/classes/webDevelopment_fall2019/', target='_blank') http://johnguerra.co/classes/webDevelopment_fall2019/
+            a(href='http://johnguerra.co/classes/webDevelopment_spring_2025/', target='_blank') http://johnguerra.co/classes/webDevelopment_spring_2025/
 
 
         //- convert -density 150 -depth 8 -quality 85 ~/Dropbox/documentos/2016/andes/visual_analytics/lectures_tamara/05_rules-artery.pdf ./05_rules-artery.png
@@ -102,11 +92,18 @@ html
                 * Need setup
                 * Better linters!!
                 * I recommend [Sublime](https://www.sublimetext.com/)
+                * Or [VS Code](https://code.visualstudio.com/) with [Copilot](https://code.visualstudio.com/blogs/2023/03/30/vscode-copilot)
+
+          section
+            h2 Setting up locally
+            span.
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/Q5bbPEAOwYs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
         section
           section
             h2 Group Exercise
-            p We have the #[a(href="images/UniandesTweets.json") tweets] collected from yesterday for the class. Let's design a web page to show display and grade them.
+            p Here are some of the #[a(href="images/airbnb_sf_listings_500.json.zip") SF Airbnb listings for Sept 2023]. Let's design a web page to display them and rate them.
 
           section
             h2 Audience and objective
@@ -118,13 +115,14 @@ html
             h2.demo Resources
             p What do we have to show?
             ul.small
-              li.fragment Tweets
+              li.fragment Listing
                 ul
-                  li.fragment Handle
-                  li.fragment Text
-                  li.fragment User image
+                  li.fragment Host
+                  li.fragment Listing Info
+                  li.fragment Price
+                  li.fragment Images
                   li.fragment Date
-              li.fragment University Logo
+              li.fragment Neighborhood?
               li.fragment What else?
 
           section
@@ -169,51 +167,7 @@ html
 
 
 
-    script(src='../lib/js/head.min.js')
-    script(src='../lib/js/reveal.js')
-
-    script.
-      Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
-        rollingLinks: true,
-        transition: "convex",
-        //- width: "90%",
-        //- height: 1.0,
-        dependencies: [
-          // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
-          { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
-
-          // Interpret Markdown in <section> elements
-          { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-
-          // Syntax highlight for <code> elements
-          { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-
-          // Zoom in and out with Alt+click
-          { src: '../plugin/zoom-js/zoom.js', async: true },
-
-          // Speaker notes
-          { src: '../plugin/notes/notes.js', async: true },
-
-          //- // Remote control your reveal.js presentation using a touch device
-          //- { src: '../plugin/remotes/remotes.js', async: true },
-
-          //- // MathJax
-          //- { src: '../plugin/math/math.js', async: true }
-        ]
-      });
-    script.
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-72531610-1', 'auto');
-      ga('send', 'pageview');
+  include ../partials/reveal_footer.pug
 
 
 
