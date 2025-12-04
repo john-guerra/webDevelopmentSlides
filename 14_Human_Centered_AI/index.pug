@@ -1,0 +1,401 @@
+doctype html
+html
+  head
+    title Human Centered AI - CS5610 Web Development
+    meta(charset='utf-8')
+    meta(name='author', content='John Alexis Guerra Gomez')
+    meta(name='description', content='Human Centered AI - CS5610 Web Development, Northeastern University')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui")
+
+    include ../partials/reveal_header.pug
+  body
+
+    .reveal
+      .slides
+
+        //- ============== TITLE & INTRODUCTION ==============
+        section#title
+          h1 Human Centered AI
+          h3 A better path forward
+          br
+          p.small
+            a(href='http://johnguerra.co/', target='_blank') #[strong John Alexis Guerra Gómez]
+          br
+          span jguerra at northeastern.edu
+          br
+          a(href='https://bsky.app/profile/johnguerra.bsky.social') @johnguerra.bsky.social
+          br
+          p.tiny Slides:
+            a(href='http://johnguerra.co/lectures/webDevelopment_fall2025/14_Human_Centered_AI/', target='_blank') http://johnguerra.co/lectures/webDevelopment_fall2025/14_Human_Centered_AI/
+
+        section
+          section
+            h2 TLDR
+            ul
+              li.fragment AI should be a #[strong tool]
+              li.fragment AI should #[strong empower] humans
+              li.fragment Keep #[strong human in the loop]
+
+        //- ============== THE PROBLEM - AI TO REPLACE US ==============
+        section
+          section
+            h1 The Problem
+            h3 AI to Replace Us?
+
+          section
+            h2 What's AI?
+
+          section
+            h2 Traditional Programming
+            img(src="images/traditional_programming.png" alt="Traditional Programming: Data + Rules = Answers")
+            p.small Data + Rules → Answers
+
+          section
+            h2 Machine Learning
+            img(src="images/machine_learning.png" alt="Machine Learning: Data + Answers = Rules")
+            p.small Data + Answers → Rules (Model)
+
+          section
+            h2 ML produces Models
+            ul
+              li.fragment Not explicit rules
+              li.fragment Statistical patterns
+              li.fragment "Black box" predictions
+
+          section
+            h2 ML Training Flow
+            img(src="images/ml_training_flow.png" alt="Training → Model → Prediction")
+            ul
+              li.fragment Training data → Model
+              li.fragment New input → Prediction
+
+          section
+            h2 LLM Training
+            ul
+              li.fragment Trained on #[strong all the internet]
+              li.fragment Learns #[strong common sequences]
+              li.fragment Runs on massive #[strong GPUs]
+              li.fragment Responds to #[strong prompts]
+
+        //- ============== AI CONCERNS & MISUSE ==============
+        section
+          section
+            h1 AI Concerns
+
+          section
+            h2 AI Doomsday?
+            ul
+              li.fragment "AI will take all jobs"
+              li.fragment "End of humanity"
+              li.fragment Open letters to pause AI
+              li.fragment But... is this the real problem?
+
+          section
+            h2 AI as the Solution?
+            img(src="images/zuckerberg_congress.png" alt="Zuckerberg at Congress")
+            p.small Zuckerberg after Cambridge Analytica: "AI will fix it"
+            a.tiny(target="_blank" href="https://www.youtube.com/watch?v=k-jGs5kyuXo") YouTube: Zuckerberg Senate Hearing
+
+          section
+            h2 AI Filters Facebook Now
+            ul
+              li.fragment Millions of posts moderated daily
+              li.fragment Automated content decisions
+              li.fragment But is it working?
+
+          section
+            h2 "My grades are phishy?"
+            img(src="images/phishy_grades.png" alt="Phishing detection false positive on grades")
+            p.small AI flagging legitimate content as spam
+
+          section
+            h2 Autocomplete Bias
+            img(src="images/aoc_autocomplete.png" alt="AOC photo autocomplete bias")
+            p.small Google Photos autocomplete showing bias
+
+          section
+            h2 Adobe Generative Fill Bias
+            img(src="images/adobe_generative_fill.png" alt="Adobe Photoshop generative fill bias")
+            p.small AI generating biased content
+
+          section
+            h2 Personal Examples
+            img(src="images/personal_bias_example.png" alt="Personal photo examples showing bias")
+
+          section
+            h2 VioGen - AI as Solution?
+            img(src="images/viogen.png" alt="VioGen algorithm")
+            p.small Spain's algorithm to predict domestic violence risk
+
+          section
+            h2 The Macarena Tragedy
+            ul
+              li.fragment VioGen rated her risk as "low"
+              li.fragment She was murdered by her ex-partner
+              li.fragment Algorithm failed to protect her
+            a.tiny(target="_blank" href="https://www.youtube.com/watch?v=tFPVuKw4iDY") DW Documentary
+
+        //- ============== HUMAN-CENTERED AI FRAMEWORK ==============
+        section
+          section
+            h1 Human-Centered AI
+            h3 A Framework
+            
+          section
+            h2 Automation Spectrum
+            img(src="images/automation_spectrum.png" alt="Human ↔ Robot spectrum")
+            p It's #[strong NOT] binary!
+            p.small Human ← → Full Automation
+
+          section
+            h2 Ben Shneiderman
+            img(src="images/ben_shneiderman.png" alt="Ben Shneiderman")
+            a.tiny(target="_blank" href="https://www.youtube.com/watch?v=3QAyI3i9gWQ") YouTube: HCAI Talk
+
+          section
+            h2 HCAI Framework
+            img(src="images/hcai_framework.png" alt="HCAI Framework: Human Control × Computer Automation")
+            p.small High Human Control + High Computer Automation = Sweet Spot
+
+        //- ============== VISUALIZATION FOR HUMAN-IN-THE-LOOP ==============
+        section
+          section
+            h1 Visualization
+            h3 Keeping Human in the Loop
+
+          section
+            h2 Starting Point
+            img(src="images/data_user_start.png" alt="Data + User")
+            p Data + User
+
+          section
+            h2 Traditional ML Approach
+            img(src="images/ml_black_box.png" alt="Data → ML → Outliers/Clusters")
+            p.small Data → ML Black Box → Results
+            p User is confused 😕
+
+          section
+            h2 Add Visualization
+            img(src="images/ml_with_viz.png" alt="Data → ML → Visualization")
+            p.small Data → ML → #[strong Information Visualization]
+            p User understands better!
+
+          section
+            h2 Full Loop
+            img(src="images/full_loop.png" alt="Data ↔ ML ↔ Visualization ↔ User")
+            p.small Data ↔ ML ↔ Visualization ↔ User
+            p Bidirectional feedback!
+
+          section
+            h2 Transparent ML
+            img(src="images/transparent_ml.png" alt="Gears instead of black box")
+            p.small Expose the gears, not a black box
+
+        //- ============== EXAMPLES - VISUALIZATION TOOLS ==============
+        section
+          section
+            h1 Visualization Examples
+
+          section
+            h3.demo Twitter Influentials
+            iframe.blocks(data-src="https://johnguerra.co/viz/influentials/story/")
+            a.tiny(target="_blank" href="https://johnguerra.co/viz/influentials/story/") johnguerra.co/viz/influentials/story/
+
+          section
+            h3.demo Election Results Bogota 2022
+            iframe.blocks(data-src="https://johnguerra.co/viz/resultadosPrimeraVuelta2022Bogota/")
+            a.tiny(target="_blank" href="https://johnguerra.co/viz/resultadosPrimeraVuelta2022Bogota/") johnguerra.co/viz/resultadosPrimeraVuelta2022Bogota/
+
+          section
+            h3.demo Colombia Election Second Round
+            iframe.blocks(data-src="https://johnguerra.co/viz/resultadosSegundaVuelta2022/")
+            a.tiny(target="_blank" href="https://johnguerra.co/viz/resultadosSegundaVuelta2022/") johnguerra.co/viz/resultadosSegundaVuelta2022/
+
+          section
+            h2 Departamentos Sorpresa
+            img(src="images/departamentos_sorpresa.png" alt="Surprising departments in election")
+            p.small Unexpected voting patterns revealed through visualization
+
+        //- ============== DIMENSIONALITY REDUCTION ==============
+        section
+          section
+            h1 Dimensionality Reduction
+            h3 Seeing High-Dimensional Data
+
+          section
+            h2 The Curse of Dimensionality
+            ul
+              li.fragment Data often has many dimensions
+              li.fragment Hard to visualize > 3 dimensions
+              li.fragment Patterns hidden in high-D space
+
+          section
+            h2 High Dimensional Data
+            img(src="images/fda_nutrients.png" alt="FDA Nutrients table")
+            p.small FDA Nutrients: Many columns!
+
+          section
+            h2 Some Dimensions
+            img(src="images/some_dimensions.png" alt="Scatterplot with a few dimensions")
+            p.small Pick 2-3 dimensions → Scatterplot
+
+          section
+            h2 But I Want It All!
+            p How do we see #[strong all] dimensions?
+
+          section
+            h2 SPLOM
+            img(src="images/splom.png" alt="Scatterplot Matrix - 7 dimensions")
+            p.small Scatterplot Matrix: Show all pairs
+
+          section
+            h2 Parallel Coordinates
+            img(src="images/parallel_coordinates.png" alt="Parallel Coordinates visualization")
+            p.small Each line is a data point
+
+          section
+            h3.demo NAVIO
+            iframe.blocks(data-src="https://navio.dev")
+            a.tiny(target="_blank" href="https://navio.dev") navio.dev
+
+          section
+            h2 Dimensionality Reduction
+            img(src="images/dim_reduction_concept.png" alt="Dimensionality Reduction concept")
+            p.small Project high-D → low-D while preserving structure
+
+          section
+            h2 UMAP
+            img(src="images/umap_viz.png" alt="UMAP visualization")
+            p.small Uniform Manifold Approximation and Projection
+
+          section
+            h2 How DR is Compared
+            img(src="images/dr_comparison.png" alt="Nature paper comparing DR methods")
+            a.tiny(target="_blank" href="https://www.nature.com/articles/s41467-019-13056-x") Nature: Comparing DR Methods
+
+          section
+            h2 Hyperparameters Matter!
+            img(src="images/tsne_hyperparameters.png" alt="Distill.pub t-SNE article")
+            a.tiny(target="_blank" href="https://distill.pub/2016/misread-tsne/") distill.pub/2016/misread-tsne/
+
+          section
+            h2 UMAP Hyperparameters
+            img(src="images/umap_hyperparameters.png" alt="UMAP hyperparameter comparison")
+            p.small Different parameters → Different results!
+
+          section
+            h3.demo UMAP Playground
+            iframe.blocks(data-src="https://johnguerra.co/viz/umapPlayground/")
+            a.tiny(target="_blank" href="https://johnguerra.co/viz/umapPlayground/") johnguerra.co/viz/umapPlayground/
+
+        //- ============== EMBEDDINGS & LLMs ==============
+        section
+          section
+            h1 Embeddings
+            h3 How LLMs See the World
+
+          section
+            h2 LLM Training Revisited
+            img(src="images/llm_training.png" alt="LLM Training/Prediction diagram")
+            p.small Text → Embeddings → Transformer → Output
+
+          section
+            h2 What are Embeddings?
+            img(src="images/embeddings_concept.png" alt="King - Man + Woman = Queen")
+            ul
+              li.fragment Words as vectors
+              li.fragment Similar words = nearby vectors
+              li.fragment King - Man + Woman ≈ Queen
+
+          section
+            h2 Actual Embeddings
+            img(src="images/actual_embeddings.png" alt="Real embedding visualization")
+            p.small High-dimensional vectors projected to 2D
+
+          section
+            h3.demo Embeddings with Transformers.js
+            iframe.blocks(data-src="https://observablehq.com/@john-guerra/embeddings-playground")
+            a.tiny(target="_blank" href="https://observablehq.com/@john-guerra/embeddings-playground") Observable: Embeddings Playground
+
+          section
+            h3.demo Embedding Projector
+            iframe.blocks(data-src="https://projector.tensorflow.org/")
+            a.tiny(target="_blank" href="https://projector.tensorflow.org/") projector.tensorflow.org
+
+          section
+            h2 The Pipeline
+            img(src="images/embedding_pipeline.png" alt="Documents → Embeddings → Dim Red → Visualization")
+            p.small Documents → Embeddings → Dim Reduction → Visualization
+
+        //- ============== PRACTICAL APPLICATIONS ==============
+        section
+          section
+            h1 Practical Applications
+
+          section
+            h3.demo CHI 2024 Papers Explorer
+            iframe.blocks(data-src="https://johnguerra.co/viz/chi2024Papers/")
+            a.tiny(target="_blank" href="https://johnguerra.co/viz/chi2024Papers/") johnguerra.co/viz/chi2024Papers/
+
+          section
+            h2 CHI 2024 Features
+            ul
+              li.fragment Search by embedding similarity
+              li.fragment Cluster papers by topic
+              li.fragment Interactive exploration
+              li.fragment Human stays in control!
+
+          section
+            h3.demo Dimensionality Reduction Observable
+            iframe.blocks(data-src="https://observablehq.com/@john-guerra/dimensionality-reduction")
+            a.tiny(target="_blank" href="https://observablehq.com/@john-guerra/dimensionality-reduction") Observable: Dimensionality Reduction
+
+          section
+            h2 How to Build Them
+            h3 Reactive Widgets
+
+          section
+            h3.demo Reactive Widgets
+            iframe.blocks(data-src="https://observablehq.com/@johnguerra/reactive-widgets")
+            a.tiny(target="_blank" href="https://observablehq.com/@johnguerra/reactive-widgets") Observable: Reactive Widgets
+
+        //- ============== CONCLUSION ==============
+        section
+          section
+            h1 Key Takeaways
+
+          section
+            h2 Remember
+            ul
+              li.fragment AI is a #[strong tool], not a replacement
+              li.fragment Keep #[strong humans in the loop]
+              li.fragment Use #[strong visualization] for transparency
+              li.fragment #[strong Hyperparameters] matter!
+              li.fragment Design for #[strong human control] + automation
+
+          section
+            h3.demo HCI Collab
+            img(src="images/hci_collab.png" alt="HCI Collaboration visualization")
+
+          section
+            h2 Resources
+            ul
+              li
+                a(href="https://navio.dev" target="_blank") NAVIO - navio.dev
+              li
+                a(href="https://johnguerra.co/viz/umapPlayground/" target="_blank") UMAP Playground
+              li
+                a(href="https://projector.tensorflow.org/" target="_blank") TensorFlow Embedding Projector
+              li
+                a(href="https://distill.pub/2016/misread-tsne/" target="_blank") How to Use t-SNE Effectively
+
+          section
+            h1 Thank You!
+            br
+            p.small
+              a(href='http://johnguerra.co/', target='_blank') johnguerra.co
+            p.small
+              a(href='https://bsky.app/profile/johnguerra.bsky.social') @johnguerra.bsky.social
+
+
+    include ../partials/reveal_footer.pug

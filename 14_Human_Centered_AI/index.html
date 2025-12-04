@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Human Centered AI - CS5610 Web Development</title>
+    <meta charset="utf-8">
+    <meta name="author" content="John Alexis Guerra Gomez">
+    <meta name="description" content="Human Centered AI - CS5610 Web Development, Northeastern University">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link href="../lib/reset.css" rel="stylesheet">
+    <link href="../lib/reveal.css" rel="stylesheet">
+    <link href="../lib/theme/white.css" rel="stylesheet" id="theme">
+    <link rel="stylesheet" href="../lib/plugin/highlight/monokai.css">
+    <link href="../css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section id="title">
+          <h1>Human Centered AI</h1>
+          <h3>A better path forward</h3><br>
+          <p class="small"><a href="http://johnguerra.co/" target="_blank"><strong>John Alexis Guerra Gómez</strong></a></p><br><span>jguerra at northeastern.edu</span><br><a href="https://bsky.app/profile/johnguerra.bsky.social">@johnguerra.bsky.social</a><br>
+          <p class="tiny">Slides:<a href="http://johnguerra.co/lectures/webDevelopment_fall2025/14_Human_Centered_AI/" target="_blank">http://johnguerra.co/lectures/webDevelopment_fall2025/14_Human_Centered_AI/</a></p>
+        </section>
+        <section>
+          <section>
+            <h2>TLDR</h2>
+            <ul>
+              <li class="fragment">AI should be a <strong>tool</strong></li>
+              <li class="fragment">AI should <strong>empower</strong> humans</li>
+              <li class="fragment">Keep <strong>human in the loop</strong></li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>The Problem</h1>
+            <h3>AI to Replace Us?</h3>
+          </section>
+          <section>
+            <h2>What's AI?</h2>
+          </section>
+          <section>
+            <h2>Traditional Programming</h2><img src="images/traditional_programming.png" alt="Traditional Programming: Data + Rules = Answers">
+            <p class="small">Data + Rules → Answers</p>
+          </section>
+          <section>
+            <h2>Machine Learning</h2><img src="images/machine_learning.png" alt="Machine Learning: Data + Answers = Rules">
+            <p class="small">Data + Answers → Rules (Model)</p>
+          </section>
+          <section>
+            <h2>ML produces Models</h2>
+            <ul>
+              <li class="fragment">Not explicit rules</li>
+              <li class="fragment">Statistical patterns</li>
+              <li class="fragment">"Black box" predictions</li>
+            </ul>
+          </section>
+          <section>
+            <h2>ML Training Flow</h2><img src="images/ml_training_flow.png" alt="Training → Model → Prediction">
+            <ul>
+              <li class="fragment">Training data → Model</li>
+              <li class="fragment">New input → Prediction</li>
+            </ul>
+          </section>
+          <section>
+            <h2>LLM Training</h2>
+            <ul>
+              <li class="fragment">Trained on <strong>all the internet</strong></li>
+              <li class="fragment">Learns <strong>common sequences</strong></li>
+              <li class="fragment">Runs on massive <strong>GPUs</strong></li>
+              <li class="fragment">Responds to <strong>prompts</strong></li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>AI Concerns</h1>
+          </section>
+          <section>
+            <h2>AI Doomsday?</h2>
+            <ul>
+              <li class="fragment">"AI will take all jobs"</li>
+              <li class="fragment">"End of humanity"</li>
+              <li class="fragment">Open letters to pause AI</li>
+              <li class="fragment">But... is this the real problem?</li>
+            </ul>
+          </section>
+          <section>
+            <h2>AI as the Solution?</h2><img src="images/zuckerberg_congress.png" alt="Zuckerberg at Congress">
+            <p class="small">Zuckerberg after Cambridge Analytica: "AI will fix it"</p><a class="tiny" target="_blank" href="https://www.youtube.com/watch?v=k-jGs5kyuXo">YouTube: Zuckerberg Senate Hearing</a>
+          </section>
+          <section>
+            <h2>AI Filters Facebook Now</h2>
+            <ul>
+              <li class="fragment">Millions of posts moderated daily</li>
+              <li class="fragment">Automated content decisions</li>
+              <li class="fragment">But is it working?</li>
+            </ul>
+          </section>
+          <section>
+            <h2>"My grades are phishy?"</h2><img src="images/phishy_grades.png" alt="Phishing detection false positive on grades">
+            <p class="small">AI flagging legitimate content as spam</p>
+          </section>
+          <section>
+            <h2>Autocomplete Bias</h2><img src="images/aoc_autocomplete.png" alt="AOC photo autocomplete bias">
+            <p class="small">Google Photos autocomplete showing bias</p>
+          </section>
+          <section>
+            <h2>Adobe Generative Fill Bias</h2><img src="images/adobe_generative_fill.png" alt="Adobe Photoshop generative fill bias">
+            <p class="small">AI generating biased content</p>
+          </section>
+          <section>
+            <h2>Personal Examples</h2><img src="images/personal_bias_example.png" alt="Personal photo examples showing bias">
+          </section>
+          <section>
+            <h2>VioGen - AI as Solution?</h2><img src="images/viogen.png" alt="VioGen algorithm">
+            <p class="small">Spain's algorithm to predict domestic violence risk</p>
+          </section>
+          <section>
+            <h2>The Macarena Tragedy</h2>
+            <ul>
+              <li class="fragment">VioGen rated her risk as "low"</li>
+              <li class="fragment">She was murdered by her ex-partner</li>
+              <li class="fragment">Algorithm failed to protect her</li>
+            </ul><a class="tiny" target="_blank" href="https://www.youtube.com/watch?v=tFPVuKw4iDY">DW Documentary</a>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>Human-Centered AI</h1>
+            <h3>A Framework</h3>
+          </section>
+          <section>
+            <h2>Automation Spectrum</h2><img src="images/automation_spectrum.png" alt="Human ↔ Robot spectrum">
+            <p>It's <strong>NOT</strong> binary!</p>
+            <p class="small">Human ← → Full Automation</p>
+          </section>
+          <section>
+            <h2>Ben Shneiderman</h2><img src="images/ben_shneiderman.png" alt="Ben Shneiderman"><a class="tiny" target="_blank" href="https://www.youtube.com/watch?v=3QAyI3i9gWQ">YouTube: HCAI Talk</a>
+          </section>
+          <section>
+            <h2>HCAI Framework</h2><img src="images/hcai_framework.png" alt="HCAI Framework: Human Control × Computer Automation">
+            <p class="small">High Human Control + High Computer Automation = Sweet Spot</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>Visualization</h1>
+            <h3>Keeping Human in the Loop</h3>
+          </section>
+          <section>
+            <h2>Starting Point</h2><img src="images/data_user_start.png" alt="Data + User">
+            <p>Data + User</p>
+          </section>
+          <section>
+            <h2>Traditional ML Approach</h2><img src="images/ml_black_box.png" alt="Data → ML → Outliers/Clusters">
+            <p class="small">Data → ML Black Box → Results</p>
+            <p>User is confused 😕</p>
+          </section>
+          <section>
+            <h2>Add Visualization</h2><img src="images/ml_with_viz.png" alt="Data → ML → Visualization">
+            <p class="small">Data → ML → <strong>Information Visualization</strong></p>
+            <p>User understands better!</p>
+          </section>
+          <section>
+            <h2>Full Loop</h2><img src="images/full_loop.png" alt="Data ↔ ML ↔ Visualization ↔ User">
+            <p class="small">Data ↔ ML ↔ Visualization ↔ User</p>
+            <p>Bidirectional feedback!</p>
+          </section>
+          <section>
+            <h2>Transparent ML</h2><img src="images/transparent_ml.png" alt="Gears instead of black box">
+            <p class="small">Expose the gears, not a black box</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>Visualization Examples</h1>
+          </section>
+          <section>
+            <h3 class="demo">Twitter Influentials</h3>
+            <iframe class="blocks" data-src="https://johnguerra.co/viz/influentials/story/"></iframe><a class="tiny" target="_blank" href="https://johnguerra.co/viz/influentials/story/">johnguerra.co/viz/influentials/story/</a>
+          </section>
+          <section>
+            <h3 class="demo">Election Results Bogota 2022</h3>
+            <iframe class="blocks" data-src="https://johnguerra.co/viz/resultadosPrimeraVuelta2022Bogota/"></iframe><a class="tiny" target="_blank" href="https://johnguerra.co/viz/resultadosPrimeraVuelta2022Bogota/">johnguerra.co/viz/resultadosPrimeraVuelta2022Bogota/</a>
+          </section>
+          <section>
+            <h3 class="demo">Colombia Election Second Round</h3>
+            <iframe class="blocks" data-src="https://johnguerra.co/viz/resultadosSegundaVuelta2022/"></iframe><a class="tiny" target="_blank" href="https://johnguerra.co/viz/resultadosSegundaVuelta2022/">johnguerra.co/viz/resultadosSegundaVuelta2022/</a>
+          </section>
+          <section>
+            <h2>Departamentos Sorpresa</h2><img src="images/departamentos_sorpresa.png" alt="Surprising departments in election">
+            <p class="small">Unexpected voting patterns revealed through visualization</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>Dimensionality Reduction</h1>
+            <h3>Seeing High-Dimensional Data</h3>
+          </section>
+          <section>
+            <h2>The Curse of Dimensionality</h2>
+            <ul>
+              <li class="fragment">Data often has many dimensions</li>
+              <li class="fragment">Hard to visualize > 3 dimensions</li>
+              <li class="fragment">Patterns hidden in high-D space</li>
+            </ul>
+          </section>
+          <section>
+            <h2>High Dimensional Data</h2><img src="images/fda_nutrients.png" alt="FDA Nutrients table">
+            <p class="small">FDA Nutrients: Many columns!</p>
+          </section>
+          <section>
+            <h2>Some Dimensions</h2><img src="images/some_dimensions.png" alt="Scatterplot with a few dimensions">
+            <p class="small">Pick 2-3 dimensions → Scatterplot</p>
+          </section>
+          <section>
+            <h2>But I Want It All!</h2>
+            <p>How do we see <strong>all</strong> dimensions?</p>
+          </section>
+          <section>
+            <h2>SPLOM</h2><img src="images/splom.png" alt="Scatterplot Matrix - 7 dimensions">
+            <p class="small">Scatterplot Matrix: Show all pairs</p>
+          </section>
+          <section>
+            <h2>Parallel Coordinates</h2><img src="images/parallel_coordinates.png" alt="Parallel Coordinates visualization">
+            <p class="small">Each line is a data point</p>
+          </section>
+          <section>
+            <h3 class="demo">NAVIO</h3>
+            <iframe class="blocks" data-src="https://navio.dev"></iframe><a class="tiny" target="_blank" href="https://navio.dev">navio.dev</a>
+          </section>
+          <section>
+            <h2>Dimensionality Reduction</h2><img src="images/dim_reduction_concept.png" alt="Dimensionality Reduction concept">
+            <p class="small">Project high-D → low-D while preserving structure</p>
+          </section>
+          <section>
+            <h2>UMAP</h2><img src="images/umap_viz.png" alt="UMAP visualization">
+            <p class="small">Uniform Manifold Approximation and Projection</p>
+          </section>
+          <section>
+            <h2>How DR is Compared</h2><img src="images/dr_comparison.png" alt="Nature paper comparing DR methods"><a class="tiny" target="_blank" href="https://www.nature.com/articles/s41467-019-13056-x">Nature: Comparing DR Methods</a>
+          </section>
+          <section>
+            <h2>Hyperparameters Matter!</h2><img src="images/tsne_hyperparameters.png" alt="Distill.pub t-SNE article"><a class="tiny" target="_blank" href="https://distill.pub/2016/misread-tsne/">distill.pub/2016/misread-tsne/</a>
+          </section>
+          <section>
+            <h2>UMAP Hyperparameters</h2><img src="images/umap_hyperparameters.png" alt="UMAP hyperparameter comparison">
+            <p class="small">Different parameters → Different results!</p>
+          </section>
+          <section>
+            <h3 class="demo">UMAP Playground</h3>
+            <iframe class="blocks" data-src="https://johnguerra.co/viz/umapPlayground/"></iframe><a class="tiny" target="_blank" href="https://johnguerra.co/viz/umapPlayground/">johnguerra.co/viz/umapPlayground/</a>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>Embeddings</h1>
+            <h3>How LLMs See the World</h3>
+          </section>
+          <section>
+            <h2>LLM Training Revisited</h2><img src="images/llm_training.png" alt="LLM Training/Prediction diagram">
+            <p class="small">Text → Embeddings → Transformer → Output</p>
+          </section>
+          <section>
+            <h2>What are Embeddings?</h2><img src="images/embeddings_concept.png" alt="King - Man + Woman = Queen">
+            <ul>
+              <li class="fragment">Words as vectors</li>
+              <li class="fragment">Similar words = nearby vectors</li>
+              <li class="fragment">King - Man + Woman ≈ Queen</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Actual Embeddings</h2><img src="images/actual_embeddings.png" alt="Real embedding visualization">
+            <p class="small">High-dimensional vectors projected to 2D</p>
+          </section>
+          <section>
+            <h3 class="demo">Embeddings with Transformers.js</h3>
+            <iframe class="blocks" data-src="https://observablehq.com/@john-guerra/embeddings-playground"></iframe><a class="tiny" target="_blank" href="https://observablehq.com/@john-guerra/embeddings-playground">Observable: Embeddings Playground</a>
+          </section>
+          <section>
+            <h3 class="demo">Embedding Projector</h3>
+            <iframe class="blocks" data-src="https://projector.tensorflow.org/"></iframe><a class="tiny" target="_blank" href="https://projector.tensorflow.org/">projector.tensorflow.org</a>
+          </section>
+          <section>
+            <h2>The Pipeline</h2><img src="images/embedding_pipeline.png" alt="Documents → Embeddings → Dim Red → Visualization">
+            <p class="small">Documents → Embeddings → Dim Reduction → Visualization</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>Practical Applications</h1>
+          </section>
+          <section>
+            <h3 class="demo">CHI 2024 Papers Explorer</h3>
+            <iframe class="blocks" data-src="https://johnguerra.co/viz/chi2024Papers/"></iframe><a class="tiny" target="_blank" href="https://johnguerra.co/viz/chi2024Papers/">johnguerra.co/viz/chi2024Papers/</a>
+          </section>
+          <section>
+            <h2>CHI 2024 Features</h2>
+            <ul>
+              <li class="fragment">Search by embedding similarity</li>
+              <li class="fragment">Cluster papers by topic</li>
+              <li class="fragment">Interactive exploration</li>
+              <li class="fragment">Human stays in control!</li>
+            </ul>
+          </section>
+          <section>
+            <h3 class="demo">Dimensionality Reduction Observable</h3>
+            <iframe class="blocks" data-src="https://observablehq.com/@john-guerra/dimensionality-reduction"></iframe><a class="tiny" target="_blank" href="https://observablehq.com/@john-guerra/dimensionality-reduction">Observable: Dimensionality Reduction</a>
+          </section>
+          <section>
+            <h2>How to Build Them</h2>
+            <h3>Reactive Widgets</h3>
+          </section>
+          <section>
+            <h3 class="demo">Reactive Widgets</h3>
+            <iframe class="blocks" data-src="https://observablehq.com/@johnguerra/reactive-widgets"></iframe><a class="tiny" target="_blank" href="https://observablehq.com/@johnguerra/reactive-widgets">Observable: Reactive Widgets</a>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>Key Takeaways</h1>
+          </section>
+          <section>
+            <h2>Remember</h2>
+            <ul>
+              <li class="fragment">AI is a <strong>tool</strong>, not a replacement</li>
+              <li class="fragment">Keep <strong>humans in the loop</strong></li>
+              <li class="fragment">Use <strong>visualization</strong> for transparency</li>
+              <li class="fragment"><strong>Hyperparameters</strong> matter!</li>
+              <li class="fragment">Design for <strong>human control</strong> + automation</li>
+            </ul>
+          </section>
+          <section>
+            <h3 class="demo">HCI Collab</h3><img src="images/hci_collab.png" alt="HCI Collaboration visualization">
+          </section>
+          <section>
+            <h2>Resources</h2>
+            <ul>
+              <li><a href="https://navio.dev" target="_blank">NAVIO - navio.dev</a></li>
+              <li><a href="https://johnguerra.co/viz/umapPlayground/" target="_blank">UMAP Playground</a></li>
+              <li><a href="https://projector.tensorflow.org/" target="_blank">TensorFlow Embedding Projector</a></li>
+              <li><a href="https://distill.pub/2016/misread-tsne/" target="_blank">How to Use t-SNE Effectively</a></li>
+            </ul>
+          </section>
+          <section>
+            <h1>Thank You!</h1><br>
+            <p class="small"><a href="http://johnguerra.co/" target="_blank">johnguerra.co</a></p>
+            <p class="small"><a href="https://bsky.app/profile/johnguerra.bsky.social">@johnguerra.bsky.social</a></p>
+          </section>
+        </section>
+      </div>
+    </div>
+    <script src="../lib/reveal.js"></script>
+    <script src="../lib/plugin/markdown/markdown.js"></script>
+    <script src="../lib/plugin/highlight/highlight.js"></script>
+    <script src="../lib/plugin/notes/notes.js"></script>
+    <script src="../lib/plugin/math/math.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: "convex",
+        //- height: 1.0,
+      
+        //- // Fill the viewport width and height
+        //- width: "100%",
+        //- height: "100%",
+        
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+      });
+      
+    </script>
+  </body>
+</html>
