@@ -1,0 +1,184 @@
+doctype html
+html
+  head
+    title CS5610 Web Development, Accessibility
+    meta(charset='utf-8')
+    meta(name='author', content='John Alexis Guerra Gomez')
+    meta(name='description', content='CS5610 Web Development, Northeastern University, Oakland')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui")
+include ../partials/reveal_header.pug
+  body
+
+
+    .reveal
+      .slides
+
+        section#title
+          h2 Accessibility
+          img.logo(src="../img/seal_logotype-768x252.png" alt="Northeastern University")
+
+
+          br
+          p.small
+            a(href='http://johnguerra.co/', target='_blank') #[strong John Alexis Guerra Gómez]
+
+          p.tiny.email jguerra[at}northeastern.edu |
+            a(href='http://twitter.com/duto_guerra' , target='_blank')  @duto_guerra
+            br
+
+
+            //- br
+            //- span ja.guerrag en uniandes.edu.co
+            //- br
+            //- a(href='https://bsky.app/profile/johnguerra.bsky.social') @johnguerra.bsky.social
+          p.small Based on #[a(href="https://developers.google.com/web/fundamentals/accessibility") Google Web Fundamentals Guide ]
+          //-   strong  spacebar
+          //-   |  and the arrows to advance slides
+          br
+          p.tiny Slides:
+            a(href='http://johnguerra.co/lectures/webDevelopment_fall2025/09_Accessibility/', target='_blank') http://johnguerra.co/lectures/webDevelopment_fall2025/09_Accessibility/
+          p.tiny Class page:
+            a(href='http://johnguerra.co/classes/webDevelopment_fall_2025/', target='_blank') http://johnguerra.co/classes/webDevelopment_fall_2025/
+
+
+        //- convert -density 150 -depth 8 -quality 85 ~/Dropbox/documentos/2016/andes/visual_analytics/lectures_tamara/05_rules-artery.pdf ./05_rules-artery.png
+        section
+          section
+            h2 Readings discussion
+            ul
+              li.fragment questions?
+
+        section
+          section
+            h1 Web Accessibility
+            p.fragment or the very basics of it
+
+          section
+            p Create affordances to help people with disabilities.
+
+          section
+            h2 Which dissabilities?
+            p We all have dissabilities!
+            ul
+              li.fragment Situational, Temporary, Permanent
+              li.fragment Visual, motor, hearing, and cognitive
+
+          section
+            h2 Standards
+            a(href="https://www.w3.org/TR/WCAG20/") Web Content Accessibility Guidelines (WCAG) 2.0
+            a(href="https://webaim.org/standards/wcag/checklist")  WebAIM (Web Accessibility in Mind) checklist
+
+
+        section
+          section
+            h1 Focus
+            p An user should be able to use the site with the keyboard (rubric)
+
+          section
+            h2 Exercise
+            a(href="http://udacity.github.io/ud891/lesson2-focus/01-basic-form/") Airline site mockup page
+
+
+          section
+            h2 Focus in React
+            p Send the focus to the right element after mounting
+            p #[code useEffect] or #[code ComponentDidMount]
+
+          section
+            h2 DOM order matters
+            p Make sure your html elements are in the semantic order (rubric)
+
+          section
+            h2 Tabindex
+            ul
+              li Use it for specific behaviour
+              li Avoid it on headers and content elements
+
+          section
+            h2 Offscreen elements
+            p Shouldn't be focusable
+
+          section
+            h2 Keyboard traps
+            p A component that captures the tab behaviour
+
+          section
+            h2 Modals
+            ul
+              li Esc closes
+              li Tab changes options
+              li On close change focus back
+
+        section
+          section
+            h1 Semantics
+
+          section
+            h2 Order
+            ul
+              li Use #[code h1, h2, h3] to manage hierarchy
+              li DOM order matters
+
+          section
+            h2 Alt text
+            ul
+              li All images should have an #[code alt] text
+              li Decoration images should use #[code alt="" ]
+          section
+            h2 Form controls
+            ul
+              li Use standard elements
+              li Use
+                br
+                code.
+                  &lt;label&gt;Text: &lt;input(type=&quot;text&quot;)/&gt;&lt;/label&gt;
+
+          section
+            h2 Aria roles
+            a(href="https://www.w3.org/TR/wai-aria/") ARIA spec
+            br
+            a(href="https://developers.google.com/web/fundamentals/accessibility/semantics-aria") Google's guide
+
+          section
+            h2 Use standard HTML elements!
+
+
+        section
+          section
+            h1 Tools
+
+          section
+            h2 Screen readers
+            ul
+              li
+                a(href="http://www.chromevox.com/tutorial/") Chromevox
+              li
+                a(href="https://www.freedomscientific.com/products/software/jaws/") Jaws (Windows)
+              li
+                a(href="https://www.imore.com/how-enable-voiceover-mac") VoiceOver (Mac)
+              li
+                a(href="https://www.nvaccess.org/") NVDA (Windows - Free)
+
+          section
+            h2 Validators
+
+            ul
+              li Lighthouse (Chrome)
+              li
+                a(href="https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd/related?hl=en-US") Deque's Axe (Chrome) (Rubric 0% errors)
+              li Firefox Accessibility
+              li
+                a(href="https://wave.webaim.org/") WebAIM's Wave
+              li
+                a(href="https://developers.google.com/web/fundamentals/accessibility/how-to-review") Google's Accessibility Guide: How to do an a11y review
+
+
+
+
+
+
+
+  include ../partials/reveal_footer.pug
+
+
+

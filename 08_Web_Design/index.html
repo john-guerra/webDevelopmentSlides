@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CS5610 Web Development, Web Design</title>
+    <meta charset="utf-8">
+    <meta name="author" content="John Alexis Guerra Gomez">
+    <meta name="description" content="CS5610 Web Development, Northeastern University, Oakland">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  </head>
+</html>
+<link href="../lib/reset.css" rel="stylesheet">
+<link href="../lib/reveal.css" rel="stylesheet">
+<link href="../lib/theme/white.css" rel="stylesheet" id="theme">
+<link rel="stylesheet" href="../lib/plugin/highlight/monokai.css">
+<link href="../css/style.css" rel="stylesheet">
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section id="title">
+        <h2>Web Design</h2><img class="logo" src="../img/seal_logotype-768x252.png" alt="Northeastern University"><br>
+        <p class="small"><a href="http://johnguerra.co/" target="_blank"><strong>John Alexis Guerra Gómez</strong></a></p>
+        <p class="tiny email">jguerra[at}northeastern.edu |<a href="http://twitter.com/duto_guerra" target="_blank"> @duto_guerra</a><br></p><br>
+        <p class="tiny">Slides:<a href="http://johnguerra.co/lectures/webDevelopment_fall2025/08_Web_Design/" target="_blank">http://johnguerra.co/lectures/webDevelopment_fall2025/08_Web_Design/</a></p>
+        <p class="tiny">Class page:<a href="http://johnguerra.co/classes/webDevelopment_fall_2025/" target="_blank">http://johnguerra.co/classes/webDevelopment_fall_2025/</a></p>
+      </section>
+      <section id="intro">
+        <section>
+          <h2>Readings discussion</h2>
+          <ul>
+            <li class="fragment">questions?</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Please complete the<br><span>course evaluations</span></h2>
+        </section>
+        <section>
+          <h2>Random Questions</h2>
+          <ul>
+            <li class="fragment">Tell me one important component of web design</li>
+            <li class="fragment">What is typography matching</li>
+            <li class="fragment">What is usability</li>
+            <li class="fragment">What is consistency in web design?</li>
+          </ul>
+        </section>
+      </section>
+      <section id="basicDesignPrinciples">
+        <section>
+          <h1>Basic Design Principles</h1>
+        </section>
+        <section>
+          <h2>Basic Design Principles</h2>
+          <ul>
+            <li class="fragment">Proximity</li>
+            <li class="fragment">Alignment</li>
+            <li class="fragment">Repetition</li>
+            <li class="fragment">Contrast</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Proximity</h2>
+          <div class="flex">
+            <div class="half">
+              <ul class="small">
+                <li>Do group related items together</li>
+                <li class="fragment">Avoid equal whitespace between unrelated</li>
+              </ul>
+            </div>
+            <div class="half">
+              <figure><img style="max-height:300px" src="images/design_proximity.png" alt="Proximity">
+                <figcaption class="tiny">The Non-Designer’s Design Book, 4th ed. Robin Williams, Peachpit Press, 2015.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Alignment</h2>
+          <div class="flex">
+            <div class="half">
+              <ul class="small">
+                <li>Do find/make strong line, stick to it</li>
+                <li class="fragment">Avoid automatic centering</li>
+              </ul>
+            </div>
+            <div class="half">
+              <figure><img style="max-height:300px" src="images/design_alignment.png" alt="Alignment">
+                <figcaption class="tiny">The Non-Designer’s Design Book, 4th ed. Robin Williams, Peachpit Press, 2015.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Repetition</h2>
+          <div class="flex">
+            <div class="half">
+              <ul class="small">
+                <li>Do unify by pushing existing consistencies</li>
+              </ul>
+            </div>
+            <div class="half">
+              <figure><img style="max-height:300px" src="images/design_repetition.png" alt="Repetition">
+                <figcaption class="tiny">The Non-Designer’s Design Book, 4th ed. Robin Williams, Peachpit Press, 2015.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Contrast</h2>
+          <div class="flex">
+            <div class="half">
+              <ul class="small">
+                <li>If not identical, then very different</li>
+                <li class="fragment">Avoid similar</li>
+              </ul>
+            </div>
+            <div class="half">
+              <figure><img style="max-height:300px" src="images/design_contrast.png" alt="Contrast">
+                <figcaption class="tiny">The Non-Designer’s Design Book, 4th ed. Robin Williams, Peachpit Press, 2015.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>Web Design Fundamentals</h1>
+          <p class="fragment">or the very basics of it</p>
+        </section>
+        <section>
+          <h2>Precedence and placement</h2>
+          <ul>
+            <li class="fragment">What do you want users to do first?</li>
+            <li class="fragment">What are your goals/users?</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Airbnb</h2>
+          <ul>
+            <li class="fragment">What are their goals?</li>
+            <li class="fragment">What are their users?</li><a href="https://www.airbnb.com/">https://www.airbnb.com/</a>
+          </ul>
+        </section>
+        <section>
+          <h2>Layouts</h2>
+          <ul>
+            <li class="fragment">Use hierarchies</li>
+            <li class="fragment">Use the grid</li>
+            <li class="fragment">Manage spacing</li>
+            <li class="fragment">Align and distribute</li>
+            <li class="fragment"><a href="https://webdesign.tutsplus.com/articles/understanding-visual-hierarchy-in-web-design--webdesign-84" target="_blank">Understanding visual hierarchy in web design</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Layout examples</h2><a href="https://designshack.net/articles/layouts/10-rock-solid-website-layout-examples/">https://designshack.net/articles/layouts/10-rock-solid-website-layout-examples/</a>
+        </section>
+        <section>
+          <h2>Typography</h2>
+        </section>
+        <section>
+          <h2>Why Typography matters</h2>
+          <div class="flex">
+            <div class="half">
+              <ul class="small">
+                <li class="fragment">Readability</li>
+                <li class="fragment">Legibility</li>
+                <li class="fragment">Visual hierarchy</li>
+                <li class="fragment">Emphasis</li>
+                <li class="fragment">Mood</li>
+              </ul>
+            </div>
+            <div class="half">
+              <figure><img style="max-height:300px" src="../img/fontMatters.webp" alt="Font matters">
+                <figcaption class="tiny"><a href="https://www.reddit.com/r/funny/comments/5bjth1/fonts_matter/">r/funny Reddit</a></figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Font Families</h2>
+          <ul>
+            <li class="fragment" style="font-family:sans-serif">Sans Serif</li>
+            <li class="fragment" style="font-family:serif">Serif</li>
+            <li class="fragment" style="font-family:cursive">Cursive</li>
+            <li class="fragment" style="font-family:monospace">Monospace</li>
+            <li class="fragment"><a href="https://developer.mozilla.org/en/docs/Web/CSS/font-family" target="_blank">Others</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Good basic course on typography</h2><a href="https://www.codeschool.com/courses/fundamentals-of-design?from_search=design" target="_blank">https://www.codeschool.com/courses/fundamentals-of-design?from_search=design</a>
+        </section>
+        <section>
+          <h2>Typography Matching</h2>
+          <ul>
+            <li class="fragment">Create enough difference</li>
+            <li class="fragment">e.g. Serif + Sans Serif</li>
+            <li class="fragment"><a href="http://fontpair.co/" target="_blank">http://fontpair.co/</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Advanced combinations</h2><a href="https://www.typography.com/techniques/">https://www.typography.com/techniques/</a>
+        </section>
+        <section>
+          <h2>Color</h2>
+        </section>
+        <section>
+          <h2>Color Models</h2>
+          <ul>
+            <li class="fragment">RGB</li>
+            <li class="fragment">HSB</li>
+            <li class="fragment">CMYK</li>
+            <li class="fragment"><a href="https://en.wikipedia.org/wiki/Color_model" target="_blank">https://en.wikipedia.org/wiki/Color_model</a></li>
+          </ul>
+        </section>
+        <section class="demo">
+          <h2 class="demo">Color Space</h2><img class="demo" src="https://upload.wikimedia.org/wikipedia/commons/3/37/Colorspace.png"><a href="https://en.wikipedia.org/wiki/Color_space" target="_blank">https://en.wikipedia.org/wiki/Color_space</a>
+        </section>
+        <section>
+          <h2>Color Palettes</h2>
+          <ul>
+            <li class="fragment">Complementary colors</li>
+            <li class="fragment">Homogeneous colors</li>
+            <li class="fragment">Triads</li>
+            <li class="fragment">Analogous</li>
+            <li class="fragment">Monochromatic</li>
+            <li class="fragment"><a href="https://color.adobe.com" target="_blank">Adobe Color CC</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Tips</h2>
+          <ul>
+            <li class="fragment">Create enough contrast</li>
+            <li class="fragment">Be consistent</li>
+            <li class="fragment">Use nature as inspiration</li>
+            <li class="fragment"><a href="https://webdesign.tutsplus.com/articles/an-introduction-to-color-theory-for-web-designers--webdesign-1437">Color theory intro for web design</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2 class="demo">8 golden rules of design</h2>
+          <ul class="small">
+            <li class="fragment">Strive for consistency</li>
+            <li class="fragment">Cater for universal usability</li>
+            <li class="fragment">Offer informative feedback</li>
+            <li class="fragment">Design dialogs to yield closure</li>
+            <li class="fragment">Prevent errors</li>
+            <li class="fragment">Permit easy reversal of actions</li>
+            <li class="fragment">Support internal locus of control</li>
+            <li class="fragment">Reduce short-term memory load</li>
+          </ul>
+          <div><a class="tiny" href="https://smile.amazon.com/Designing-User-Interface-Human-Computer-Interaction/dp/013438038X/ref=dp_ob_title_bk">Designing the User Interface: Strategies for Effective Human-Computer Interaction</a></div>
+        </section>
+        <section>
+          <h2>Research based web design guidelines</h2>
+          <div><a href="https://www.usability.gov/sites/default/files/documents/guidelines_book.pdf" target="_blank">https://www.usability.gov/sites/default/files/documents/guidelines_book.pdf</a></div>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>Evaluation</h1>
+        </section>
+        <section>
+          <h2 class="demo">Usability Testing</h2><span>
+            <a data-flickr-embed="true"  href="https://www.flickr.com/photos/yandle/3231980616/in/photolist-5VAKeJ-e6vGNu-5VAMNf-5VAJkd-5VASE7-8uu5ej-3j3Cw-7WKyy5-7WKqhG-7WGg1p-bWf1T-cN17Zf-mLmuep-5iDL3Q-7WGaTx-bWf6R-pTf438-7WKzxd-7WGgwR-5VACYA-5VAHzY-5VwiYB-5VAGNL-5VADX3-5VwrGk-7yX8Zc-2vyF2V-7yX96K-dGkneA-7z2MTA-jrkhAN-fQ1cWh-69mwdv-dSJH5t-5iKD8N-2b6Jr-7WGk2x-7WGbSp-5VAQ8f-7WGb6a-7WKXYh-5iFg8H-7WGeMg-7WKssG-7WKtKd-bWffr-7WKt9m-7WKrxA-8ZAttz-7WKzLN" title="Brighton Uni Usability Lab"><img src="https://c1.staticflickr.com/4/3094/3231980616_5ccd164737_b.jpg" width="1024" height="685" alt="Brighton Uni Usability Lab"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+            
+            </span>
+        </section>
+        <section>
+          <h2 class="demo">Usability Testing preparation</h2>
+          <ul>
+            <li class="fragment">Create a task list</li>
+            <li class="fragment">Get a consent form</li>
+            <li class="fragment">Plan the questions</li>
+            <li class="fragment">Run the test on yourself</li>
+            <li class="fragment">Open non-biased call for participants</li>
+          </ul>
+        </section>
+        <section>
+          <h2 class="demo">Usability Testing steps</h2>
+          <ul>
+            <li class="fragment">Consent</li>
+            <li class="fragment">User is not being tested</li>
+            <li class="fragment">Try not to bias the user</li>
+            <li class="fragment">Ask user to think aloud</li>
+            <li class="fragment">Post-study survey</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Likert Scale</h2>
+          <p>What do you think?</p>
+          <ul class="fragment">
+            <li>Strongly disagree</li>
+            <li>disagree</li>
+            <li>ok</li>
+            <li>agree</li>
+            <li>Strongly agree</li>
+          </ul>
+        </section>
+        <section>
+          <h2>More about likert scales</h2>
+          <ul>
+            <li class="fragment">Can be 3, 5, 7 or more responses</li>
+            <li class="fragment">Continuous or Discrete</li>
+            <li class="fragment">Middle response is the balance</li>
+          </ul>
+        </section>
+        <section>
+          <h2 class="small">How to visualize Likert Scale results</h2>
+          <iframe class="blocks" height="450" data-src="https://observablehq.com/embed/@john-guerra/d3-likert-scale?cells=chart"></iframe>
+        </section>
+        <section>
+          <h2 class="demo">Alternatives</h2>
+          <ul>
+            <li class="fragment">Mechanical Turk</li>
+            <li class="fragment">Behavior logs</li>
+            <li class="fragment">A/B Testing</li>
+            <li class="fragment">Controlled Experiments</li>
+            <li class="fragment">Expert reviews</li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h2>Next class readings: accessibility</h2><a class="tiny" href="https://www.udacity.com/course/web-accessibility--ud891">https://www.udacity.com/course/web-accessibility--ud891</a>
+        </section>
+      </section>
+    </div>
+  </div>
+</body>
+<script src="../lib/reveal.js"></script>
+<script src="../lib/plugin/markdown/markdown.js"></script>
+<script src="../lib/plugin/highlight/highlight.js"></script>
+<script src="../lib/plugin/notes/notes.js"></script>
+<script src="../lib/plugin/math/math.js"></script>
+<script>
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    transition: "convex",
+    //- height: 1.0,
+  
+    //- // Fill the viewport width and height
+    //- width: "100%",
+    //- height: "100%",
+    
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+  });
+  
+</script>

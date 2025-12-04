@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CS5610 Web Development, Accessibility</title>
+    <meta charset="utf-8">
+    <meta name="author" content="John Alexis Guerra Gomez">
+    <meta name="description" content="CS5610 Web Development, Northeastern University, Oakland">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  </head>
+</html>
+<link href="../lib/reset.css" rel="stylesheet">
+<link href="../lib/reveal.css" rel="stylesheet">
+<link href="../lib/theme/white.css" rel="stylesheet" id="theme">
+<link rel="stylesheet" href="../lib/plugin/highlight/monokai.css">
+<link href="../css/style.css" rel="stylesheet">
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section id="title">
+        <h2>Accessibility</h2><img class="logo" src="../img/seal_logotype-768x252.png" alt="Northeastern University"><br>
+        <p class="small"><a href="http://johnguerra.co/" target="_blank"><strong>John Alexis Guerra Gómez</strong></a></p>
+        <p class="tiny email">jguerra[at}northeastern.edu |<a href="http://twitter.com/duto_guerra" target="_blank"> @duto_guerra</a><br></p>
+        <p class="small">Based on <a href="https://developers.google.com/web/fundamentals/accessibility">Google Web Fundamentals Guide </a></p><br>
+        <p class="tiny">Slides:<a href="http://johnguerra.co/lectures/webDevelopment_fall2025/09_Accessibility/" target="_blank">http://johnguerra.co/lectures/webDevelopment_fall2025/09_Accessibility/</a></p>
+        <p class="tiny">Class page:<a href="http://johnguerra.co/classes/webDevelopment_fall_2025/" target="_blank">http://johnguerra.co/classes/webDevelopment_fall_2025/</a></p>
+      </section>
+      <section>
+        <section>
+          <h2>Readings discussion</h2>
+          <ul>
+            <li class="fragment">questions?</li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>Web Accessibility</h1>
+          <p class="fragment">or the very basics of it</p>
+        </section>
+        <section>
+          <p>Create affordances to help people with disabilities.</p>
+        </section>
+        <section>
+          <h2>Which dissabilities?</h2>
+          <p>We all have dissabilities!</p>
+          <ul>
+            <li class="fragment">Situational, Temporary, Permanent</li>
+            <li class="fragment">Visual, motor, hearing, and cognitive</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Standards</h2><a href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG) 2.0</a><a href="https://webaim.org/standards/wcag/checklist"> WebAIM (Web Accessibility in Mind) checklist</a>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>Focus</h1>
+          <p>An user should be able to use the site with the keyboard (rubric)</p>
+        </section>
+        <section>
+          <h2>Exercise</h2><a href="http://udacity.github.io/ud891/lesson2-focus/01-basic-form/">Airline site mockup page</a>
+        </section>
+        <section>
+          <h2>Focus in React</h2>
+          <p>Send the focus to the right element after mounting</p>
+          <p><code>useEffect</code> or <code>ComponentDidMount</code></p>
+        </section>
+        <section>
+          <h2>DOM order matters</h2>
+          <p>Make sure your html elements are in the semantic order (rubric)</p>
+        </section>
+        <section>
+          <h2>Tabindex</h2>
+          <ul>
+            <li>Use it for specific behaviour</li>
+            <li>Avoid it on headers and content elements</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Offscreen elements</h2>
+          <p>Shouldn't be focusable</p>
+        </section>
+        <section>
+          <h2>Keyboard traps</h2>
+          <p>A component that captures the tab behaviour</p>
+        </section>
+        <section>
+          <h2>Modals</h2>
+          <ul>
+            <li>Esc closes</li>
+            <li>Tab changes options</li>
+            <li>On close change focus back</li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>Semantics</h1>
+        </section>
+        <section>
+          <h2>Order</h2>
+          <ul>
+            <li>Use <code>h1, h2, h3</code> to manage hierarchy</li>
+            <li>DOM order matters</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Alt text</h2>
+          <ul>
+            <li>All images should have an <code>alt</code> text</li>
+            <li>Decoration images should use <code>alt="" </code></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Form controls</h2>
+          <ul>
+            <li>Use standard elements</li>
+            <li>Use<br><code>
+                &lt;label&gt;Text: &lt;input(type=&quot;text&quot;)/&gt;&lt;/label&gt;
+                </code></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Aria roles</h2><a href="https://www.w3.org/TR/wai-aria/">ARIA spec</a><br><a href="https://developers.google.com/web/fundamentals/accessibility/semantics-aria">Google's guide</a>
+        </section>
+        <section>
+          <h2>Use standard HTML elements!</h2>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>Tools</h1>
+        </section>
+        <section>
+          <h2>Screen readers</h2>
+          <ul>
+            <li><a href="http://www.chromevox.com/tutorial/">Chromevox</a></li>
+            <li><a href="https://www.freedomscientific.com/products/software/jaws/">Jaws (Windows)</a></li>
+            <li><a href="https://www.imore.com/how-enable-voiceover-mac">VoiceOver (Mac)</a></li>
+            <li><a href="https://www.nvaccess.org/">NVDA (Windows - Free)</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Validators</h2>
+          <ul>
+            <li>Lighthouse (Chrome)</li>
+            <li><a href="https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd/related?hl=en-US">Deque's Axe (Chrome) (Rubric 0% errors)</a></li>
+            <li>Firefox Accessibility</li>
+            <li><a href="https://wave.webaim.org/">WebAIM's Wave</a></li>
+            <li><a href="https://developers.google.com/web/fundamentals/accessibility/how-to-review">Google's Accessibility Guide: How to do an a11y review</a></li>
+          </ul>
+        </section>
+      </section>
+    </div>
+  </div>
+</body>
+<script src="../lib/reveal.js"></script>
+<script src="../lib/plugin/markdown/markdown.js"></script>
+<script src="../lib/plugin/highlight/highlight.js"></script>
+<script src="../lib/plugin/notes/notes.js"></script>
+<script src="../lib/plugin/math/math.js"></script>
+<script>
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    transition: "convex",
+    //- height: 1.0,
+  
+    //- // Fill the viewport width and height
+    //- width: "100%",
+    //- height: "100%",
+    
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+  });
+  
+</script>

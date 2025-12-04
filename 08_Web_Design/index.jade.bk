@@ -1,0 +1,166 @@
+doctype html
+html
+  head
+    title CS5610 Web Development, Node.js
+    meta(charset='utf-8')
+    meta(name='author', content='John Alexis Guerra Gomez')
+    meta(name='description', content='CS5610 Web Development, Northeastern University, Oakland')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui")
+    //- link(href='../lib/css/reveal.css', rel='stylesheet')
+    //- link(href='../lib/css/theme/simple.css', rel='stylesheet')
+    //- link(href='../lib/css/zenburn.css', rel='stylesheet')
+    link(href='../css/style.css', rel='stylesheet')
+    //- Printing and PDF exports -->
+    script.
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/css/print/pdf.css' : '../lib/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    //- script(src='../lib/js/d3.min.js')
+  body
+
+
+    .reveal
+      .slides
+
+        section#title
+          h2 Node.js
+          img.logo(src="../img/seal_logotype-768x252.png" alt="Northeastern University")
+
+
+          br
+          p.small
+            a(href='http://johnguerra.co/', target='_blank') #[strong John Alexis Guerra Gómez]
+
+          p.tiny.email jguerra[at}northeastern.edu |
+            a(href='http://twitter.com/duto_guerra' , target='_blank')  @duto_guerra
+            br
+
+
+            //- br
+            //- span ja.guerrag en uniandes.edu.co
+            //- br
+            //- a(href='https://bsky.app/profile/johnguerra.bsky.social') @johnguerra.bsky.social
+          //- p.small Use
+          //-   strong  spacebar
+          //-   |  and the arrows to advance slides
+          br
+          p.tiny Slides:
+            a(href='http://johnguerra.co/lectures/webDevelopment_fall2025/06_Node/', target='_blank') http://johnguerra.co/lectures/webDevelopment_fall2025/06_Node/
+          p.tiny Class page:
+            a(href='http://johnguerra.co/classes/webDevelopment_fall_2025/', target='_blank') http://johnguerra.co/classes/webDevelopment_fall_2025/
+
+
+        //- convert -density 150 -depth 8 -quality 85 ~/Dropbox/documentos/2016/andes/visual_analytics/lectures_tamara/05_rules-artery.pdf ./05_rules-artery.png
+        section
+          section
+            h2 What did we learn last time?
+
+          section
+            h2 Readings discussion
+            ul
+              li.fragment questions?
+
+          section
+            h2 Random Questions
+            ul
+              li.fragment What is #[strong Node.js]?
+              li.fragment Why would we need #[strong Node.js]?
+              li.fragment What does it mean it is asynchronous?
+        section
+          section
+            h2 Node.js
+            p Interactive Shell
+            pre
+              code(data-trim data-noescape).
+                $ node
+
+          section
+            h2 Node.js
+            p Some things work only on the browser, some only on the server
+
+          section
+            h2 NPM
+            ul
+              li Package Management
+              li
+                a(href="https://www.npmjs.com/" target="_blank") https://www.npmjs.com/
+              li.fragment more than 400,000 packages!
+
+
+          section
+            h2 Install a package
+            pre
+              code(data-trim data-noescape).
+                $ npm install express
+            p Creates a local #[code node_modules/] folder
+
+          section
+            h2 Install it globally
+            pre
+              code(data-trim data-noescape).
+                $ npm install -g express
+            p Installs it for the whole system
+
+          section
+            h2 Install and save dependency
+            pre
+              code(data-trim data-noescape).
+                # Run only once
+                $ npm init
+                # Then for each package
+                $ npm install --save express
+            p Installs it locally and creates a #[code packages.json] file that saves the dependency
+
+          section
+            h2
+              code packages.json
+            pre
+              code(data-trim data-noescape).
+                {
+                  "name": "webdevex1",
+                  "version": "1.0.0",
+                  "description": "TEst",
+                  "main": "index.js",
+                  "dependencies": {
+                    "express": "^4.14.1"
+                  },
+                  "devDependencies": {},
+                  "scripts": {
+                    "test": "echo \"Error: no test specified\" && exit 1"
+                  },
+                  "repository": {
+                    "type": "git",
+                    "url": "git+https://github.com/john-guerra/webDevEx1.git"
+                  },
+                  "author": "John Alexis Guerra Gómez",
+                  "license": "MIT",
+                  "bugs": {
+                    "url": "https://github.com/john-guerra/webDevEx1/issues"
+                  },
+                  "homepage": "https://github.com/john-guerra/webDevEx1#readme"
+                }
+
+
+          section
+            h2 Express
+            p Allows us to create a simple HTTP Server
+            a(href="http://expressjs.com/" target="_blank") http://expressjs.com/
+
+
+        section
+          section
+            h2 Exercise
+            p Use Node+Express to create a web application that shows yesterday's tweets
+            ul
+              li.fragment Share your results
+
+
+
+
+
+include ../partials/reveal_header.pug
+
+
+

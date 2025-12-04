@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   </head>
 </html>
+<link href="../lib/reset.css" rel="stylesheet">
 <link href="../lib/reveal.css" rel="stylesheet">
 <link href="../lib/theme/white.css" rel="stylesheet" id="theme">
 <link rel="stylesheet" href="../lib/plugin/highlight/monokai.css">
@@ -19,10 +20,10 @@
         <h2>CSS</h2><img class="logo" src="../img/seal_logotype-768x252.png" alt="Northeastern University"><br>
         <p class="small"><a href="http://johnguerra.co/" target="_blank"><strong>John Alexis Guerra Gómez</strong></a></p>
         <p class="tiny email">jguerra[at}northeastern.edu |<a href="http://twitter.com/duto_guerra" target="_blank"> @duto_guerra</a><br></p><br>
-        <p class="tiny">Slides:<a href="http://johnguerra.co/lectures/webDevelopment_spring2025/03_CSS/" target="_blank">http://johnguerra.co/lectures/webDevelopment_spring2025/03_CSS/</a></p>
-        <p class="tiny">Class page:<a href="http://johnguerra.co/classes/webDevelopment_spring_2025/" target="_blank">http://johnguerra.co/classes/webDevelopment_spring_2025/</a></p>
+        <p class="tiny">Slides:<a href="http://johnguerra.co/lectures/webDevelopment_fall2025/03_CSS/" target="_blank">http://johnguerra.co/lectures/webDevelopment_fall2025/03_CSS/</a></p>
+        <p class="tiny">Class page:<a href="http://johnguerra.co/classes/webDevelopment_fall_2025/" target="_blank">http://johnguerra.co/classes/webDevelopment_fall_2025/</a></p>
       </section>
-      <section>
+      <section id="lasTime">
         <section>
           <h2>What did we learn last time?</h2>
         </section>
@@ -44,38 +45,544 @@
           </ul>
         </section>
       </section>
-      <section>
+      <section id="cssBasics">
         <section>
-          <h2>When to use pxs, ems and %?</h2>
+          <h2>CSS Basics</h2>
+          <p>Understanding the fundamentals</p>
+          <p class="small">Source: <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Getting_started" target="_blank">MDN Styling_basics/Getting_started</a></p>
+          <p class="tiny fragment" title="Prompt: please read [url] and propose some useful slides for the class. Make sure to include the most important concepts. Maybe some code examples and properly styled for reveal.js">Generated with GitHub Copilot + Claude Sonnet 4</p>
+        </section>
+        <section>
+          <h2>CSS Syntax</h2>
+          <p>CSS rules consist of selectors and declarations</p>
+          <pre><code class="css">selector {
+  property: value;
+  property: value;
+}</code></pre>
+          <div class="fragment">
+            <p>Example:</p>
+            <pre><code class="css">h1 {
+  color: red;
+  font-size: 24px;
+}
+</code></pre>
+          </div>
+        </section>
+        <section>
+          <h2>Adding CSS to HTML</h2>
+          <h3>Three Methods</h3>
           <ul>
-            <li class="fragment"><strong>pxs</strong> fixed. Not dependent on screen size.</li>
-            <li class="fragment"><strong>ems</strong> Relative to font-size. Good for fonts on responsive designs.</li>
-            <li class="fragment"><strong>%</strong> Relative to height/width. Good for divs on responsive designs.</li>
+            <li class="fragment"><strong>External</strong> (recommended) - separate .css file</li>
+            <li class="fragment"><strong>Internal</strong> - &lt;style&gt; tag in &lt;head&gt;</li>
+            <li class="fragment"><strong>Inline</strong> - style attribute (avoid)</li>
           </ul>
         </section>
         <section>
-          <h2>Margins</h2><img class="blocks" src="images/margins_and_padding.png">
+          <h2>External CSS (Best Practice)</h2>
+          <p>Link external stylesheet in HTML &lt;head&gt;</p>
+          <pre><code class="html">&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+          <div class="fragment">
+            <p>styles.css:</p>
+            <pre><code class="css">h1 {
+  color: blue;
+}
+</code></pre>
+          </div>
         </section>
         <section>
-          <h2>Z-index</h2>
-          <p>Doesn't work with SVG 😞</p>
+          <h2>CSS Selectors</h2>
+          <h3>Element Selectors</h3>
+          <pre><code class="css">p {
+  color: green;
+}
+
+h1, h2, h3 {
+  font-family: Arial, sans-serif;
+}
+</code></pre>
         </section>
         <section>
-          <h2>Gradients</h2>
-          <p>Search online for generators. e.g. <a href="http://www.colorzilla.com/gradient-editor/">Colorzilla gradient editor</a></p>
+          <h2>Class Selectors</h2>
+          <p>Use classes to target specific elements</p>
+          <pre><code class="html">&lt;p class="special"&gt;Special paragraph&lt;/p&gt;</code></pre>
+          <pre><code class="css">.special {
+  color: orange;
+  font-weight: bold;
+}
+</code></pre>
         </section>
         <section>
-          <h2>Group Exercise</h2>
-          <p>Let's continue visualizing <a href="../02_HTML/images/airbnb_sf_listings_500.json.zip">the Airbnb Listings</a></p>
+          <h2>ID Selectors</h2>
+          <p>Use IDs for unique elements</p>
+          <pre><code class="html">&lt;div id="header"&gt;Header content&lt;/div&gt;</code></pre>
+          <pre><code class="css">#header {
+  background-color: navy;
+  color: white;
+}
+</code></pre>
+        </section>
+        <section>
+          <h2>Descendant Selectors</h2>
+          <p>Target elements inside other elements</p>
+          <pre><code class="css">li em {
+  color: rebeccapurple;
+}
+
+.container p {
+  margin-bottom: 10px;
+}
+</code></pre>
+        </section>
+        <section>
+          <h2>Adjacent Sibling Selector</h2>
+          <p>Target elements that immediately follow others</p>
+          <pre><code class="css">h1 + p {
+  font-size: 120%;
+  margin-top: 0;
+}</code></pre>
+          <p class="small">Targets paragraphs that directly follow h1 elements</p>
+        </section>
+        <section>
+          <h2>Pseudo-classes</h2>
+          <p>Style elements based on their state</p>
+          <pre><code class="css">a:link { color: blue; }
+a:visited { color: purple; }
+a:hover { color: red; }
+a:active { color: orange; }
+
+button:hover {
+  background-color: lightblue;
+}
+</code></pre>
+        </section>
+        <section>
+          <h2>CSS Functions</h2>
+          <h3>calc() Function</h3>
+          <pre><code class="css">.container {
+  width: calc(100% - 50px);
+  margin: calc(1rem + 5px);
+}</code></pre>
+          <h3 class="fragment">Transform Functions</h3>
+          <pre class="fragment"><code class="css">.box {
+  transform: rotate(45deg);
+  transform: scale(1.5);
+}
+</code></pre>
+        </section>
+        <section>
+          <h2>CSS Variables (Custom Properties)</h2>
+          <p>Reusable values throughout your stylesheet</p>
+          <pre><code class="css">:root {
+  --primary-color: #3498db;
+  --font-size: 16px;
+}
+
+h1 {
+  color: var(--primary-color);
+  font-size: var(--font-size);
+}
+</code></pre>
+        </section>
+        <section>
+          <h2>Shorthand Properties</h2>
+          <p>Write multiple properties in one line</p>
+          <pre><code class="css">/* Instead of: */
+padding-top: 10px;
+padding-right: 15px;
+padding-bottom: 10px;
+padding-left: 15px;
+
+/* Use shorthand: */
+padding: 10px 15px 10px 15px;
+/* or */
+padding: 10px 15px; /* top/bottom left/right */
+</code></pre>
+        </section>
+        <section>
+          <h2>Media Queries (@rules)</h2>
+          <p>Responsive design with conditional CSS</p>
+          <pre><code class="css">body {
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-color: lightblue;
+    font-size: 14px;
+  }
+}
+</code></pre>
+        </section>
+        <section>
+          <h2>CSS Comments</h2>
+          <p>Document your code for maintainability</p>
+          <pre><code class="css">/* Main navigation styles */
+nav {
+  background-color: #333;
+}
+
+/* 
+  Commented out for testing
+  .old-style {
+    color: red;
+  }
+*/
+</code></pre>
+        </section>
+        <section>
+          <h2>CSS Best Practices</h2>
+          <ul>
+            <li class="fragment">Use external stylesheets</li>
+            <li class="fragment">Prefer classes over IDs for styling</li>
+            <li class="fragment">Write meaningful class names</li>
+            <li class="fragment">Group related styles together</li>
+            <li class="fragment">Use comments to organize code</li>
+            <li class="fragment">Avoid inline styles</li>
+            <li class="fragment">Test across different browsers</li>
+          </ul>
+        </section>
+      </section>
+      <section id="cssTools">
+        <section>
+          <h2>CSS Pre processors</h2>
+          <p>They add syntactic sugar to CSS</p>
+          <ul>
+            <li class="fragment"> <a href="https://sass-lang.com/" target="_blank">Sass</a> (most popular)</li>
+            <li class="fragment"> <a href="https://lesscss.org/" target="_blank">Less</a></li>
+            <li class="fragment"> <a href="https://stylus-lang.com/" target="_blank">Stylus</a></li>
+            <li class="fragment"> <a href="https://postcss.org/" target="_blank">PostCSS</a></li>
+          </ul>
+          <p class="small fragment">Note: CSS preprocessors are less prominent in modern workflows due to native CSS improvements and build tools like Vite (19.9% usage)</p>
+        </section>
+        <section> 
+          <h2>CSS Frameworks</h2>
+          <p>They provide pre-defined styles and components</p>
+          <ul>
+            <li class="fragment"> <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> (we'll use v5 in class) - still widely used in enterprise</li>
+            <li class="fragment"> <a href="https://get.foundation/" target="_blank">Foundation</a></li>
+            <li class="fragment"> <a href="https://bulma.io/" target="_blank">Bulma</a></li>
+            <li class="fragment"> <a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a> (very popular now) - utility-first approach</li>
+          </ul>
+          <p class="small fragment">Note: Modern development increasingly uses component-based frameworks (React 39.5%, Vue.js 15.4%) with CSS-in-JS solutions</p>
+        </section>
+        <section>
+          <h2>Stack Overflow Developer Survey 2024</h2>
+          <p class="small"> <a href="https://survey.stackoverflow.co/2024/" target="_blank">65,437 developers from 185 countries</a></p>
+          <ul>
+            <li class="fragment"><strong>JavaScript</strong> remains most popular language (62.3%)</li>
+            <li class="fragment"><strong>HTML/CSS</strong> used by 52.9% of developers</li>
+            <li class="fragment"><strong>React</strong> dominates web frameworks (39.5%)</li>
+            <li class="fragment"><strong>Visual Studio Code</strong> most popular IDE (73.6%)</li>
+            <li class="fragment"><strong>Docker</strong> most used dev tool (53.9%)</li>
+            <li class="fragment"><strong>76%</strong> of developers using or planning to use AI tools</li>
+            <li class="fragment">Traditional CSS frameworks less prominent due to modern component-based development</li>
+          </ul>
+        </section>
+      </section>
+      <section id="boxModel">
+        <!-- Based on https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model-->
+        <section>
+          <h2>The CSS Box Model</h2>
+          <p>Every element is a rectangular box with four areas</p>
+          <p class="small">Source: <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model" target="_blank">MDN Box Model Guide</a></p>
+          <p class="tiny fragment" title="Prompt: please read [url] and propose some useful slides for the class. Make sure to include the most important concepts. Maybe some code examples and properly styled for reveal.js">Generated with GitHub Copilot + Claude Sonnet 4</p>
+        </section>
+        <section>
+          <h2>Box Model Components</h2><img src="images/margins_and_padding.png" alt="CSS Box Model Diagram">
+          <ul>
+            <li class="fragment"><strong>Content</strong> - actual content (text, images)</li>
+            <li class="fragment"><strong>Padding</strong> - space around content (inside border)</li>
+            <li class="fragment"><strong>Border</strong> - line around padding</li>
+            <li class="fragment"><strong>Margin</strong> - space outside border</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Standard Box Model</h2>
+          <p>Width/height = content area only</p>
+          <pre><code class="css">.box {
+  width: 300px;    /* content width */
+  padding: 20px;   /* +40px total */
+  border: 5px;     /* +10px total */
+  margin: 10px;    /* space around */
+}
+/* Total width = 300 + 40 + 10 = 350px */
+</code></pre>
+        </section>
+        <section>
+          <h2>Alternative Box Model</h2>
+          <p>Width/height = content + padding + border</p>
+          <pre><code class="css">.box {
+  box-sizing: border-box;
+  width: 300px;    /* total box width */
+  padding: 20px;
+  border: 5px;
+}
+/* Total width = 300px (padding + border included) */
+</code></pre>
+        </section>
+        <section>
+          <h2>Box-sizing Best Practice</h2>
+          <p>Apply to all elements for predictable sizing</p>
+          <pre><code class="css">html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+</code></pre>
+        </section>
+        <section>
+          <h2>Block vs Inline Elements</h2>
+          <h3>Block Elements</h3>
+          <ul>
+            <li class="fragment">Break to new line</li>
+            <li class="fragment">Respect width/height</li>
+            <li class="fragment">Full width by default</li>
+          </ul>
+          <h3 class="fragment">Inline Elements  </h3>
+          <ul>
+            <li class="fragment">Stay on same line</li>
+            <li class="fragment">Ignore width/height</li>
+            <li class="fragment">Only horizontal padding/margin</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Display: inline-block</h2>
+          <p>Best of both worlds</p>
+          <pre><code class="css">.button {
+  display: inline-block;
+  padding: 10px 20px;
+  width: 200px;    /* respected */
+  height: 40px;    /* respected */
+}</code></pre>
+          <p class="small">Stays inline but respects width/height and full box model</p>
+        </section>
+      </section>
+      <section id="conflicts">
+        <!-- Based on https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts-->
+        <section>
+          <h2>CSS Conflicts & The Cascade</h2>
+          <p>How browsers resolve competing CSS rules</p>
+          <p class="small">Source: <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts" target="_blank">MDN Handling Conflicts Guide</a></p>
+          <p class="tiny fragment" title="Prompt: please read [url] and propose some useful slides for the class. Make sure to include the most important concepts. Maybe some code examples and properly styled for reveal.js">Generated with GitHub Copilot + Claude Sonnet 4</p>
+        </section>
+        <section>
+          <h2>The Three Key Concepts</h2>
+          <ul>
+            <li class="fragment"><strong>Cascade</strong> - source order matters</li>
+            <li class="fragment"><strong>Specificity</strong> - selector weight determines priority</li>
+            <li class="fragment"><strong>Inheritance</strong> - properties passed from parent to child</li>
+          </ul>
+          <p class="small fragment">These work together to resolve conflicts</p>
+        </section>
+        <section>
+          <h2>Cascade: Source Order</h2>
+          <p>When rules have equal specificity, last one wins</p>
+          <pre><code class="css">h1 { color: red; }
+h1 { color: blue; }  /* This wins */</code></pre>
+          <div class="fragment">
+            <p>Result: h1 elements will be blue</p>
+          </div>
+        </section>
+        <section>
+          <h2>Specificity Scoring</h2>
+          <p>Selectors have different weights</p>
+          <ul>
+            <li class="fragment"><strong>Inline styles</strong> (1000) - style attribute</li>
+            <li class="fragment"><strong>IDs</strong> (100) - #header</li>
+            <li class="fragment"><strong>Classes</strong> (10) - .button, [type="text"], :hover</li>
+            <li class="fragment"><strong>Elements</strong> (1) - h1, div, p</li>
+          </ul>
+          <p class="small fragment">Universal selector (*) = 0 points</p>
+        </section>
+        <section>
+          <h2>Specificity Example</h2>
+          <pre><code class="html">&lt;h1 class="main-heading"&gt;Title&lt;/h1&gt;</code></pre>
+          <pre><code class="css">h1 { color: blue; }           /* 0-0-1 */
+.main-heading { color: red; } /* 0-1-0 - wins! */</code></pre>
+          <p class="fragment">Class selector beats element selector</p>
+        </section>
+        <section>
+          <h2>Inheritance</h2>
+          <p>Some properties inherit from parent to child</p>
+          <pre><code class="css">body { color: blue; font-family: Arial; }
+/* All text inherits these values */
+
+.special { color: red; }
+/* Overrides inherited color */</code></pre>
+          <p class="small fragment">color, font-family inherit; width, margin, border don't</p>
+        </section>
+        <section>
+          <h2>Controlling Inheritance</h2>
+          <h3>Special Values</h3>
+          <ul>
+            <li class="fragment"><strong>inherit</strong> - use parent's value</li>
+            <li class="fragment"><strong>initial</strong> - use property's default value</li>
+            <li class="fragment"><strong>unset</strong> - inherit if inheritable, initial if not</li>
+            <li class="fragment"><strong>all: unset</strong> - reset all properties</li>
+          </ul>
+        </section>
+        <section>
+          <h2>The !important Flag</h2>
+          <p>Nuclear option - overrides everything</p>
+          <pre><code class="css">.button { 
+  background: gray !important; 
+}
+#special-button { 
+  background: red; /* won't work */
+}</code></pre>
+          <p class="small fragment">⚠️ !important is forbidded in the class - makes debugging difficult</p>
+        </section>
+        <section>
+          <h2>Best Practices</h2>
+          <ul>
+            <li class="fragment">Use classes instead of IDs for styling</li>
+            <li class="fragment">Avoid inline styles and !important</li>
+            <li class="fragment">Understand specificity to write maintainable CSS</li>
+            <li class="fragment">Use inheritance effectively for typography</li>
+            <li class="fragment">Keep selectors simple and specific as needed</li>
+          </ul>
+        </section>
+      </section>
+      <section id="flexbox"> 
+        <section>
+          <h2>CSS Flexbox</h2>
+          <p>One-dimensional layout method for rows or columns</p>
+          <p>Modern solution for flexible layouts</p>
+          <p class="small">Source: <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox" target="_blank">MDN Flexbox Guide</a></p>
+          <p class="tiny fragment" title="Prompt: please read [url] and propose some useful slides for the class. Make sure to include the most important concepts. Maybe some code examples and properly styled for reveal.js">Generated with GitHub Copilot + Claude Sonnet 4</p>
+        </section>
+        <section>
+          <h2>Why Flexbox?</h2>
+          <p>Solves common layout problems:</p>
+          <ul>
+            <li class="fragment">Vertically center content</li>
+            <li class="fragment">Equal height columns</li>
+            <li class="fragment">Flexible item sizing</li>
+            <li class="fragment">Responsive spacing</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Creating a Flex Container</h2>
+          <p>Add <code>display: flex</code> to parent element</p>
+          <pre><code class="css">.container {
+  display: flex;
+}</code></pre>
+          <div class="fragment">
+            <p>Children automatically become flex items!</p>
+          </div>
+        </section>
+        <section>
+          <h2>The Flex Model</h2><img src="images/flex-model.png" alt="Flexbox model diagram" style="max-width: 80%">
+          <ul>
+            <li class="fragment"><strong>Main axis</strong> - primary direction</li>
+            <li class="fragment"><strong>Cross axis</strong> - perpendicular direction</li>
+            <li class="fragment"><strong>Flex container</strong> - parent with display: flex</li>
+            <li class="fragment"><strong>Flex items</strong> - children elements</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Flex Direction</h2>
+          <p>Controls main axis direction</p>
+          <pre><code class="css">.container {
+  flex-direction: row;    /* default */
+  flex-direction: column;
+  flex-direction: row-reverse;
+  flex-direction: column-reverse;
+}
+</code></pre>
+        </section>
+        <section>
+          <h2>Flex Wrap</h2>
+          <p>Control wrapping behavior</p>
+          <pre><code class="css">.container {
+  flex-wrap: nowrap;  /* default */
+  flex-wrap: wrap;    /* allow wrapping */
+  flex-wrap: wrap-reverse;
+}</code></pre>
+          <h3 class="fragment">Shorthand</h3>
+          <pre class="fragment"><code class="css">flex-flow: row wrap;  /* direction + wrap */
+</code></pre>
+        </section>
+        <section>
+          <h2>Justify Content (Main Axis)</h2>
+          <p>Align items along main axis</p>
+          <pre><code class="css">.container {
+  justify-content: flex-start;   /* default */
+  justify-content: center;
+  justify-content: flex-end;
+  justify-content: space-between;
+  justify-content: space-around;
+  justify-content: space-evenly;
+}
+</code></pre>
+        </section>
+        <section>
+          <h2>Align Items (Cross Axis)</h2>
+          <p>Align items along cross axis</p>
+          <pre><code class="css">.container {
+  align-items: stretch;    /* default */
+  align-items: center;
+  align-items: flex-start;
+  align-items: flex-end;
+  align-items: baseline;
+}
+</code></pre>
+        </section>
+        <section>
+          <h2>Flex Item Properties</h2>
+          <h3>Flex Grow, Shrink, Basis</h3>
+          <pre><code class="css">.item {
+  flex: 1;        /* shorthand: grow shrink basis */
+  flex-grow: 1;   /* how much to grow */
+  flex-shrink: 1; /* how much to shrink */
+  flex-basis: 0;  /* initial size */
+}
+</code></pre>
+        </section>
+        <section>
+          <h2>Flex Examples</h2>
+          <pre><code class="css">.item1 { flex: 1; }      /* equal space */
+.item2 { flex: 2; }      /* twice as much */
+.item3 { flex: 1 100px; } /* min 100px */</code></pre>
+          <p class="fragment">Creates proportional layouts that adapt to container size</p>
+        </section>
+        <section>
+          <h2>Individual Item Alignment</h2>
+          <p>Override container alignment for specific items</p>
+          <pre><code class="css">.special-item {
+  align-self: flex-end;   /* override align-items */
+  order: 1;               /* change visual order */
+}</code></pre>
+          <p class="small fragment">Order doesn't affect tab order (accessibility)</p>
+        </section>
+        <section>
+          <h2>Common Flexbox Patterns</h2>
+          <h3 class="fragment">Center Everything</h3>
+          <pre class="fragment"><code class="css">.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</code></pre>
+        </section>
+        <section>
+          <h2>Flexbox Best Practices</h2>
+          <ul>
+            <li class="fragment">Use for one-dimensional layouts</li>
+            <li class="fragment">Perfect for navigation bars</li>
+            <li class="fragment">Great for card layouts</li>
+            <li class="fragment">Avoid for complex 2D grids (use CSS Grid)</li>
+            <li class="fragment">Test across browsers</li>
+            <li class="fragment">Consider accessibility with order property</li>
+          </ul>
         </section>
       </section>
       <section>
         <section>
           <h2>Exercise</h2>
-          <p>Improve the HTML of your homepage with some CSS</p>
-          <ul>
-            <li class="fragment">Share your results</li>
-          </ul>
+          <p>Let's continue visualizing <a href="../02_HTML/images/airbnb_sf_listings_500.json.zip">the Airbnb Listings</a></p>
         </section>
       </section>
       <section>
@@ -103,6 +610,7 @@
     history: true,
     center: true,
     transition: "convex",
+    //- height: 1.0,
   
     plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
   });
@@ -140,12 +648,4 @@
   //-   ]
   //- });
 </script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  
-  ga('create', 'UA-72531610-1', 'auto');
-  ga('send', 'pageview');
-</script>
+<script></script>

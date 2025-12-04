@@ -29,13 +29,11 @@ include ../partials/reveal_header.pug
 
           br
           p.tiny Slides:
-            a(href='http://johnguerra.co/lectures/webDevelopment_spring2025/03_CSS/', target='_blank') http://johnguerra.co/lectures/webDevelopment_spring2025/03_CSS/
+            a(href='http://johnguerra.co/lectures/webDevelopment_fall2025/03_CSS/', target='_blank') http://johnguerra.co/lectures/webDevelopment_fall2025/03_CSS/
           p.tiny Class page:
-            a(href='http://johnguerra.co/classes/webDevelopment_spring_2025/', target='_blank') http://johnguerra.co/classes/webDevelopment_spring_2025/
+            a(href='http://johnguerra.co/classes/webDevelopment_fall_2025/', target='_blank') http://johnguerra.co/classes/webDevelopment_fall_2025/
 
-
-        //- convert -density 150 -depth 8 -quality 85 ~/Dropbox/documentos/2016/andes/visual_analytics/lectures_tamara/05_rules-artery.pdf ./05_rules-artery.png
-        section
+        section#lasTime
           section
             h2 What did we learn last time?
 
@@ -54,40 +52,615 @@ include ../partials/reveal_header.pug
               li.fragment Why would you add a rgba after a rgb property?
               li.fragment What is Google Fonts?
 
-        section
-
-          //- Do exercise with many divs
-          //- Explain the box model
+        section#cssBasics
+          section
+            h2 CSS Basics
+            p Understanding the fundamentals
+            p.small Source: #[a(href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Getting_started", target="_blank") MDN Styling_basics/Getting_started]
+            p.tiny.fragment(title="Prompt: please read [url] and propose some useful slides for the class. Make sure to include the most important concepts. Maybe some code examples and properly styled for reveal.js") Generated with GitHub Copilot + Claude Sonnet 4
 
           section
-            h2 When to use pxs, ems and %?
+            h2 CSS Syntax
+            p CSS rules consist of selectors and declarations
+            pre
+              code.css.
+                selector {
+                  property: value;
+                  property: value;
+                }
+            .fragment
+              p Example:
+              pre
+                code.css.
+                  h1 {
+                    color: red;
+                    font-size: 24px;
+                  }
+
+          section
+            h2 Adding CSS to HTML
+            h3 Three Methods
             ul
-              li.fragment #[strong pxs] fixed. Not dependent on screen size.
-              li.fragment #[strong ems] Relative to font-size. Good for fonts on responsive designs.
-              li.fragment #[strong %] Relative to height/width. Good for divs on responsive designs.
+              li.fragment #[strong External] (recommended) - separate .css file
+              li.fragment #[strong Internal] - &lt;style&gt; tag in &lt;head&gt;
+              li.fragment #[strong Inline] - style attribute (avoid)
 
           section
-            h2 Margins
-            img.blocks(src="images/margins_and_padding.png")
+            h2 External CSS (Best Practice)
+            p Link external stylesheet in HTML &lt;head&gt;
+            pre
+              code.html.
+                &lt;link rel="stylesheet" href="styles.css"&gt;
+            .fragment
+              p styles.css:
+              pre
+                code.css.
+                  h1 {
+                    color: blue;
+                  }
 
           section
-            h2 Z-index
-            p Doesn't work with SVG 😞
+            h2 CSS Selectors
+            h3 Element Selectors
+            pre
+              code.css.
+                p {
+                  color: green;
+                }
+                
+                h1, h2, h3 {
+                  font-family: Arial, sans-serif;
+                }
 
           section
-            h2 Gradients
-            p Search online for generators. e.g. #[a(href="http://www.colorzilla.com/gradient-editor/") Colorzilla gradient editor]
+            h2 Class Selectors
+            p Use classes to target specific elements
+            pre
+              code.html.
+                &lt;p class="special"&gt;Special paragraph&lt;/p&gt;
+            pre
+              code.css.
+                .special {
+                  color: orange;
+                  font-weight: bold;
+                }
 
           section
-            h2 Group Exercise
-            p Let's continue visualizing #[a(href="../02_HTML/images/airbnb_sf_listings_500.json.zip") the Airbnb Listings]
+            h2 ID Selectors
+            p Use IDs for unique elements
+            pre
+              code.html.
+                &lt;div id="header"&gt;Header content&lt;/div&gt;
+            pre
+              code.css.
+                #header {
+                  background-color: navy;
+                  color: white;
+                }
+
+          section
+            h2 Descendant Selectors
+            p Target elements inside other elements
+            pre
+              code.css.
+                li em {
+                  color: rebeccapurple;
+                }
+                
+                .container p {
+                  margin-bottom: 10px;
+                }
+
+          section
+            h2 Adjacent Sibling Selector
+            p Target elements that immediately follow others
+            pre
+              code.css.
+                h1 + p {
+                  font-size: 120%;
+                  margin-top: 0;
+                }
+            p.small Targets paragraphs that directly follow h1 elements
+
+          section
+            h2 Pseudo-classes
+            p Style elements based on their state
+            pre
+              code.css.
+                a:link { color: blue; }
+                a:visited { color: purple; }
+                a:hover { color: red; }
+                a:active { color: orange; }
+                
+                button:hover {
+                  background-color: lightblue;
+                }
+
+          section
+            h2 CSS Functions
+            h3 calc() Function
+            pre
+              code.css.
+                .container {
+                  width: calc(100% - 50px);
+                  margin: calc(1rem + 5px);
+                }
+            h3.fragment Transform Functions
+            pre.fragment
+              code.css.
+                .box {
+                  transform: rotate(45deg);
+                  transform: scale(1.5);
+                }
+
+          section
+            h2 CSS Variables (Custom Properties)
+            p Reusable values throughout your stylesheet
+            pre
+              code.css.
+                :root {
+                  --primary-color: #3498db;
+                  --font-size: 16px;
+                }
+                
+                h1 {
+                  color: var(--primary-color);
+                  font-size: var(--font-size);
+                }
+
+          section
+            h2 Shorthand Properties
+            p Write multiple properties in one line
+            pre
+              code.css.
+                /* Instead of: */
+                padding-top: 10px;
+                padding-right: 15px;
+                padding-bottom: 10px;
+                padding-left: 15px;
+                
+                /* Use shorthand: */
+                padding: 10px 15px 10px 15px;
+                /* or */
+                padding: 10px 15px; /* top/bottom left/right */
+
+          section
+            h2 Media Queries (@rules)
+            p Responsive design with conditional CSS
+            pre
+              code.css.
+                body {
+                  background-color: white;
+                }
+                
+                @media (max-width: 768px) {
+                  body {
+                    background-color: lightblue;
+                    font-size: 14px;
+                  }
+                }
+
+          section
+            h2 CSS Comments
+            p Document your code for maintainability
+            pre
+              code.css.
+                /* Main navigation styles */
+                nav {
+                  background-color: #333;
+                }
+                
+                /* 
+                  Commented out for testing
+                  .old-style {
+                    color: red;
+                  }
+                */
+
+          section
+            h2 CSS Best Practices
+            ul
+              li.fragment Use external stylesheets
+              li.fragment Prefer classes over IDs for styling
+              li.fragment Write meaningful class names
+              li.fragment Group related styles together
+              li.fragment Use comments to organize code
+              li.fragment Avoid inline styles
+              li.fragment Test across different browsers
+
+        section#cssTools
+          section
+            h2 CSS Pre processors
+            p They add syntactic sugar to CSS
+            ul
+              li.fragment 
+                a(href="https://sass-lang.com/", target="_blank") Sass
+                |  (most popular)
+              li.fragment 
+                a(href="https://lesscss.org/", target="_blank") Less
+              li.fragment 
+                a(href="https://stylus-lang.com/", target="_blank") Stylus
+              li.fragment 
+                a(href="https://postcss.org/", target="_blank") PostCSS
+            p.small.fragment Note: CSS preprocessors are less prominent in modern workflows due to native CSS improvements and build tools like Vite (19.9% usage)
+
+          section 
+            h2 CSS Frameworks
+            p They provide pre-defined styles and components
+            ul
+              li.fragment 
+                a(href="https://getbootstrap.com/", target="_blank") Bootstrap
+                |  (we'll use v5 in class) - still widely used in enterprise
+              li.fragment 
+                a(href="https://get.foundation/", target="_blank") Foundation
+              li.fragment 
+                a(href="https://bulma.io/", target="_blank") Bulma
+              li.fragment 
+                a(href="https://tailwindcss.com/", target="_blank") Tailwind CSS
+                |  (very popular now) - utility-first approach
+            p.small.fragment Note: Modern development increasingly uses component-based frameworks (React 39.5%, Vue.js 15.4%) with CSS-in-JS solutions
+
+          section
+            h2 Stack Overflow Developer Survey 2024
+            p.small 
+              a(href="https://survey.stackoverflow.co/2024/", target="_blank") 65,437 developers from 185 countries
+            ul
+              li.fragment #[strong JavaScript] remains most popular language (62.3%)
+              li.fragment #[strong HTML/CSS] used by 52.9% of developers
+              li.fragment #[strong React] dominates web frameworks (39.5%)
+              li.fragment #[strong Visual Studio Code] most popular IDE (73.6%)
+              li.fragment #[strong Docker] most used dev tool (53.9%)
+              li.fragment #[strong 76%] of developers using or planning to use AI tools
+              li.fragment Traditional CSS frameworks less prominent due to modern component-based development
+
+        section#boxModel
+          // Based on https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model
+          section
+            h2 The CSS Box Model
+            p Every element is a rectangular box with four areas
+            p.small Source: #[a(href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model", target="_blank") MDN Box Model Guide]
+            p.tiny.fragment(title="Prompt: please read [url] and propose some useful slides for the class. Make sure to include the most important concepts. Maybe some code examples and properly styled for reveal.js") Generated with GitHub Copilot + Claude Sonnet 4
+            
+          section
+            h2 Box Model Components
+            img(src="images/margins_and_padding.png" alt="CSS Box Model Diagram")
+            ul
+              li.fragment #[strong Content] - actual content (text, images)
+              li.fragment #[strong Padding] - space around content (inside border)
+              li.fragment #[strong Border] - line around padding
+              li.fragment #[strong Margin] - space outside border
+
+          section
+            h2 Standard Box Model
+            p Width/height = content area only
+            pre
+              code.css.
+                .box {
+                  width: 300px;    /* content width */
+                  padding: 20px;   /* +40px total */
+                  border: 5px;     /* +10px total */
+                  margin: 10px;    /* space around */
+                }
+                /* Total width = 300 + 40 + 10 = 350px */
+
+          section
+            h2 Alternative Box Model
+            p Width/height = content + padding + border
+            pre
+              code.css.
+                .box {
+                  box-sizing: border-box;
+                  width: 300px;    /* total box width */
+                  padding: 20px;
+                  border: 5px;
+                }
+                /* Total width = 300px (padding + border included) */
+
+          section
+            h2 Box-sizing Best Practice
+            p Apply to all elements for predictable sizing
+            pre
+              code.css.
+                html {
+                  box-sizing: border-box;
+                }
+                
+                *, *::before, *::after {
+                  box-sizing: inherit;
+                }
+
+          section
+            h2 Block vs Inline Elements
+            h3 Block Elements
+            ul
+              li.fragment Break to new line
+              li.fragment Respect width/height
+              li.fragment Full width by default
+            h3.fragment Inline Elements  
+            ul
+              li.fragment Stay on same line
+              li.fragment Ignore width/height
+              li.fragment Only horizontal padding/margin
+
+          section
+            h2 Display: inline-block
+            p Best of both worlds
+            pre
+              code.css.
+                .button {
+                  display: inline-block;
+                  padding: 10px 20px;
+                  width: 200px;    /* respected */
+                  height: 40px;    /* respected */
+                }
+            p.small Stays inline but respects width/height and full box model
+
+        section#conflicts
+          // Based on https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts
+          section
+            h2 CSS Conflicts & The Cascade
+            p How browsers resolve competing CSS rules
+            p.small Source: #[a(href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts", target="_blank") MDN Handling Conflicts Guide]
+            p.tiny.fragment(title="Prompt: please read [url] and propose some useful slides for the class. Make sure to include the most important concepts. Maybe some code examples and properly styled for reveal.js") Generated with GitHub Copilot + Claude Sonnet 4
+            
+          section
+            h2 The Three Key Concepts
+            ul
+              li.fragment #[strong Cascade] - source order matters
+              li.fragment #[strong Specificity] - selector weight determines priority
+              li.fragment #[strong Inheritance] - properties passed from parent to child
+            p.small.fragment These work together to resolve conflicts
+
+          section
+            h2 Cascade: Source Order
+            p When rules have equal specificity, last one wins
+            pre
+              code.css.
+                h1 { color: red; }
+                h1 { color: blue; }  /* This wins */
+            .fragment
+              p Result: h1 elements will be blue
+
+          section
+            h2 Specificity Scoring
+            p Selectors have different weights
+            ul
+              li.fragment #[strong Inline styles] (1000) - style attribute
+              li.fragment #[strong IDs] (100) - #header
+              li.fragment #[strong Classes] (10) - .button, [type="text"], :hover
+              li.fragment #[strong Elements] (1) - h1, div, p
+            p.small.fragment Universal selector (*) = 0 points
+
+          section
+            h2 Specificity Example
+            pre
+              code.html.
+                &lt;h1 class="main-heading"&gt;Title&lt;/h1&gt;
+            pre
+              code.css.
+                h1 { color: blue; }           /* 0-0-1 */
+                .main-heading { color: red; } /* 0-1-0 - wins! */
+            p.fragment Class selector beats element selector
+
+          section
+            h2 Inheritance
+            p Some properties inherit from parent to child
+            pre
+              code.css.
+                body { color: blue; font-family: Arial; }
+                /* All text inherits these values */
+                
+                .special { color: red; }
+                /* Overrides inherited color */
+            p.small.fragment color, font-family inherit; width, margin, border don't
+
+          section
+            h2 Controlling Inheritance
+            h3 Special Values
+            ul
+              li.fragment #[strong inherit] - use parent's value
+              li.fragment #[strong initial] - use property's default value
+              li.fragment #[strong unset] - inherit if inheritable, initial if not
+              li.fragment #[strong all: unset] - reset all properties
+
+          section
+            h2 The !important Flag
+            p Nuclear option - overrides everything
+            pre
+              code.css.
+                .button { 
+                  background: gray !important; 
+                }
+                #special-button { 
+                  background: red; /* won't work */
+                }
+            p.small.fragment ⚠️ !important is forbidded in the class - makes debugging difficult
+
+          section
+            h2 Best Practices
+            ul
+              li.fragment Use classes instead of IDs for styling
+              li.fragment Avoid inline styles and !important
+              li.fragment Understand specificity to write maintainable CSS
+              li.fragment Use inheritance effectively for typography
+              li.fragment Keep selectors simple and specific as needed
+
+        section#flexbox 
+          //- Based on https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox
+          section
+            h2 CSS Flexbox
+            p One-dimensional layout method for rows or columns
+            p Modern solution for flexible layouts
+            p.small Source: #[a(href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox", target="_blank") MDN Flexbox Guide]
+            p.tiny.fragment(title="Prompt: please read [url] and propose some useful slides for the class. Make sure to include the most important concepts. Maybe some code examples and properly styled for reveal.js") Generated with GitHub Copilot + Claude Sonnet 4
+
+          section
+            h2 Why Flexbox?
+            p Solves common layout problems:
+            ul
+              li.fragment Vertically center content
+              li.fragment Equal height columns
+              li.fragment Flexible item sizing
+              li.fragment Responsive spacing
+
+          section
+            h2 Creating a Flex Container
+            p Add #[code display: flex] to parent element
+            pre
+              code.css.
+                .container {
+                  display: flex;
+                }
+            .fragment
+              p Children automatically become flex items!
+
+          section
+            h2 The Flex Model
+            img(src="images/flex-model.png" alt="Flexbox model diagram" style="max-width: 80%")
+            ul
+              li.fragment #[strong Main axis] - primary direction
+              li.fragment #[strong Cross axis] - perpendicular direction
+              li.fragment #[strong Flex container] - parent with display: flex
+              li.fragment #[strong Flex items] - children elements
+
+          section
+            h2 Flex Direction
+            p Controls main axis direction
+            pre
+              code.css.
+                .container {
+                  flex-direction: row;    /* default */
+                  flex-direction: column;
+                  flex-direction: row-reverse;
+                  flex-direction: column-reverse;
+                }
+
+          section
+            h2 Flex Wrap
+            p Control wrapping behavior
+            pre
+              code.css.
+                .container {
+                  flex-wrap: nowrap;  /* default */
+                  flex-wrap: wrap;    /* allow wrapping */
+                  flex-wrap: wrap-reverse;
+                }
+            h3.fragment Shorthand
+            pre.fragment
+              code.css.
+                flex-flow: row wrap;  /* direction + wrap */
+
+          section
+            h2 Justify Content (Main Axis)
+            p Align items along main axis
+            pre
+              code.css.
+                .container {
+                  justify-content: flex-start;   /* default */
+                  justify-content: center;
+                  justify-content: flex-end;
+                  justify-content: space-between;
+                  justify-content: space-around;
+                  justify-content: space-evenly;
+                }
+
+          section
+            h2 Align Items (Cross Axis)
+            p Align items along cross axis
+            pre
+              code.css.
+                .container {
+                  align-items: stretch;    /* default */
+                  align-items: center;
+                  align-items: flex-start;
+                  align-items: flex-end;
+                  align-items: baseline;
+                }
+
+          section
+            h2 Flex Item Properties
+            h3 Flex Grow, Shrink, Basis
+            pre
+              code.css.
+                .item {
+                  flex: 1;        /* shorthand: grow shrink basis */
+                  flex-grow: 1;   /* how much to grow */
+                  flex-shrink: 1; /* how much to shrink */
+                  flex-basis: 0;  /* initial size */
+                }
+
+          section
+            h2 Flex Examples
+            pre
+              code.css.
+                .item1 { flex: 1; }      /* equal space */
+                .item2 { flex: 2; }      /* twice as much */
+                .item3 { flex: 1 100px; } /* min 100px */
+            p.fragment Creates proportional layouts that adapt to container size
+
+          section
+            h2 Individual Item Alignment
+            p Override container alignment for specific items
+            pre
+              code.css.
+                .special-item {
+                  align-self: flex-end;   /* override align-items */
+                  order: 1;               /* change visual order */
+                }
+            p.small.fragment Order doesn't affect tab order (accessibility)
+
+          section
+            h2 Common Flexbox Patterns
+            h3.fragment Center Everything
+            pre.fragment
+              code.css.
+                .center {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+
+          section
+            h2 Flexbox Best Practices
+            ul
+              li.fragment Use for one-dimensional layouts
+              li.fragment Perfect for navigation bars
+              li.fragment Great for card layouts
+              li.fragment Avoid for complex 2D grids (use CSS Grid)
+              li.fragment Test across browsers
+              li.fragment Consider accessibility with order property
+
+        //- section
+        //-   //- Do exercise with many divs
+        //-   //- Explain the box model
+
+        //-   section
+        //-     h2 When to use pxs, ems and %?
+        //-     ul
+        //-       li.fragment #[strong pxs] fixed. Not dependent on screen size.
+        //-       li.fragment #[strong ems] Relative to font-size. Good for fonts on responsive designs.
+        //-       li.fragment #[strong %] Relative to height/width. Good for divs on responsive designs.
+
+        //-   section
+        //-     h2 Margins
+        //-     img.blocks(src="images/margins_and_padding.png")
+
+        //-   section
+        //-     h2 Z-index
+        //-     p Doesn't work with SVG 😞
+
+        //-   section
+        //-     h2 Gradients
+        //-     p Search online for generators. e.g. #[a(href="http://www.colorzilla.com/gradient-editor/") Colorzilla gradient editor]
+
+        //-   section
+        //-     h2 Group Exercise
+        //-     p Let's continue visualizing #[a(href="../02_HTML/images/airbnb_sf_listings_500.json.zip") the Airbnb Listings]
 
         section
           section
             h2 Exercise
-            p Improve the HTML of your homepage with some CSS
-            ul
-              li.fragment Share your results
+            p Let's continue visualizing #[a(href="../02_HTML/images/airbnb_sf_listings_500.json.zip") the Airbnb Listings]
 
         section
           section

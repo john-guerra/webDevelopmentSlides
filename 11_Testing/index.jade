@@ -1,0 +1,248 @@
+doctype html
+html
+  head
+    title CS5610 Web Development, Testing
+    meta(charset='utf-8')
+    meta(name='author', content='John Alexis Guerra Gomez')
+    meta(name='description', content='CS5610 Web Development, Northeastern University, Oakland')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui")
+include ../partials/reveal_header.pug
+  body
+
+
+    .reveal
+      .slides
+
+        section#title
+          h2 Testing
+          img.logo(src="../img/seal_logotype-768x252.png" alt="Northeastern University")
+
+
+          br
+          p.small
+            a(href='http://johnguerra.co/', target='_blank') #[strong John Alexis Guerra Gómez]
+
+          p.tiny.email jguerra[at}northeastern.edu |
+            a(href='http://twitter.com/duto_guerra' , target='_blank')  @duto_guerra
+            br
+
+
+            //- br
+            //- span ja.guerrag en uniandes.edu.co
+            //- br
+            //- a(href='https://bsky.app/profile/johnguerra.bsky.social') @johnguerra.bsky.social
+          //- p.small Use
+          //-   strong  spacebar
+          //-   |  and the arrows to advance slides
+          br
+          p.tiny Slides:
+            a(href='http://johnguerra.co/lectures/webDevelopment_fall2025/11_Testing/', target='_blank') http://johnguerra.co/lectures/webDevelopment_fall2025/11_Testing/
+          p.tiny Class page:
+            a(href='http://johnguerra.co/classes/webDevelopment_fall_2025/', target='_blank') http://johnguerra.co/classes/webDevelopment_fall_2025/
+
+
+        //- convert -density 150 -depth 8 -quality 85 ~/Dropbox/documentos/2016/andes/visual_analytics/lectures_tamara/05_rules-artery.pdf ./05_rules-artery.png
+        section
+          section
+            h2 Readings discussion
+            ul
+              li.fragment questions?
+
+        section
+
+          section
+            h1 Testing
+
+
+          //- section
+          //-   h2 Meteor Testing Guide
+          //-   a(href="https://guide.meteor.com/testing.html") https://guide.meteor.com/testing.html
+
+
+          section
+            h2 Types of Testing
+            ul
+              li.fragment Unit test
+              li.fragment Integration test
+              li.fragment Acceptance test (end to end test)
+              li.fragment Load test
+
+
+        section
+          section
+            h2
+              a(href="https://jestjs.io/") Jest
+            p Jest is a testing framework (included in create-react-app). We can use it to test js code
+            pre
+              code(data-trim data-noescape).
+                yarn add --dev jest
+
+                or
+
+                npm install --save-dev jest
+
+          section
+            h2
+              a(href="https://jestjs.io/docs/en/getting-started") Getting Started
+            p sum.js
+            pre
+              code(data-trim data-noescape).
+                function sum(a, b) {
+                  return a + b;
+                }
+                module.exports = sum;
+
+          section
+            h2 Add a test file
+            p sum.test.js
+            pre
+              code(data-trim data-noescape).
+                const sum = require('./sum');
+
+                test('adds 1 + 2 to equal 3', () => {
+                  expect(sum(1, 2)).toBe(3);
+                });
+
+          section
+            h2 Add to config
+            p package.json
+            pre
+              code(data-trim data-noescape).
+                {
+                  "scripts": {
+                    "test": "jest"
+                  }
+                }
+
+
+          section
+            h2 Run it
+            pre
+              code(data-trim data-noescape).
+                yarn test
+
+                or
+
+                npm run test
+
+
+          section
+            h2 What can you match?
+
+            a(href="https://jestjs.io/docs/en/using-matchers") https://jestjs.io/docs/en/using-matchers
+
+            pre
+              code.
+                test('two plus two', () => {
+                  const value = 2 + 2;
+                  expect(value).toBeGreaterThan(3);
+                  expect(value).toBeGreaterThanOrEqual(3.5);
+                  expect(value).toBeLessThan(5);
+                  expect(value).toBeLessThanOrEqual(4.5);
+
+                  // toBe and toEqual are equivalent for numbers
+                  expect(value).toBe(4);
+                  expect(value).toEqual(4);
+                });
+
+
+          section
+            h2 Async calls
+            p e.g. database calls
+            a(href="https://jestjs.io/docs/en/asynchronous") https://jestjs.io/docs/en/asynchronous
+            pre
+              code.
+                test('the data is peanut butter', () => {
+                  return fetchData().then(data => {
+                    expect(data).toBe('peanut butter');
+                  });
+                });
+
+
+                test('the data is peanut butter', () => {
+                  return expect(fetchData()).resolves.toBe('peanut butter');
+                });
+
+
+          section
+            h2 Setting up
+
+            a(href="https://jestjs.io/docs/en/setup-teardown") https://jestjs.io/docs/en/setup-teardown
+            pre
+              code.
+                beforeAll(() => {
+                  return initializeCityDatabase();
+                });
+
+                afterAll(() => {
+                  return clearCityDatabase();
+                });
+
+                test('city database has Vienna', () => {
+                  expect(isCity('Vienna')).toBeTruthy();
+                });
+
+                test('city database has San Juan', () => {
+                  expect(isCity('San Juan')).toBeTruthy();
+                });
+
+
+        section
+          section
+            h1 Testing the database
+
+          section
+            h2 Install jest-mongodb
+            pre
+              code.
+                yarn add mongodb
+                yarn add @shelf/jest-mongodb --dev
+
+            p package.json
+            pre
+              code.
+                {
+                  "preset": "@shelf/jest-mongodb"
+                }
+
+          section
+            h2 Jest and MongoDB
+            a(href="https://jestjs.io/docs/en/mongodb") https://jestjs.io/docs/en/mongodb
+
+            pre
+              code.
+                const {MongoClient} = require('mongodb');
+
+                describe('insert', () => {
+                  let connection;
+                  let db;
+
+                  beforeAll(async () => {
+                    connection = await MongoClient.connect(global.__MONGO_URI__, {
+                      useNewUrlParser: true,
+                    });
+                    db = await connection.db(global.__MONGO_DB_NAME__);
+                  });
+
+                  afterAll(async () => {
+                    await connection.close();
+                    await db.close();
+                  });
+
+                  it('should insert a doc into collection', async () => {
+                    const users = db.collection('users');
+
+                    const mockUser = {_id: 'some-user-id', name: 'John'};
+                    await users.insertOne(mockUser);
+
+                    const insertedUser = await users.findOne({_id: 'some-user-id'});
+                    expect(insertedUser).toEqual(mockUser);
+                  });
+                });
+
+
+
+  include ../partials/reveal_footer.pug
+
+
+

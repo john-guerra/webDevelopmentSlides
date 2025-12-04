@@ -6,6 +6,7 @@
     <meta name="author" content="John Alexis Guerra Gomez">
     <meta name="description" content="CS5610 Web Development, Northeastern University, Oakland">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link href="../lib/reset.css" rel="stylesheet">
     <link href="../lib/reveal.css" rel="stylesheet">
     <link href="../lib/theme/white.css" rel="stylesheet" id="theme">
     <link rel="stylesheet" href="../lib/plugin/highlight/monokai.css">
@@ -18,8 +19,8 @@
           <h2>HTML</h2><img class="logo" src="../img/seal_logotype-768x252.png" alt="Northeastern University"><br>
           <p class="small"><a href="http://johnguerra.co/" target="_blank"><strong>John Alexis Guerra Gómez</strong></a></p>
           <p class="tiny email">jguerra[at}northeastern.edu |<a href="http://twitter.com/duto_guerra" target="_blank"> @duto_guerra</a><br></p><br>
-          <p class="tiny">Slides:<a href="http://johnguerra.co/lectures/webDevelopment_spring2025/02_HTML/" target="_blank">http://johnguerra.co/lectures/webDevelopment_spring2025/02_HTML/</a></p>
-          <p class="tiny">Class page:<a href="http://johnguerra.co/classes/webDevelopment_spring_2025/" target="_blank">http://johnguerra.co/classes/webDevelopment_spring_2025/</a></p>
+          <p class="tiny">Slides:<a href="http://johnguerra.co/lectures/webDevelopment_fall2025/02_HTML/" target="_blank">http://johnguerra.co/lectures/webDevelopment_fall2025/02_HTML/</a></p>
+          <p class="tiny">Class page:<a href="http://johnguerra.co/classes/webDevelopment_fall_2025/" target="_blank">http://johnguerra.co/classes/webDevelopment_fall_2025/</a></p>
         </section>
         <section>
           <section>
@@ -68,8 +69,36 @@
           <section>
             <h2>Setting up locally</h2><span>
               <iframe width="560" height="315" src="https://www.youtube.com/embed/Q5bbPEAOwYs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              
               </span>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>HTML MDN Guide</h2><a class="tiny" href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">https://developer.mozilla.org/en-US/docs/Web/HTML</a>
+          </section>
+          <section>
+            <h2>Content Categories</h2>
+            <ul>
+              <li>Main Content Categories</li>
+              <li>Form-Related Categories</li>
+              <li>Specific Content Categories</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Main Content Categories</h2><a class="tiny" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Content_categories" target="_blank">https://developer.mozilla.org/en-US/docs/Web/HTML/Content_categories</a>
+            <ul class="r-fit-text">
+              <li class="fragment">Metadata (base, link, meta, noscript, script, style, title)</li>
+              <li class="fragment">Flow content (ul)
+                <ul>
+                  <li class="fragment">Sectioning content (article, aside, nav, section)</li>
+                  <li class="fragment">Heading content (h1-h6)</li>
+                  <li class="fragment">Phrasing content (b, em, i, strong, span)</li>
+                  <li class="fragment">Embedded content (audio, embed, iframe, img, object, source, track, video)</li>
+                  <li class="fragment">Interactive content (a, button, details, embed, iframe, img, input, label, select, textarea)</li>
+                  <li class="fragment">Form-associated content (form, input, label, legend, meter, output)</li>
+                </ul>
+              </li>
+            </ul>
           </section>
         </section>
         <section>
@@ -85,7 +114,7 @@
             </ul>
           </section>
           <section>
-            <h2 class="demo">Resources</h2>
+            <h2>Resources</h2>
             <p>What do we have to show?</p>
             <ul class="small">
               <li class="fragment">Listing
@@ -147,6 +176,7 @@
       history: true,
       center: true,
       transition: "convex",
+      //- height: 1.0,
     
       plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
     });

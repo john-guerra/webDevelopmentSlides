@@ -1,0 +1,70 @@
+doctype html
+html
+  head
+    title CS5610 Web Development, Security
+    meta(charset='utf-8')
+    meta(name='author', content='John Alexis Guerra Gomez')
+    meta(name='description', content='CS5610 Web Development, Northeastern University, Oakland')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui")
+
+    include ../partials/reveal_header.pug
+
+    script(src='../lib/js/bumpChartPhotos.js')
+
+  body
+
+    .reveal
+      .slides
+
+        section#title
+          h2 Basic security concepts
+          img.logo(src="../img/seal_logotype-768x252.png" alt="Northeastern University")
+
+
+          br
+          p.small
+            a(href='http://johnguerra.co/', target='_blank') #[strong John Alexis Guerra Gómez]
+
+          p.tiny.email jguerra[at}northeastern.edu |
+            a(href='http://twitter.com/duto_guerra' , target='_blank')  @duto_guerra
+            br
+
+
+            //- br
+            //- span ja.guerrag en uniandes.edu.co
+            //- br
+            //- a(href='https://bsky.app/profile/johnguerra.bsky.social') @johnguerra.bsky.social
+          //- p.small Use
+          //-   strong  spacebar
+          //-   |  and the arrows to advance slides
+          br
+          p.tiny Slides:
+            a(href='http://johnguerra.co/lectures/webDevelopment_fall2025/13_Security/', target='_blank') http://johnguerra.co/lectures/webDevelopment_fall2025/13_Security/
+          p.tiny Class page:
+            a(href='http://johnguerra.co/classes/webDevelopment_fall_2025/', target='_blank') http://johnguerra.co/classes/webDevelopment_fall_2025/
+
+
+        //- convert -density 150 -depth 8 -quality 85 ~/Dropbox/documentos/2016/andes/visual_analytics/lectures_tamara/05_rules-artery.pdf ./05_rules-artery.png
+
+        section
+          section
+            h2 This should be a whole semester!
+
+
+          section
+            h2.demo I challenge a hacker
+            iframe.demo(width="560" height="315" src="https://www.youtube.com/embed/F78UdORll-Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+
+          section
+            h2.demo Car hacking
+            iframe(width="560" height="315" src="https://www.youtube.com/embed/MK0SrxBC1xs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+
+          section
+            h2.demo Hacking in Movies
+            iframe.demo(width="560" height="315" src="https://www.youtube.com/embed/SZQz9tkEHIg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+
+
+  include ../partials/reveal_footer.pug
+
+
+

@@ -10,7 +10,6 @@ html
     include ../partials/reveal_header.pug
   body
 
-
     .reveal
       .slides
 
@@ -32,9 +31,9 @@ html
           //-   |  and the arrows to advance slides
           br
           p.tiny Slides:
-            a(href='http://johnguerra.co/lectures/webDevelopment_spring2025/01_Introduction/', target='_blank') http://johnguerra.co/lectures/webDevelopment_spring2025/01_Introduction/
+            a(href='http://johnguerra.co/lectures/webDevelopment_fall2025/01_Introduction/', target='_blank') http://johnguerra.co/lectures/webDevelopment_fall2025/01_Introduction/
           p.tiny Class page:
-            a(href='http://johnguerra.co/classes/webDevelopment_spring_2025/', target='_blank') http://johnguerra.co/classes/webDevelopment_spring_2025/
+            a(href='http://johnguerra.co/classes/webDevelopment_fall_2025/', target='_blank') http://johnguerra.co/classes/webDevelopment_fall_2025/
 
 
         //- convert -density 150 -depth 8 -quality 85 ~/Dropbox/documentos/2016/andes/visual_analytics/lectures_tamara/05_rules-artery.pdf ./05_rules-artery.png
@@ -52,7 +51,7 @@ html
               li.fragment Love/Hate the professor
 
           section
-            h2 Topics
+            h2.small Topics
             span.left.small
               :markdown-it
                 * HTML5, CSS
@@ -72,16 +71,15 @@ html
                 * Desktop Apps with JS
                 * SVG + Canvas
                 * Web Sockets
-                * Gatsby?
 
           section
             h2 Readings
-            ul.small
+            ul.small.r-fit-text
               li.fragment Asynchronous materials
                 ul
                   li.fragment You read them on your own
                   li.fragment Mandatory
-                  li.fragment Tweet before class something about what you read
+                  li.fragment Post on Bluesky before class something about what you read
               li.fragment Synchronous materials
                 ul
                   li.fragment Discussions
@@ -89,10 +87,10 @@ html
                   li.fragment Random questions (participation)
 
           section
-            h2 Comments (tweets) before class
+            h2 Comments (Bluesky) before class
             ul
               li.fragment Must be #[strong interesting] and #[strong original]
-              li.fragment Tweet using #WebDev @NortheasternCA
+              li.fragment Post on Bluesky using #WebDev @northeasternu.bsky.social
               li.fragment Count as part of the participation grade
                 ul
                   li.fragment 2pts Original and interesting
@@ -168,8 +166,8 @@ html
             h2 Projects
             ul
               li.fragment One short project – Individually
-              li.fragment Two short projects - Pairs
-              li.fragment One final project - Pairs
+              li.fragment Two short projects - Individually
+              li.fragment One final project - Individually
 
           section
             h2 More about projects
@@ -197,7 +195,7 @@ html
             ul
               li.fragment #[a(href="http://web-dev-neu.slack.com") Slack channel]
               li.fragment Office hours by appointment
-              li.fragment Two/Three TAs
+              li.fragment One TA
 
 
         //- ------------------------WHOAMI----------------------
@@ -226,7 +224,7 @@ html
             img(src="images/Ben_and_Catherine.jpg")
 
           section
-            iframe.blocks(src="https://cdn.rawgit.com/mbostock/4063582/raw/dd152a94f98ab7081a41096a88ece375e64a8b6c/index.html")
+            iframe.blocks(data-src="https://cdn.rawgit.com/mbostock/4063582/raw/dd152a94f98ab7081a41096a88ece375e64a8b6c/index.html")
 
           section
             img(src="images/lifelines.jpg")
@@ -301,6 +299,7 @@ html
           //- section
           //-   img(src="images/GeoExplorer.png")
 
+
         //- ------------ Examples --------------
         section#Examples
           section
@@ -308,8 +307,8 @@ html
 
           section
             h3.demo My home page
-            iframe.blocks(src="http://johnguerra.co")
-            a.tiny(target="_blank" href="http://johnguerra.co") http://johnguerra.co
+            iframe.blocks(data-src="https://johnguerra.co")
+            a.tiny(target="_blank" href="https://johnguerra.co") http://johnguerra.co
 
           section
             h3 My home page
@@ -320,11 +319,10 @@ html
 
           section
             h3.demo My PhD Thesis
-            a.tiny(target="_blank" href="http://treeversity.cattlab.umd.edu") http://treeversity.cattlab.umd.edu
+            a.tiny(target="_blank" href="https://treeversity.cattlab.umd.edu") http://treeversity.cattlab.umd.edu
 
-          section(data-background-iframe= "http://treeversity.cattlab.umd.edu")
-            //- iframe.blocks(src="http://treeversity.cattlab.umd.edu")
-
+          section(data-background-iframe= "https://treeversity.cattlab.umd.edu")
+            //- iframe.blocks(data-src="http://treeversity.cattlab.umd.edu")
 
           section
             h3 My PhD Thesis
@@ -335,8 +333,8 @@ html
 
           section
             h3.demo Tweetometro
-            iframe.blocks(src="http://old.tweetometro.co")
-            a.tiny(target="_blank" href="http://old.tweetometro.co") http://tweetometro.co
+            iframe.blocks(data-src="https://old.tweetometro.co")
+            a.tiny(target="_blank" href="https://old.tweetometro.co") http://tweetometro.co
 
           section
             h3 Tweetometro
@@ -348,9 +346,9 @@ html
           section
             h3.demo Who likes my Facebook
             img(src="images/wholikesmyfb_small.gif")
-            //- iframe.blocks(src="http://wholikesmyfb.com")
+            //- iframe.blocks(data-src="http://wholikesmyfb.com")
             br
-            a.tiny(target="_blank" href="http://wholikesmyfb.com") http://wholikesmyfb.com
+            a.tiny(target="_blank" href="https://wholikesmyfb.com") https://wholikesmyfb.com
 
           section
             h3 Who likes my Facebook
@@ -373,7 +371,7 @@ html
 
           section
             h3.demo How did Colombia really vote
-            iframe.blocks(src="http://johnguerra.co/viz/resultadosSegundaVuelta2018/")
+            iframe.blocks(data-src="http://johnguerra.co/viz/resultadosSegundaVuelta2018/")
             a.tiny(target="_blank" href="http://johnguerra.co/viz/resultadosSegundaVuelta2018/") http://johnguerra.co/viz/resultadosSegundaVuelta2018/
 
           section(data-background-iframe="http://johnguerra.co/viz/resultadosSegundaVuelta2018/")
@@ -386,7 +384,7 @@ html
 
           section
             h3.demo BTactile
-            iframe.blocks(src="http://btactile.com")
+            iframe.blocks(data-src="http://btactile.com")
             a.tiny(target="_blank" href="http://btactile.com") http://btactile.com
 
           section

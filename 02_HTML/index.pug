@@ -36,12 +36,14 @@ html
           //-   |  and the arrows to advance slides
           br
           p.tiny Slides:
-            a(href='http://johnguerra.co/lectures/webDevelopment_spring2025/02_HTML/', target='_blank') http://johnguerra.co/lectures/webDevelopment_spring2025/02_HTML/
+            a(href='http://johnguerra.co/lectures/webDevelopment_fall2025/02_HTML/', target='_blank') http://johnguerra.co/lectures/webDevelopment_fall2025/02_HTML/
           p.tiny Class page:
-            a(href='http://johnguerra.co/classes/webDevelopment_spring_2025/', target='_blank') http://johnguerra.co/classes/webDevelopment_spring_2025/
+            a(href='http://johnguerra.co/classes/webDevelopment_fall_2025/', target='_blank') http://johnguerra.co/classes/webDevelopment_fall_2025/
 
 
         //- convert -density 150 -depth 8 -quality 85 ~/Dropbox/documentos/2016/andes/visual_analytics/lectures_tamara/05_rules-artery.pdf ./05_rules-artery.png
+
+        //- What we learned last time
         section
           //- section
           //-   h2 What did we learn last time?
@@ -62,7 +64,7 @@ html
               li.fragment What's the DOM
 
 
-
+        //- setting up env
         section
           section
             span
@@ -99,7 +101,36 @@ html
             span.
               <iframe width="560" height="315" src="https://www.youtube.com/embed/Q5bbPEAOwYs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+        //- HTML MDN Guide
+        section
+          section
+            h2 HTML MDN Guide
+            a.tiny(href="https://developer.mozilla.org/en-US/docs/Web/HTML", target="_blank") https://developer.mozilla.org/en-US/docs/Web/HTML
 
+
+          section
+            h2 Content Categories
+            ul
+              li Main Content Categories
+              li Form-Related Categories
+              li Specific Content Categories
+
+          section
+            h2 Main Content Categories
+            a.tiny(href="https://developer.mozilla.org/en-US/docs/Web/HTML/Content_categories", target="_blank") https://developer.mozilla.org/en-US/docs/Web/HTML/Content_categories
+            ul.r-fit-text
+              li.fragment Metadata (base, link, meta, noscript, script, style, title)
+              li.fragment Flow content (ul)
+                ul
+                  li.fragment Sectioning content (article, aside, nav, section)
+                  li.fragment Heading content (h1-h6)
+                  li.fragment Phrasing content (b, em, i, strong, span)
+                  li.fragment Embedded content (audio, embed, iframe, img, object, source, track, video)
+                  li.fragment Interactive content (a, button, details, embed, iframe, img, input, label, select, textarea)
+                  li.fragment Form-associated content (form, input, label, legend, meter, output)
+
+
+        //- Group exercise airbnb
         section
           section
             h2 Group Exercise
@@ -112,7 +143,7 @@ html
               li.fragment What do we want them to do? #[strong Task]
 
           section
-            h2.demo Resources
+            h2 Resources
             p What do we have to show?
             ul.small
               li.fragment Listing

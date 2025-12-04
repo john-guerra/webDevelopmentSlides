@@ -1,0 +1,635 @@
+doctype html
+html
+  head
+    title CS5610 Web Development, Usability
+    meta(charset='utf-8')
+    meta(name='author', content='John Alexis Guerra Gomez')
+    meta(name='description', content='CS5610 Web Development, Northeastern University, Oakland')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui")
+include ../partials/reveal_header.pug
+  body
+
+
+    .reveal
+      .slides
+
+        section#title
+          h2 Usability and HCI
+          img.logo(src="../img/seal_logotype-768x252.png" alt="Northeastern University")
+
+
+          br
+          p.small
+            a(href='http://johnguerra.co/', target='_blank') #[strong John Alexis Guerra Gómez]
+
+          p.tiny.email jguerra[at}northeastern.edu |
+            a(href='http://twitter.com/duto_guerra' , target='_blank')  @duto_guerra
+            br
+
+
+            //- br
+            //- span ja.guerrag en uniandes.edu.co
+            //- br
+            //- a(href='https://bsky.app/profile/johnguerra.bsky.social') @johnguerra.bsky.social
+          //- p.small Use
+          //-   strong  spacebar
+          //-   |  and the arrows to advance slides
+          br
+          p.tiny Slides:
+            a(href='http://johnguerra.co/lectures/webDevelopment_fall2025/10_Usability/', target='_blank') http://johnguerra.co/lectures/webDevelopment_fall2025/10_Usability/
+          p.tiny Class page:
+            a(href='http://johnguerra.co/classes/webDevelopment_fall_2025/', target='_blank') http://johnguerra.co/classes/webDevelopment_fall_2025/
+
+
+        //- convert -density 150 -depth 8 -quality 85 ~/Dropbox/documentos/2016/andes/visual_analytics/lectures_tamara/05_rules-artery.pdf ./05_rules-artery.png
+        section
+          section
+            h2 Readings discussion
+            ul
+              li.fragment questions?
+
+
+        section
+          section
+            h2 Evaluation
+            ul
+              li.fragment Controlled experiments
+              li.fragment Natural settings
+              li.fragment Any setting not involving users (expert reviews)
+
+          section
+            h2 Expert Reviews
+            ul
+              li.fragment Design experts
+              li.fragment Visualization experts
+              li.fragment Usability experts
+              li.fragment Domain experts
+
+          section
+            h2 Types of Expert Reviews
+            ul.small
+              li.fragment Heuristic evaluation (golden rules)
+              li.fragment Guidelines review
+              li.fragment Consistency inspection
+              li.fragment Cognitive walkthrough
+              li.fragment Metaphors of human thinking
+              li.fragment Formal usability inspection (courtroom style)
+              li.fragment Accesibility inspection
+
+          section
+            h2 Eight Golden Rules of Design
+            ul.small
+              li.fragment Strive for consistency
+              li.fragment Cater for universal usability
+              li.fragment Offer informative feedback
+              li.fragment Design dialogs to yield closure
+              li.fragment Prevent errors
+              li.fragment Permit easy reversal of actions
+              li.fragment Support internal locus of control
+              li.fragment Reduce short-term memory load
+
+          //- section
+          //-   div
+          //-     img(data-src="./images/UC_Berkeley_wordmark_cal_gold.png" alt="University Of California at Berkeley logo")
+        section
+          section
+            h2 Controlled Experiments
+            ul
+              li.fragment Experiments in the lab
+              li.fragment Controlled confounding variables
+              li.fragment Measure one or more quantitative variables
+                ul
+                  li.fragment Usability testing
+                  li.fragment Living labs
+          section
+            h3 What to Measure?
+            ul
+              li.fragment Time to learn
+              li.fragment Speed of performance
+              li.fragment Rate of errors
+              li.fragment Retention over time
+              li.fragment Subject satisfaction
+
+          section
+            h2 Variables
+            ul
+              li.fragment Independent variables (causes)
+              li.fragment Dependent variables (effect)
+              li.fragment Extraneous variables (that can affect the experiment)
+
+          section
+            h2 Controlled Experiment example
+
+
+          section.full
+            h3.demo Tasks and conditions
+            figure
+              img(style="width:800px", data-src="./images/controlled_experiment_example.png", "Controlled experiment example")
+              figcaption.reference Kim, Y. and Heer, J. (2018), Assessing Effects of Task and Data Distribution on the Effectiveness of Visual Encodings. Computer Graphics Forum, 37: 157-167. doi:10.1111/cgf.13409
+
+          section.full
+            h3.demo Controlling extraneous variables
+
+            figure
+              img(style="height:500px;width:auto;", data-src="./images/controlled_experiment_example2.png", "Controlled experiment example")
+              figcaption.reference Kim, Y. and Heer, J. (2018), Assessing Effects of Task and Data Distribution on the Effectiveness of Visual Encodings. Computer Graphics Forum, 37: 157-167. doi:10.1111/cgf.13409
+
+          section.full
+            h3.demo Tasks
+
+            figure
+              img(style="height:500px;width:auto;", data-src="./images/controlled_experiment_example3.png", "Controlled experiment example")
+              figcaption.reference Kim, Y. and Heer, J. (2018), Assessing Effects of Task and Data Distribution on the Effectiveness of Visual Encodings. Computer Graphics Forum, 37: 157-167. doi:10.1111/cgf.13409
+
+          section.full
+            h3.demo Results
+
+            figure
+              img(style="height:500px;width:auto;", data-src="./images/controlled_experiment_example4.png", "Controlled experiment example")
+              figcaption.reference Kim, Y. and Heer, J. (2018), Assessing Effects of Task and Data Distribution on the Effectiveness of Visual Encodings. Computer Graphics Forum, 37: 157-167. doi:10.1111/cgf.13409
+
+          //- section
+          //-   div
+          //-     img(data-src="./images/UC_Berkeley_wordmark_cal_gold.png" alt="University Of California at Berkeley logo")
+        section
+          section
+            h1 Usability Testing
+
+          section
+            h2.demo Usability Testing
+            span.
+              <a data-flickr-embed="true"  href="https://www.flickr.com/photos/yandle/3231980616/in/photolist-5VAKeJ-e6vGNu-5VAMNf-5VAJkd-5VASE7-8uu5ej-3j3Cw-7WKyy5-7WKqhG-7WGg1p-bWf1T-cN17Zf-mLmuep-5iDL3Q-7WGaTx-bWf6R-pTf438-7WKzxd-7WGgwR-5VACYA-5VAHzY-5VwiYB-5VAGNL-5VADX3-5VwrGk-7yX8Zc-2vyF2V-7yX96K-dGkneA-7z2MTA-jrkhAN-fQ1cWh-69mwdv-dSJH5t-5iKD8N-2b6Jr-7WGk2x-7WGbSp-5VAQ8f-7WGb6a-7WKXYh-5iFg8H-7WGeMg-7WKssG-7WKtKd-bWffr-7WKt9m-7WKrxA-8ZAttz-7WKzLN" title="Brighton Uni Usability Lab"><img data-src="https://c1.staticflickr.com/4/3094/3231980616_5ccd164737_b.jpg" width="1024" height="685" alt="Brighton Uni Usability Lab"></a><script async data-src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
+          section
+            h3 Natural Settings Involving Users
+            ul
+              li Observation
+              li Interviews
+              li Logging
+
+          section
+            h2 Triangulation
+            p Different researchers observe the same effect.
+
+          section
+            h2 Interviews
+            ul
+              li Unstructured
+              li Structured
+              li Semi-structured
+              li Focus group
+              li Telephone/online interviews
+
+          section
+            h2 Questionnaire
+            p Like interviews but without the researcher present
+
+          //- section
+          //-   div
+          //-     img(data-src="./images/UC_Berkeley_wordmark_cal_gold.png" alt="University Of California at Berkeley logo")
+        section
+          section
+            h1 Likert Scales
+
+          section
+            h2 Likert Scale
+            p What do you think?
+            ul
+              li Strongly disagree
+              li Disagree
+              li Okay
+              li Agree
+              li Strongly agree
+
+          section
+            h2 More About Likert Scales
+            ul
+              li Can be 3, 5, 7, or more responses
+              li Continuous or discrete
+              li Middle response is the balance
+
+          section
+            h3.demo Likert Scales d3
+            .demo.
+              <div id="observablehq-4a66ebdc">
+                <div class="observablehq-chart"></div>
+                <div style="overflow: hidden;"><a style="display: block; float:right;" href="https://observablehq.com/@john-guerra/d3-likert-scale"><object type="image/svg+xml" style="pointer-events: none;" width=180 height=22 data="https://static.observableusercontent.com/files/c3fab254a006f1a3a1f9f63aba8ab1460db4752529036b9962950bde0ec195bab823daa6b278b1c3401e545b3bd640ddfdcad805cf9859af218cb2b9fed4ddf0"></object></a></div>
+              </div>
+              <script type="module">
+                import {Runtime, Inspector, Library} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+                import define from "https://api.observablehq.com/@john-guerra/d3-likert-scale.js?v=3";
+
+                const runtime = new Runtime(Object.assign(new Library, {width: document.querySelector("#observablehq-4a66ebdc .observablehq-chart").clientWidth-200}))
+
+                runtime.module(define, name => {
+                  if (name === "chart") return Inspector.into("#observablehq-4a66ebdc .observablehq-chart")();
+                });
+              </script>
+
+            iframe.blocks(data-src="https://blockbuilder.org/john-guerra/57d31bae7685139cecd731bba9f48090")
+            a.tiny(target="_blank" href="https://blockbuilder.org/john-guerra/57d31bae7685139cecd731bba9f48090") https://blockbuilder.org/john-guerra/57d31bae7685139cecd731bba9f48090
+
+
+          section
+            h3.demo Likert Scales Vega-Lite
+            iframe.blocks(data-src="https://vega.github.io/vega-lite/examples/layer_likert.html")
+            a.tiny(target="_blank" href="https://vega.github.io/vega-lite/examples/layer_likert.html") https://vega.github.io/vega-lite/examples/layer_likert.html
+
+          section
+            h3.demo Likert Scales Vega-L ite (cont.)
+            iframe.blocks(data-src="https://vega.github.io/vega-lite/examples/concat_layer_voyager_result.html")
+            a.tiny(target="_blank" href="https://vega.github.io/vega-lite/examples/concat_layer_voyager_result.html") https://vega.github.io/vega-lite/examples/concat_layer_voyager_result.html
+
+
+          //- section
+          //-   div
+          //-     img(data-src="./images/UC_Berkeley_wordmark_cal_gold.png" alt="University Of California at Berkeley logo")
+        section
+          section
+            h1 Other Methods
+
+          section
+            h2 Observation
+            ul
+              li User's setting
+              li Can be direct or indirect
+
+          section
+            h2 Direct Observation in the Field
+            p Ethnography
+
+          section
+            h3 Direct Observation in Controlled Environments
+            ul
+              li Think aloud techniques
+
+          section
+            h3 Direct Observation: Tracking Users
+            ul
+              li Diaries
+              li Interaction logs and web analytics
+
+          section
+            h2 MILCS
+            ul
+              li Multi-dimensional
+              li In-depth
+              li Long-term
+              li Case studies
+
+          section
+            h2 TreeVersity MILCS
+            ul
+              li Thirteen different case studies with nine agencies
+              li
+                a(href="http://treeversity.cattlab.umd.edu/") TreeVersity 2: UMD Budget 2010 - 2012
+
+          section
+            h2 Focus groups
+            p One researcher, many attendees
+
+          section
+            h2 Prototyping
+            ul
+              li Low vs. high fidelity?
+              li Read data
+              li Build scenarios, tell a story
+
+          section
+            h2 Quatitative evaluation
+            a(href="http://yatani.jp/teaching/doku.php?id=hcistats:anova") Analysis of Variance (ANOVA) for comparing the means
+
+          //- section
+          //-   div
+          //-     img(data-src="./images/UC_Berkeley_wordmark_cal_gold.png" alt="University Of California at Berkeley logo")
+        section
+          section
+            h2 Running a Usability Study
+
+
+          section
+            h3 Validity Checks
+            ul
+              li Earlier stages:
+                ul
+                  li Observe and interview target users (needs assessment)
+                  li Design data abstraction/operation (data types, transformation, operations)
+                  li Justify encoding/interaction design (design heuristics, perception research)
+                  li Informal analysis/qualitative analysis of prototypes (task-based)
+                  li Algorithm complexity analysis/evaluation
+
+              li Mid- and later stages:
+                ul
+                  li Qualitative analysis of system (task-based)
+                  li Algorithm performance analysis
+                  li Lab or crowdsourced user study
+                  li Field study of the deployed system
+
+          section
+            h3 Formal Usability Study
+            h4.fragment Goal: Does the visualization allow the user/analyst to perform key tasks?
+
+          section
+            h3 Task-Oriented Visual Insights
+            ul
+              li Basic insights:
+                ul
+                  li Read a value
+                  li Identify extrema
+                  li Characterize distribution
+                  li Describe correlation
+              li Comparative insights:
+                ul
+                  li Compare values
+                  li Compare extrema
+                  li Compare distribution
+                  li Compare correlation
+
+          section
+            h3 Usability Study: Logistics
+            ul
+              li You will need:
+                ul
+                  li Visualization with test data loaded
+                  li Consent form (if required)
+                  li Task list
+                  li Protocol (study procedures and debrief questions)
+                  li Surveys/interviews and any additional data-collection instruments
+                  li Audio or video recorder, notepad
+
+          section
+            h3 How Many People Do You Need?
+            img(data-data-src="./images/usability-size.png")
+
+          section
+            h3 "Lab" Doesn’t Need to Mean a Formal Lab
+
+          section
+            h3 Software for Collecting Audio/Video
+            ul
+              li Video of user
+              li Screencapture of user actions
+              li Audio of entire session
+
+          section
+            h3 Online Tools
+            ul
+              li Surveys
+              li Mouse tracking/navigation tracking
+          //- section
+          //-   div
+          //-     img(data-src="./images/UC_Berkeley_wordmark_cal_gold.png" alt="University Of California at Berkeley logo")
+
+        section
+          section
+            h2 Prioritization
+
+          section
+            h3 You’ve Collected Data
+            div.flex
+              div.left
+                ul
+                  li Task completion
+                  li Time on task
+                  li Notes
+                  li Interview responses
+                  li Survey responses
+                  li ...Then what?
+              div.right
+                img(data-data-src="./images/user-study-result.png")
+                div.tiny #[a(href="") Table source: Stasko, J., Catrambone, R., Guzdial, M., & McDonald, K. (2000). An evaluation of space-filling information visualizations for depicting hierarchical structures.]
+            aside(class="notes").
+              How is the task completion recorded, does the analyst note it themsleves, do they write something down.
+
+          section
+            h3 What is the Analyst’s Information Scent?
+            aside(class="notes").
+              A term originating from Peter Pirolli and Stuart Card PARC looking at meaning
+              Accounts for not just completion but also situating WHAT the person was doing, may wish to do think aloud as well. It’s not always obvious what leads to the challenge.  Like a detective, not always obvious. Transating to design.
+
+          section
+            h3 MoSCoW Prioritization
+            ul
+              li Must
+              li Should
+              li Could
+              li Won't
+            aside(class="notes").
+              Discuss brief history, came from the dynamic software development method.
+
+          section
+            h3 Severity Ratings
+            ol
+              li Not a real problem
+              li Cosmetic
+              li Minor usability issue
+              li Major usability issue
+              li Critical issue
+            aside(class="notes").
+
+          section
+            h3 Limitations
+            ol
+              li Ecological validity
+              li Are performance-oriented tasks the complete story?
+            aside(class="notes").
+
+          //- section
+          //-   div
+          //-     img(data-src="./images/UC_Berkeley_wordmark_cal_gold.png" alt="University Of California at Berkeley logo")
+        section
+          section
+            h2 Usability Study Demo
+
+          //- section
+          //-   div
+          //-     img(data-src="./images/UC_Berkeley_wordmark_cal_gold.png" alt="University Of California at Berkeley logo")
+
+        //- section
+          section
+            h2 Evaluation
+            ul
+              li.fragment Controlled Experiments involving users
+              li.fragment Natural settings involving users
+              li.fragment Any setting not involving users
+
+
+          section
+            h2 Expert reviews
+            ul
+              li.fragment Design Experts
+              li.fragment Visualization Experts
+              li.fragment Usability Experts
+              li.fragment Domain Experts
+
+          section
+            h2 Types of expert reviews
+            ul
+              li.fragment Heuristic evaluation (golden rules)
+              li.fragment Guidelines review
+              li.fragment Consistency inspection
+              li.fragment Cognitive walkthrough
+              li.fragment Metaphors of human thinking
+              li.fragment Formal usability inspection (courtroom style)
+              li.fragment Accesibility inspection
+
+          section
+            h2 8 golden rules of design
+            ul.small
+              li.fragment Strive for consistency
+              li.fragment Cater for universal usability
+              li.fragment Offer informative feedback
+              li.fragment Design dialogs to yield closure
+              li.fragment Prevent errors
+              li.fragment Permit easy reversal of actions
+              li.fragment Support internal locus of control
+              li.fragment Reduce short-term memory load
+
+
+          section
+            h2 Controlled Experiments
+            ul
+              li.fragment Experiments in the lab
+              li.fragment Controlled confounding variables
+              li.fragment Measure one or more quantitative variables
+              li.fragment
+                ul
+                  li.fragment Usability testing
+                  li.fragment Living labs
+          section
+            h3 What to measure?
+            ul
+              li.fragment Time to learn
+              li.fragment Speed of performance
+              li.fragment Rate of errors
+              li.fragment Retention over time
+              li.fragment Subject satisfaction
+
+          section
+            h2.demo Usability Testing
+            span.
+              <a data-flickr-embed="true"  href="https://www.flickr.com/photos/yandle/3231980616/in/photolist-5VAKeJ-e6vGNu-5VAMNf-5VAJkd-5VASE7-8uu5ej-3j3Cw-7WKyy5-7WKqhG-7WGg1p-bWf1T-cN17Zf-mLmuep-5iDL3Q-7WGaTx-bWf6R-pTf438-7WKzxd-7WGgwR-5VACYA-5VAHzY-5VwiYB-5VAGNL-5VADX3-5VwrGk-7yX8Zc-2vyF2V-7yX96K-dGkneA-7z2MTA-jrkhAN-fQ1cWh-69mwdv-dSJH5t-5iKD8N-2b6Jr-7WGk2x-7WGbSp-5VAQ8f-7WGb6a-7WKXYh-5iFg8H-7WGeMg-7WKssG-7WKtKd-bWffr-7WKt9m-7WKrxA-8ZAttz-7WKzLN" title="Brighton Uni Usability Lab"><img src="https://c1.staticflickr.com/4/3094/3231980616_5ccd164737_b.jpg" width="1024" height="685" alt="Brighton Uni Usability Lab"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
+
+
+          section
+            h3 Natural settings involving users
+            ul
+              li Observation
+              li Interviews
+              li Logging
+
+          section
+            h2 Triangulation
+            p Different researchers observe the same effect
+
+          section
+            h2 Interviews
+            ul
+              li.fragment Unstructured
+              li.fragment Structured
+              li.fragment Semi-structured
+              li.fragment Focus group
+              li.fragment Telephone/Online interviews
+
+          section
+            h2 Questionnaire
+            p Like interviews but without the researcher present
+
+          section
+            h2 Likert Scale
+            p What do you think?
+            ul.fragment
+              li Strongly disagree
+              li disagree
+              li ok
+              li agree
+              li Strongly agree
+
+          section
+            h2 More about likert scales
+            ul
+              li.fragment Can be 3, 5, 7 or more responses
+              li.fragment Continuos or Discrete
+              li.fragment Middle response is the balance
+
+          section
+            h2 Observation
+            ul
+              li.fragment User's setting
+              li.fragment Can be direct or indirect
+
+          section
+            h2 Direct Observation in the field
+            p Ethnography
+
+          section
+            h3 Direct Observation in controlled environments
+            ul
+              li.fragment Think aloud techniques
+
+          section
+            h3 Direct Observation: tracking users
+            ul
+              li.fragment Diaries
+              li.fragment Interaction Logs and web analytics
+
+          section
+            h2 MILCS
+            ul
+              li.fragment Multi-dimensional
+              li.fragment In-depth
+              li.fragment Long-term
+              li.fragment sase studies
+
+          section
+            h2 Focus groups
+            p One researcher, many attendees
+
+          section
+            h2 Prototyping
+            ul
+              li.fragment Low vs high fidelity?
+              li.fragment read data
+              li.fragment build scenarios, tell a story
+
+          section
+            h2 Quatitative evaluation
+            a(href="http://yatani.jp/teaching/doku.php?id=hcistats:anova") http://yatani.jp/teaching/doku.php?id=hcistats:anova
+
+          //- section
+          //-   h2 Evaluation techniques
+          //-   ul
+          //-     li Interviews
+          //-     li Questionaires
+          //-     li Observation
+          //- section
+          //-   h2 Analyzing results
+          //-   ul
+          //-     li Quantitative analysis
+          //-     li Qualitative analysis
+
+
+
+        // Design principles
+        section
+          h2 References
+          ul
+            li
+              a(href="http://cs.umd.edu/hcil/DTUI6/") Shneiderman, B. and Plaisant, C., 1987. Designing the user interface: Strategies for effective human-computer interaction
+            li
+              a(href="http://www.id-book.com/") Rogers, Y., Sharp, H., Preece, J. and Tepper, M., 2007. Interaction design: beyond human-computer interaction.
+
+            li
+              a(href="https://www.amazon.com/Doing-Psychology-Experiments-David-Martin/dp/0495115770")  Martin, D.W., 2007. Doing psychology experiments. Cengage Learning.
+
+
+
+
+
+
+
+  include ../partials/reveal_footer.pug
+
+
+

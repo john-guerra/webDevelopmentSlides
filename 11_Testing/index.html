@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CS5610 Web Development, Testing</title>
+    <meta charset="utf-8">
+    <meta name="author" content="John Alexis Guerra Gomez">
+    <meta name="description" content="CS5610 Web Development, Northeastern University, Oakland">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  </head>
+</html>
+<link href="../lib/reset.css" rel="stylesheet">
+<link href="../lib/reveal.css" rel="stylesheet">
+<link href="../lib/theme/white.css" rel="stylesheet" id="theme">
+<link rel="stylesheet" href="../lib/plugin/highlight/monokai.css">
+<link href="../css/style.css" rel="stylesheet">
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section id="title">
+        <h2>Testing</h2><img class="logo" src="../img/seal_logotype-768x252.png" alt="Northeastern University"><br>
+        <p class="small"><a href="http://johnguerra.co/" target="_blank"><strong>John Alexis Guerra Gómez</strong></a></p>
+        <p class="tiny email">jguerra[at}northeastern.edu |<a href="http://twitter.com/duto_guerra" target="_blank"> @duto_guerra</a><br></p><br>
+        <p class="tiny">Slides:<a href="http://johnguerra.co/lectures/webDevelopment_fall2025/11_Testing/" target="_blank">http://johnguerra.co/lectures/webDevelopment_fall2025/11_Testing/</a></p>
+        <p class="tiny">Class page:<a href="http://johnguerra.co/classes/webDevelopment_fall_2025/" target="_blank">http://johnguerra.co/classes/webDevelopment_fall_2025/</a></p>
+      </section>
+      <section>
+        <section>
+          <h2>Readings discussion</h2>
+          <ul>
+            <li class="fragment">questions?</li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>Testing</h1>
+        </section>
+        <section>
+          <h2>Types of Testing</h2>
+          <ul>
+            <li class="fragment">Unit test</li>
+            <li class="fragment">Integration test</li>
+            <li class="fragment">Acceptance test (end to end test)</li>
+            <li class="fragment">Load test</li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h2><a href="https://jestjs.io/">Jest</a></h2>
+          <p>Jest is a testing framework (included in create-react-app). We can use it to test js code</p>
+          <pre><code data-trim data-noescape>yarn add --dev jest
+
+or
+
+npm install --save-dev jest
+</code></pre>
+        </section>
+        <section>
+          <h2><a href="https://jestjs.io/docs/en/getting-started">Getting Started</a></h2>
+          <p>sum.js</p>
+          <pre><code data-trim data-noescape>function sum(a, b) {
+  return a + b;
+}
+module.exports = sum;
+</code></pre>
+        </section>
+        <section>
+          <h2>Add a test file</h2>
+          <p>sum.test.js</p>
+          <pre><code data-trim data-noescape>const sum = require('./sum');
+
+test('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+</code></pre>
+        </section>
+        <section>
+          <h2>Add to config</h2>
+          <p>package.json</p>
+          <pre><code data-trim data-noescape>{
+  "scripts": {
+    "test": "jest"
+  }
+}
+
+</code></pre>
+        </section>
+        <section>
+          <h2>Run it</h2>
+          <pre><code data-trim data-noescape>yarn test
+
+or
+
+npm run test
+
+</code></pre>
+        </section>
+        <section>
+          <h2>What can you match?</h2><a href="https://jestjs.io/docs/en/using-matchers">https://jestjs.io/docs/en/using-matchers</a>
+          <pre><code>test('two plus two', () => {
+  const value = 2 + 2;
+  expect(value).toBeGreaterThan(3);
+  expect(value).toBeGreaterThanOrEqual(3.5);
+  expect(value).toBeLessThan(5);
+  expect(value).toBeLessThanOrEqual(4.5);
+
+  // toBe and toEqual are equivalent for numbers
+  expect(value).toBe(4);
+  expect(value).toEqual(4);
+});
+
+</code></pre>
+        </section>
+        <section>
+          <h2>Async calls</h2>
+          <p>e.g. database calls</p><a href="https://jestjs.io/docs/en/asynchronous">https://jestjs.io/docs/en/asynchronous</a>
+          <pre><code>test('the data is peanut butter', () => {
+  return fetchData().then(data => {
+    expect(data).toBe('peanut butter');
+  });
+});
+
+
+test('the data is peanut butter', () => {
+  return expect(fetchData()).resolves.toBe('peanut butter');
+});
+
+</code></pre>
+        </section>
+        <section>
+          <h2>Setting up</h2><a href="https://jestjs.io/docs/en/setup-teardown">https://jestjs.io/docs/en/setup-teardown</a>
+          <pre><code>beforeAll(() => {
+  return initializeCityDatabase();
+});
+
+afterAll(() => {
+  return clearCityDatabase();
+});
+
+test('city database has Vienna', () => {
+  expect(isCity('Vienna')).toBeTruthy();
+});
+
+test('city database has San Juan', () => {
+  expect(isCity('San Juan')).toBeTruthy();
+});
+
+</code></pre>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>Testing the database</h1>
+        </section>
+        <section>
+          <h2>Install jest-mongodb</h2>
+          <pre><code>yarn add mongodb
+yarn add @shelf/jest-mongodb --dev
+</code></pre>
+          <p>package.json</p>
+          <pre><code>{
+  "preset": "@shelf/jest-mongodb"
+}
+</code></pre>
+        </section>
+        <section>
+          <h2>Jest and MongoDB</h2><a href="https://jestjs.io/docs/en/mongodb">https://jestjs.io/docs/en/mongodb</a>
+          <pre><code>const {MongoClient} = require('mongodb');
+
+describe('insert', () => {
+  let connection;
+  let db;
+
+  beforeAll(async () => {
+    connection = await MongoClient.connect(global.__MONGO_URI__, {
+      useNewUrlParser: true,
+    });
+    db = await connection.db(global.__MONGO_DB_NAME__);
+  });
+
+  afterAll(async () => {
+    await connection.close();
+    await db.close();
+  });
+
+  it('should insert a doc into collection', async () => {
+    const users = db.collection('users');
+
+    const mockUser = {_id: 'some-user-id', name: 'John'};
+    await users.insertOne(mockUser);
+
+    const insertedUser = await users.findOne({_id: 'some-user-id'});
+    expect(insertedUser).toEqual(mockUser);
+  });
+});
+
+
+</code></pre>
+        </section>
+      </section>
+    </div>
+  </div>
+</body>
+<script src="../lib/reveal.js"></script>
+<script src="../lib/plugin/markdown/markdown.js"></script>
+<script src="../lib/plugin/highlight/highlight.js"></script>
+<script src="../lib/plugin/notes/notes.js"></script>
+<script src="../lib/plugin/math/math.js"></script>
+<script>
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    transition: "convex",
+    //- height: 1.0,
+  
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+  });
+  //- Reveal.initialize({
+  //-   controls: true,
+  //-   progress: true,
+  //-   history: true,
+  //-   center: true,
+  //-   rollingLinks: true,
+  //-   transition: "convex",
+  //-   //- width: "90%",
+  //-   //- height: 1.0,
+  //-   dependencies: [
+  //-     // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+  //-     { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+  
+  //-     // Interpret Markdown in <section> elements
+  //-     { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+  //-     { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+  
+  //-     // Syntax highlight for <code> elements
+  //-     { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+  
+  //-     // Zoom in and out with Alt+click
+  //-     { src: '../plugin/zoom-js/zoom.js', async: true },
+  
+  //-     // Speaker notes
+  //-     { src: '../plugin/notes/notes.js', async: true },
+  
+  //-     //- // Remote control your reveal.js presentation using a touch device
+  //-     //- { src: '../plugin/remotes/remotes.js', async: true },
+  
+  //-     //- // MathJax
+  //-     //- { src: '../plugin/math/math.js', async: true }
+  //-   ]
+  //- });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-72531610-1', 'auto');
+  ga('send', 'pageview');
+</script>
